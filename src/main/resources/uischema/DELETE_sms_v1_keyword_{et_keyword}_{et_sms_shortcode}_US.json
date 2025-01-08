@@ -1,0 +1,80 @@
+{
+    "connectorName": "salesforcemarketingcloud",
+    "operationName": "DELETE_sms_v1_keyword_{et_keyword}_{et_sms_shortcode}_US",
+    "title": "DELETE Sms V 1 Keyword { Et Keyword } { Et Sms Shortcode } US",
+    "help": "https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/deleteKeywordViaKeywordShortCodeCountryCode.htm
+
+Deletes a keyword on an account given a keyword, short code, and country code.",
+    "elements": [
+        {
+            "type": "attributeGroup",
+            "value": {
+                "groupName": "General",
+                "elements": [
+                    {
+                        "type": "attribute",
+                        "value": {
+                          "name": "configRef",
+                          "displayName": "Connection",
+                          "inputType": "connection",
+                          "allowedConnectionTypes": [
+                            "salesforcemarketingcloud"
+                          ],
+                          "defaultType": "connection.salesforcemarketingcloud",
+                          "defaultValue": "",
+                          "required": "true",
+                          "helpTip": "Connection to be used"
+                        }
+                    },
+                    {
+                        "type": "attributeGroup",
+                        "value": {
+                            "groupName": "Search",
+                            "elements": [
+                                {
+                                    "type": "attribute",
+                                    "value": {
+                                        "name": "search",
+                                        "displayName": "Search",
+                                        "inputType": "searchBox",
+                                        "defaultValue": "",
+                                        "required": "false",
+                                        "helpTip": "Search for an attribute using the display name"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                                        ,{
+                        "type":"attributeGroup",
+                        "value":{
+                            "groupName": "Parameters",
+                            "elements":[
+                                                                                                    {
+                                        "type":"attribute",
+                                        "value":{
+                                            "name": "etKeyword",
+                                            "displayName": "Et Keyword",
+                                            "inputType": "stringOrExpression",
+                                            "defaultValue": "",
+                                            "required": "true",
+                                            "helpTip": ""
+                                        }
+                                    },                                                                    {
+                                        "type":"attribute",
+                                        "value":{
+                                            "name": "etSmsShortcode",
+                                            "displayName": "Et Sms Shortcode",
+                                            "inputType": "stringOrExpression",
+                                            "defaultValue": "",
+                                            "required": "true",
+                                            "helpTip": ""
+                                        }
+                                    }                                                            ]
+                        }
+                    }
+                                                                                                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,70 @@
+{
+    "connectorName": "salesforcemarketingcloud",
+    "operationName": "GET_data_v1_audit_auditEvents",
+    "title": "GET Data V 1 Audit Audit Events",
+    "help": "https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/getAuditEvents.htm
+
+Retrieves logged Audit Trail audit events for the current account and its children. Logins are audited at the enterprise level.",
+    "elements": [
+        {
+            "type": "attributeGroup",
+            "value": {
+                "groupName": "General",
+                "elements": [
+                    {
+                        "type": "attribute",
+                        "value": {
+                          "name": "configRef",
+                          "displayName": "Connection",
+                          "inputType": "connection",
+                          "allowedConnectionTypes": [
+                            "salesforcemarketingcloud"
+                          ],
+                          "defaultType": "connection.salesforcemarketingcloud",
+                          "defaultValue": "",
+                          "required": "true",
+                          "helpTip": "Connection to be used"
+                        }
+                    },
+                    {
+                        "type": "attributeGroup",
+                        "value": {
+                            "groupName": "Search",
+                            "elements": [
+                                {
+                                    "type": "attribute",
+                                    "value": {
+                                        "name": "search",
+                                        "displayName": "Search",
+                                        "inputType": "searchBox",
+                                        "defaultValue": "",
+                                        "required": "false",
+                                        "helpTip": "Search for an attribute using the display name"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                                        ,{
+                        "type":"attributeGroup",
+                        "value":{
+                            "groupName": "Parameters",
+                            "elements":[
+                                                                                                    {
+                                        "type":"attribute",
+                                        "value":{
+                                            "name": "$OrderBy",
+                                            "displayName": "$ Order By",
+                                            "inputType": "stringOrExpression",
+                                            "defaultValue": "",
+                                            "required": "false",
+                                            "helpTip": ""
+                                        }
+                                    }                                                            ]
+                        }
+                    }
+                                                                                                ]
+            }
+        }
+    ]
+}

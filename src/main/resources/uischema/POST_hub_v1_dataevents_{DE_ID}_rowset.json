@@ -1,0 +1,70 @@
+{
+    "connectorName": "salesforcemarketingcloud",
+    "operationName": "POST_hub_v1_dataevents_{DE_ID}_rowset",
+    "title": "POST Hub V 1 Dataevents { DE ID } Rowset",
+    "help": "https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/postDataExtensionRowsetByKey.htm
+
+The API upserts multiple data extension rows in a single synchronous call using Data Extension ID.",
+    "elements": [
+        {
+            "type": "attributeGroup",
+            "value": {
+                "groupName": "General",
+                "elements": [
+                    {
+                        "type": "attribute",
+                        "value": {
+                          "name": "configRef",
+                          "displayName": "Connection",
+                          "inputType": "connection",
+                          "allowedConnectionTypes": [
+                            "salesforcemarketingcloud"
+                          ],
+                          "defaultType": "connection.salesforcemarketingcloud",
+                          "defaultValue": "",
+                          "required": "true",
+                          "helpTip": "Connection to be used"
+                        }
+                    },
+                    {
+                        "type": "attributeGroup",
+                        "value": {
+                            "groupName": "Search",
+                            "elements": [
+                                {
+                                    "type": "attribute",
+                                    "value": {
+                                        "name": "search",
+                                        "displayName": "Search",
+                                        "inputType": "searchBox",
+                                        "defaultValue": "",
+                                        "required": "false",
+                                        "helpTip": "Search for an attribute using the display name"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                                        ,{
+                        "type":"attributeGroup",
+                        "value":{
+                            "groupName": "Parameters",
+                            "elements":[
+                                                                                                    {
+                                        "type":"attribute",
+                                        "value":{
+                                            "name": "dEID",
+                                            "displayName": "DE ID",
+                                            "inputType": "stringOrExpression",
+                                            "defaultValue": "",
+                                            "required": "true",
+                                            "helpTip": ""
+                                        }
+                                    }                                                            ]
+                        }
+                    }
+                                                                                                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,70 @@
+{
+    "connectorName": "salesforcemarketingcloud",
+    "operationName": "PUT_interaction_v1_eventDefinitions_key:{eventDefinitionKey}",
+    "title": "PUT Interaction V 1 Event Definitions Key : { Event Definition Key }",
+    "help": "https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/jb-api-specification.htm
+
+Updates an event definition by key. Once an event definition is created, only a few properties can be updated.",
+    "elements": [
+        {
+            "type": "attributeGroup",
+            "value": {
+                "groupName": "General",
+                "elements": [
+                    {
+                        "type": "attribute",
+                        "value": {
+                          "name": "configRef",
+                          "displayName": "Connection",
+                          "inputType": "connection",
+                          "allowedConnectionTypes": [
+                            "salesforcemarketingcloud"
+                          ],
+                          "defaultType": "connection.salesforcemarketingcloud",
+                          "defaultValue": "",
+                          "required": "true",
+                          "helpTip": "Connection to be used"
+                        }
+                    },
+                    {
+                        "type": "attributeGroup",
+                        "value": {
+                            "groupName": "Search",
+                            "elements": [
+                                {
+                                    "type": "attribute",
+                                    "value": {
+                                        "name": "search",
+                                        "displayName": "Search",
+                                        "inputType": "searchBox",
+                                        "defaultValue": "",
+                                        "required": "false",
+                                        "helpTip": "Search for an attribute using the display name"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                                        ,{
+                        "type":"attributeGroup",
+                        "value":{
+                            "groupName": "Parameters",
+                            "elements":[
+                                                                                                    {
+                                        "type":"attribute",
+                                        "value":{
+                                            "name": "eventDefinitionKey",
+                                            "displayName": "Event Definition Key",
+                                            "inputType": "stringOrExpression",
+                                            "defaultValue": "",
+                                            "required": "true",
+                                            "helpTip": ""
+                                        }
+                                    }                                                            ]
+                        }
+                    }
+                                                                                                ]
+            }
+        }
+    ]
+}

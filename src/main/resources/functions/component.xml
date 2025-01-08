@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2022, WSO2 LLC. (http://www.wso2.com). All Rights Reserved.
+  ~
+  ~ This software is the property of WSO2 LLC. and its suppliers, if any.
+  ~ Dissemination of any information or reproduction of any material contained
+  ~ herein is strictly forbidden, unless permitted by WSO2 in accordance with
+  ~ the WSO2 Software License available at: https://wso2.com/licenses/eula/3.2
+  ~ For specific language governing the permissions and limitations under
+  ~ this license, please see the license as well as any agreement you’ve
+  ~ entered into with WSO2 governing the purchase of this software and any
+  ~ associated services.
+  -->
+
+<!-- Generated on 08-Wed, 01, 2025 20:03:16+0530 -->
+
+<component name="functions" type="synapse/template">
+    <subComponents>
+                <component name="DELETE_asset_v1_content_assets_<assetId>">
+            <file>DELETE_asset_v1_content_assets_<assetId>.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/routes.htm#detail_deleteAsset
+
+Deletes a category by ID.</description>
+        </component>
+                <component name="DELETE_asset_v1_content_categories_{categoryId}">
+            <file>DELETE_asset_v1_content_categories_{categoryId}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/deleteCategory.htm
+
+Deletes one Content Builder category by ID.</description>
+        </component>
+                <component name="DELETE_interaction_v1_eventDefinitions_key:{eventDefinitionKey}">
+            <file>DELETE_interaction_v1_eventDefinitions_key:{eventDefinitionKey}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/jb-api-specification.htm
+
+Deletes an individual event definition by key.</description>
+        </component>
+                <component name="DELETE_interaction_v1_eventDefinitions_{eventDefinitionId}">
+            <file>DELETE_interaction_v1_eventDefinitions_{eventDefinitionId}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/jb-api-specification.htm
+
+Deletes an individual event definition by ID.</description>
+        </component>
+                <component name="DELETE_interaction_v1_interactions_{id}">
+            <file>DELETE_interaction_v1_interactions_{id}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/deleteInteractionById.htm
+
+Deletes a journey by ID. When deleting last version of a journey, check if the journey is associated with a tag and unassociated the tag using the deleteTags resource.</description>
+        </component>
+                <component name="DELETE_messaging_v1_email_definitions_{definitionKey}">
+            <file>DELETE_messaging_v1_email_definitions_{definitionKey}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/deleteMessageDefinition.htm
+
+Deletes a message definition. You can&apos;t restore a deleted definition. The deleted definition is archived, and a delete location of the definition key is provided in the response for reference. You can reuse a deleted definition key because the information associated with it is copied to a new unique identifier.</description>
+        </component>
+                <component name="DELETE_messaging_v1_sms_definitions_{definitionKey}">
+            <file>DELETE_messaging_v1_sms_definitions_{definitionKey}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/deleteSMSMessageDefinition.htm
+
+Deletes a message definition. You can&apos;t restore a deleted definition. The deleted definition is archived, and a delete location of the definition key is provided in the response for reference. You can reuse a deleted definition key because the information associated with it is copied to a new unique identifier.</description>
+        </component>
+                <component name="DELETE_messaging_v1_sms_definitions_{definitionKey}_queue">
+            <file>DELETE_messaging_v1_sms_definitions_{definitionKey}_queue.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/deleteQueuedSMSMessagesForDefinition.htm</description>
+        </component>
+                <component name="DELETE_platform_v1_ens-callbacks_{callbackId}">
+            <file>DELETE_platform_v1_ens-callbacks_{callbackId}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/deleteCallback.htm
+
+Deletes a registered callback that isn&apos;t used by any subscriptions. Delete all subscriptions for the callback before deleting the callback.</description>
+        </component>
+                <component name="DELETE_platform_v1_ens-subscriptions_{subscriptionId}">
+            <file>DELETE_platform_v1_ens-subscriptions_{subscriptionId}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/deleteSubscription.htm
+
+Deletes a subscription.</description>
+        </component>
+                <component name="DELETE_push_v1_location_{et_location_id}">
+            <file>DELETE_push_v1_location_{et_location_id}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/deleteLocation.htm
+
+Deletes an existing location.</description>
+        </component>
+                <component name="DELETE_sms_v1_keyword_{et_keyword_id}">
+            <file>DELETE_sms_v1_keyword_{et_keyword_id}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/deleteKeywordViaKeywordId.htm
+
+Deletes a keyword on an account given a keyword Id.</description>
+        </component>
+                <component name="DELETE_sms_v1_keyword_{et_keyword}_{et_sms_shortcode}_US">
+            <file>DELETE_sms_v1_keyword_{et_keyword}_{et_sms_shortcode}_US.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/deleteKeywordViaKeywordShortCodeCountryCode.htm
+
+Deletes a keyword on an account given a keyword, short code, and country code.</description>
+        </component>
+                <component name="GET_asset_v1_content_assets">
+            <file>GET_asset_v1_content_assets.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/assetSimpleQuery.htm
+
+Gets an asset collection by simple $filter parameters.</description>
+        </component>
+                <component name="GET_asset_v1_content_assets_salutations">
+            <file>GET_asset_v1_content_assets_salutations.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/content-api.htm
+
+Gets the default header and footer for an account.</description>
+        </component>
+                <component name="GET_asset_v1_content_assets_{assetId}">
+            <file>GET_asset_v1_content_assets_{assetId}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/content-api.htm
+
+Gets an asset by ID.</description>
+        </component>
+                <component name="GET_asset_v1_content_assets_{assetId}_file">
+            <file>GET_asset_v1_content_assets_{assetId}_file.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/content-api.htm
+
+Gets the binary file for an asset</description>
+        </component>
+                <component name="GET_asset_v1_content_assets_{emailId}_salutations">
+            <file>GET_asset_v1_content_assets_{emailId}_salutations.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/content-api.htm
+
+Gets the header and footer for an email.</description>
+        </component>
+                <component name="GET_asset_v1_content_categories">
+            <file>GET_asset_v1_content_categories.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/getCategories.htm
+
+Returns one or more Content Builder categories that are owned by or reside in your MID. To request categories that have been shared with your MID, add a scope parameter to the call.</description>
+        </component>
+                <component name="GET_asset_v1_content_categories_{categoryId}">
+            <file>GET_asset_v1_content_categories_{categoryId}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/getCategory.htm
+
+Returns one Content Builder category by ID.</description>
+        </component>
+                <component name="GET_contacts_v1_attributeGroups">
+            <file>GET_contacts_v1_attributeGroups.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/routes.htm</description>
+        </component>
+                <component name="GET_contacts_v1_contacts_analytics_deleterequests">
+            <file>GET_contacts_v1_contacts_analytics_deleterequests.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/ContactsDeleteRequestsDetails.htm
+
+Retrieves details of contact delete requests for a date range.</description>
+        </component>
+                <component name="GET_contacts_v1_contacts_analytics_deleterequests_summary">
+            <file>GET_contacts_v1_contacts_analytics_deleterequests_summary.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/ContactsDeleteRequestsSummary.htm
+
+Retrieves a summary of contact delete requests for a date range.</description>
+        </component>
+                <component name="GET_contacts_v1_schema">
+            <file>GET_contacts_v1_schema.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/schemasCollection.htm
+
+Retrieves the collection of all contact data schemas contained in the current account.</description>
+        </component>
+                <component name="GET_data_v1_async_import_{id}_summary">
+            <file>GET_data_v1_async_import_{id}_summary.xml</file>
+            <description>[https://developer.salesforce.com/docs/marketing/marketing-cloud/references/mc-import_job_api?meta=Get+status+of+a+one-time+data+import](https://developer.salesforce.com/docs/marketing/marketing-cloud/references/mc-import_job_api?meta=Get%2Bstatus%2Bof%2Ba%2Bone-time%2Bdata%2Bimport)
+
+Get the status of a queued data import by ID.</description>
+        </component>
+                <component name="GET_data_v1_async_import_{id}_validationresult">
+            <file>GET_data_v1_async_import_{id}_validationresult.xml</file>
+            <description>[https://developer.salesforce.com/docs/marketing/marketing-cloud/references/mc-import_job_api?meta=Get+validation+details+of+a+one-time+data+import](https://developer.salesforce.com/docs/marketing/marketing-cloud/references/mc-import_job_api?meta=Get%2Bvalidation%2Bdetails%2Bof%2Ba%2Bone-time%2Bdata%2Bimport)
+
+Get import row level validation details by ID.</description>
+        </component>
+                <component name="GET_data_v1_async_import_{id}_validationsummary">
+            <file>GET_data_v1_async_import_{id}_validationsummary.xml</file>
+            <description>[https://developer.salesforce.com/docs/marketing/marketing-cloud/references/mc-import_job_api?meta=Get+validation+summary+of+a+one-time+data+import](https://developer.salesforce.com/docs/marketing/marketing-cloud/references/mc-import_job_api?meta=Get%2Bvalidation%2Bsummary%2Bof%2Ba%2Bone-time%2Bdata%2Bimport)
+
+Get validation summary of a data import by ID.</description>
+        </component>
+                <component name="GET_data_v1_audit_auditEvents">
+            <file>GET_data_v1_audit_auditEvents.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/getAuditEvents.htm
+
+Retrieves logged Audit Trail audit events for the current account and its children. Logins are audited at the enterprise level.</description>
+        </component>
+                <component name="GET_data_v1_audit_securityEvents">
+            <file>GET_data_v1_audit_securityEvents.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/getSecurityEvents.htm
+
+Retrieves logged Audit Trail security events for the authenticated user’s account and its children. Logins are audited at the enterprise level.</description>
+        </component>
+                <component name="GET_interaction_v1_eventDefinitions">
+            <file>GET_interaction_v1_eventDefinitions.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/jb-api-specification.htm
+
+Retrieves a collection of event definitions.</description>
+        </component>
+                <component name="GET_interaction_v1_eventDefinitions_key:{eventDefinitionKey}">
+            <file>GET_interaction_v1_eventDefinitions_key:{eventDefinitionKey}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/jb-api-specification.htm
+
+Retrieves an individual event definition by key.</description>
+        </component>
+                <component name="GET_interaction_v1_interactions">
+            <file>GET_interaction_v1_interactions.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/jb-api-specification.htm
+
+Retrieves a collection of all journeys. The journey collection resources are embedded in the items property of the response body. Use both a sort order and paging to minimize the response size and response time.</description>
+        </component>
+                <component name="GET_interaction_v1_interactions_publishStatus_{statusId}">
+            <file>GET_interaction_v1_interactions_publishStatus_{statusId}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/getPublishStatus.htm
+
+Checks the status of a publication.</description>
+        </component>
+                <component name="GET_interaction_v1_interactions_{journeyId}">
+            <file>GET_interaction_v1_interactions_{journeyId}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/jb-api-specification.htm
+
+Retrieves a single journey by ID.</description>
+        </component>
+                <component name="GET_interaction_v1_interactions_{journeyId}_audit_all">
+            <file>GET_interaction_v1_interactions_{journeyId}_audit_all.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/getInteractionAuditLog.htm
+
+Retrieves an audit log of a journey and its versions by ID or key. Pass in different actions to see history about creating, modifying, activating, deactivating, stopping, and deleting a journey.</description>
+        </component>
+                <component name="GET_interaction_v1_rest">
+            <file>GET_interaction_v1_rest.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/jb-api-specification.htm
+
+Retrieves the discovery document for the collection of journey resources.</description>
+        </component>
+                <component name="GET_messaging_v1_email_definitions">
+            <file>GET_messaging_v1_email_definitions.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/getDefinitions.htm
+
+Gets a list of send definitions.</description>
+        </component>
+                <component name="GET_messaging_v1_email_definitions_{definitionKey}">
+            <file>GET_messaging_v1_email_definitions_{definitionKey}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/getSendDefinition.htm
+
+Gets send definition configuration details for a definition key.</description>
+        </component>
+                <component name="GET_messaging_v1_email_definitions_{definitionKey}_queue">
+            <file>GET_messaging_v1_email_definitions_{definitionKey}_queue.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/getQueueMetricsForDefinition.htm
+
+Gets metrics for the messages of a send definition. Applies to messages that are accepted but not yet processed.</description>
+        </component>
+                <component name="GET_messaging_v1_email_messages_">
+            <file>GET_messaging_v1_email_messages_.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/getMessagesNotSent.htm
+
+Gets a paginated list of messages that were not sent, ordered from oldest to newest.</description>
+        </component>
+                <component name="GET_messaging_v1_messageDefinitionSends_key:<tsd_external_key>_deliveryRecords_<recipientSendId>">
+            <file>GET_messaging_v1_messageDefinitionSends_key:<tsd_external_key>_deliveryRecords_<recipientSendId>.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/messageDefinitionSendsDeliveryRecords.htm
+
+Gets the delivery details of an email sent using the MessageDefinitionSends.</description>
+        </component>
+                <component name="GET_messaging_v1_sms_definitions_">
+            <file>GET_messaging_v1_sms_definitions_.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/getSMSDefinitions.htm
+
+Gets a list of send definitions.</description>
+        </component>
+                <component name="GET_messaging_v1_sms_definitions_{definitionKey}_queue">
+            <file>GET_messaging_v1_sms_definitions_{definitionKey}_queue.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/getSMSQueueMetricsForDefinition.htm
+
+Gets metrics for the messages of a send definition. Applies to messages that are accepted but not yet processed.</description>
+        </component>
+                <component name="GET_messaging_v1_sms_messages_">
+            <file>GET_messaging_v1_sms_messages_.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/getSMSMessagesNotSent.htm
+
+Gets a paginated list of messages that were not sent, ordered from oldest to newest.</description>
+        </component>
+                <component name="GET_messaging_v1_sms_messages_{messageKey}">
+            <file>GET_messaging_v1_sms_messages_{messageKey}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/getSMSSendStatusForRecipient.htm
+
+Gets the send status for a message. Because this route is rate-limited, use it for infrequent verification of a messageKey. To collect send status at scale, subscribe to transactional send events using the Event Notification Service.</description>
+        </component>
+                <component name="GET_platform_v1_ens-callbacks">
+            <file>GET_platform_v1_ens-callbacks.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/getAllCallbacks.htm
+
+Retrieves details about all registered callbacks.</description>
+        </component>
+                <component name="GET_platform_v1_ens-callbacks_{callbackId}">
+            <file>GET_platform_v1_ens-callbacks_{callbackId}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/getCallback.htm
+
+Retrieves details about a registered callback.</description>
+        </component>
+                <component name="GET_platform_v1_ens-subscriptions-by-cb_{callbackId}">
+            <file>GET_platform_v1_ens-subscriptions-by-cb_{callbackId}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/getAllSubscriptionsForCallback.htm
+
+Retrieves details for all subscriptions associated with a callback.</description>
+        </component>
+                <component name="GET_platform_v1_ens-subscriptions_{subscriptionId}">
+            <file>GET_platform_v1_ens-subscriptions_{subscriptionId}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/getSubscription.htm
+
+Retrieves details for a subscription.</description>
+        </component>
+                <component name="GET_push_v1_location_">
+            <file>GET_push_v1_location_.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/getLocations.htm
+
+Gets a list of all locations.</description>
+        </component>
+                <component name="GET_push_v1_location_{et_location_id}">
+            <file>GET_push_v1_location_{et_location_id}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/getSpecificLocation.htm
+
+ets a specific location.</description>
+        </component>
+                <component name="GET_sms_v1_messageContact_{et_smsmsg_id}_history_{et_sms_tokenId}_mobileNumber_{mobile_number}">
+            <file>GET_sms_v1_messageContact_{et_smsmsg_id}_history_{et_sms_tokenId}_mobileNumber_{mobile_number}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/getMessageContactHistory.htm
+
+Retrieves the last message sent to a mobile number.</description>
+        </component>
+                <component name="GET_sms_v1_messageList_{et_smsmsg_id}_deliveries_{et_smstoken_id}">
+            <file>GET_sms_v1_messageList_{et_smsmsg_id}_deliveries_{et_smstoken_id}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/getMessageList.htm
+
+Returns status for a message sent to a group of mobile numbers.</description>
+        </component>
+                <component name="GET_v2_discovery">
+            <file>GET_v2_discovery.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/getBaseURLs.htm
+
+Gets tenant-specific REST and authentication base URIs for the Marketing Cloud tenant associated with the provided username and client ID.</description>
+        </component>
+                <component name="GET_v2_userinfo">
+            <file>GET_v2_userinfo.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/getUserInfo.htm
+
+Gets information for the account and user that are associated with the access token.</description>
+        </component>
+                <component name="GETmessaging_v1_email_messages_{messageKey}">
+            <file>GETmessaging_v1_email_messages_{messageKey}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/getSendStatusForRecipient.htm
+
+Gets the send status for a message. Because this route is rate-limited, use it for infrequent verification of a messageKey. To collect send status at scale, subscribe to transactional send events using the Event Notification Service.</description>
+        </component>
+                <component name="PATCH_asset_v1_content_assets_<assetId>">
+            <file>PATCH_asset_v1_content_assets_<assetId>.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/content-api.htm
+
+https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/base-asset-types.htm
+
+Updates part of an asset.</description>
+        </component>
+                <component name="PATCH_contacts_v1_contacts">
+            <file>PATCH_contacts_v1_contacts.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/updateContacts.htm
+
+Updates contacts with the specified information in the specified attribute groups.</description>
+        </component>
+                <component name="PATCH_messaging_v1_email_definitions_{definitionKey}">
+            <file>PATCH_messaging_v1_email_definitions_{definitionKey}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/updateMessageDefinition.htm
+
+Updates a specific message definition.</description>
+        </component>
+                <component name="PATCH_messaging_v1_sms_definitions_{definitionKey}">
+            <file>PATCH_messaging_v1_sms_definitions_{definitionKey}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/updateSMSMessageDefinition.htm
+
+Updates a specific message definition.</description>
+        </component>
+                <component name="POST_address_v1_validateEmail">
+            <file>POST_address_v1_validateEmail.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/validateEmail.htm
+
+Validates an email by specifying the email address and validators to be used in the request body of the HTTP POST. You can use more than one validator in the same call.</description>
+        </component>
+                <component name="POST_asset_v1_content_assets">
+            <file>POST_asset_v1_content_assets.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/content-api.htm
+
+https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/base-asset-types.htm
+
+Inserts an asset.</description>
+        </component>
+                <component name="POST_asset_v1_content_assets_query">
+            <file>POST_asset_v1_content_assets_query.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/assetAdvancedQuery.htm
+
+A complex query is comprised of two or more simple queries joined with an AND or OR logical comparison operator. The simple queries are contained in a leftOperand JSON field and rightOperand JSON field. A third field, the logicalOperator, is used to compare the two operands. You can also embed queries inside other queries.</description>
+        </component>
+                <component name="POST_asset_v1_content_categories">
+            <file>POST_asset_v1_content_categories.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/createCategory.htm
+
+Creates a category (folder) in Content Builder.</description>
+        </component>
+                <component name="POST_contacts_v1_addresses_email_search">
+            <file>POST_contacts_v1_addresses_email_search.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/retrieveContactKey.htm
+
+Retrieves the contact key for one or more email channel addresses.</description>
+        </component>
+                <component name="POST_contacts_v1_contacts">
+            <file>POST_contacts_v1_contacts.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/createContacts.htm
+
+Creates a new contact with the specified information in the specified attribute groups.</description>
+        </component>
+                <component name="POST_contacts_v1_contacts_actions_delete">
+            <file>POST_contacts_v1_contacts_actions_delete.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/DeleteByContactKeys.htm
+
+Deletes contacts based on specified contact key values. This operation runs asynchronously. Use the OperationID value returned to check the status of the delete.</description>
+        </component>
+                <component name="POST_data_v1_async_import">
+            <file>POST_data_v1_async_import.xml</file>
+            <description>[https://developer.salesforce.com/docs/marketing/marketing-cloud/references/mc-import_job_api?meta=Queue+and+start+a+one-time+data+import](https://developer.salesforce.com/docs/marketing/marketing-cloud/references/mc-import_job_api?meta=Queue%2Band%2Bstart%2Ba%2Bone-time%2Bdata%2Bimport)
+
+Queue and start a one-time import against a data extension without creating an import definition.
+
+Note: If the file is on enhanced FTP, it will be removed once import finishes.
+
+For testing purpose, it&apos;s advised to try with enhanced ftp file import first and then adapt other part by yourself.</description>
+        </component>
+                <component name="POST_hub_v1_dataevents_key:{DE_External_Key}_rowset">
+            <file>POST_hub_v1_dataevents_key:{DE_External_Key}_rowset.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/postDataExtensionRowsetByKey.htm
+
+The API upserts multiple data extension rows in a single synchronous call using Data Extension&apos;s External Key.</description>
+        </component>
+                <component name="POST_hub_v1_dataevents_{DE_ID}_rowset">
+            <file>POST_hub_v1_dataevents_{DE_ID}_rowset.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/postDataExtensionRowsetByKey.htm
+
+The API upserts multiple data extension rows in a single synchronous call using Data Extension ID.</description>
+        </component>
+                <component name="POST_hub_v1_dataeventsasync_key:{DE_External_Key}_rowset">
+            <file>POST_hub_v1_dataeventsasync_key:{DE_External_Key}_rowset.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/postDataExtensionRowsetByKey.htm
+
+The API upserts a multiple data extension rows Asynchronously using Data Extension&apos;s External Key.</description>
+        </component>
+                <component name="POST_hub_v1_dataeventsasync_{DE_ID}_rowset">
+            <file>POST_hub_v1_dataeventsasync_{DE_ID}_rowset.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/postDataExtensionRowsetByKey.htm
+
+The API upserts a multiple data extension rows Asynchronously using Data Extension&apos;s ID.</description>
+        </component>
+                <component name="POST_interaction_v1_eventDefinitions">
+            <file>POST_interaction_v1_eventDefinitions.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/createEventDefinition.htm
+
+Creates an event definition (name and data schema for an event) and defines an event definition key. The resource uses this key when firing an event to send it to the appropriate journey. Typically, marketers create the event definition in the Journey Builder UI. Use this resource instead if you are using a custom application for Journey Builder functionality.</description>
+        </component>
+                <component name="POST_interaction_v1_events">
+            <file>POST_interaction_v1_events.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/postEvent.htm
+
+Fires the entry event that initiates the journey.</description>
+        </component>
+                <component name="POST_interaction_v1_interactions">
+            <file>POST_interaction_v1_interactions.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/postCreateInteraction.htm
+
+Creates or saves a journey. To create a new journey provide the request body in the appropriate Journey Specification. Please read the Journey Spec page to understand which properties are required to create a journey via the API. The id, key, createdDate, modifiedDate, status and definitionId are assigned by Journey Builder and are never to be passed in as parameters for creating a journey.</description>
+        </component>
+                <component name="POST_interaction_v1_interactions_contactMembership">
+            <file>POST_interaction_v1_interactions_contactMembership.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/contactMembershipRequest.htm
+
+Provides a list of journeys and journey versions for a list of contact keys.</description>
+        </component>
+                <component name="POST_interaction_v1_interactions_contactexit">
+            <file>POST_interaction_v1_interactions_contactexit.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/contactExitRequest.htm
+
+Removes up to 50 contacts from a journey or from one or more versions of a journey.</description>
+        </component>
+                <component name="POST_interaction_v1_interactions_contactexit_status">
+            <file>POST_interaction_v1_interactions_contactexit_status.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/contactExitStatus.htm
+
+Returns the status of a request to remove a contact from a journey or from one or more versions of a journey.</description>
+        </component>
+                <component name="POST_interaction_v1_interactions_journeyhistory_download">
+            <file>POST_interaction_v1_interactions_journeyhistory_download.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/contactMembershipRequest.htm
+
+Provides a list of journeys and journey versions for a list of contact keys.</description>
+        </component>
+                <component name="POST_interaction_v1_interactions_publishAsync_{journeyId}">
+            <file>POST_interaction_v1_interactions_publishAsync_{journeyId}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/postPublishInteractionById.htm
+
+Publishes a journey version asynchronously.</description>
+        </component>
+                <component name="POST_interaction_v1_interactions_stop_{journeyId}">
+            <file>POST_interaction_v1_interactions_stop_{journeyId}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/postStopInteractionById.htm
+
+Stops a running journey.</description>
+        </component>
+                <component name="POST_messaging_v1_email_definitions">
+            <file>POST_messaging_v1_email_definitions.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/createSendDefinition.htm
+
+Creates a send definition.</description>
+        </component>
+                <component name="POST_messaging_v1_email_messages">
+            <file>POST_messaging_v1_email_messages.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/sendMessageMultipleRecipients.htm
+
+Sends a message to multiple recipients using a send definition. You can provide a messageKey in the request; otherwise, the messageKey is automatically generated in the response.</description>
+        </component>
+                <component name="POST_messaging_v1_email_messages_{guid}">
+            <file>POST_messaging_v1_email_messages_{guid}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/sendMessageSingleRecipient.htm
+
+Sends a message to a single recipient via a send definition using a messageKey path parameter.</description>
+        </component>
+                <component name="POST_messaging_v1_messageDefinitionSends_key:<tsd_external_key>_send">
+            <file>POST_messaging_v1_messageDefinitionSends_key:<tsd_external_key>_send.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/messageDefinitionSends.htm
+
+Sends transactional email using Marketing Cloud&apos;s triggered send functionality. In order to use this service, configure a triggered send definition in Email Studio.</description>
+        </component>
+                <component name="POST_messaging_v1_sms_definitions">
+            <file>POST_messaging_v1_sms_definitions.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/createSMSSendDefinition.htm
+
+Creates a send definition.</description>
+        </component>
+                <component name="POST_messaging_v1_sms_messages">
+            <file>POST_messaging_v1_sms_messages.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/sendSMSMessageMultipleRecipients.htm
+
+Sends a message to multiple recipients using a send definition. You can provide a messageKey in the request; otherwise, the messageKey is automatically generated in the response.</description>
+        </component>
+                <component name="POST_messaging_v1_sms_messages_{guid}">
+            <file>POST_messaging_v1_sms_messages_{guid}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/sendSMSMessageSingleRecipient.htm
+
+Sends a message to a single recipient via a send definition using a messageKey path parameter.</description>
+        </component>
+                <component name="POST_platform_v1_ens-callbacks">
+            <file>POST_platform_v1_ens-callbacks.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/createCallback.htm
+
+Registers a new callback to receive event notifications. Verify your callback before you can use it in a subscription.</description>
+        </component>
+                <component name="POST_platform_v1_ens-subscriptions">
+            <file>POST_platform_v1_ens-subscriptions.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/createSubscription.htm
+
+Creates a single subscription. A subscription indicates which event types to receive notifications for and which callback, or webhook, to receive them on. A new subscription can take up to two minutes to become active. You can create a subscription only for a verified callback.</description>
+        </component>
+                <component name="POST_platform_v1_ens-verify">
+            <file>POST_platform_v1_ens-verify.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/verifyCallback.htm
+
+Verifies a callback so that it can receive notifications.</description>
+        </component>
+                <component name="POST_push_v1_location">
+            <file>POST_push_v1_location.xml</file>
+            <description>This is POST_push_v1_location operation.</description>
+        </component>
+                <component name="POST_push_v1_message">
+            <file>POST_push_v1_message.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/createPushMessage.htm
+
+Creates a push message template for sending to a list of subscribers or an audience inclusion list or data extension. You can personalize each message for each subscriber using personalization strings or AMPscript lookups from a data extension within a single push message definition. You can also pass the text of the message to override the message contents specified in the definition for API-driven personalization.</description>
+        </component>
+                <component name="POST_push_v1_messageApp_{mobilepush_message_id}_send">
+            <file>POST_push_v1_messageApp_{mobilepush_message_id}_send.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/postMessageAppSend.htm
+
+Broadcasts a message to all users of a push-enabled app.</description>
+        </component>
+                <component name="POST_push_v1_messageList_{mobilepush_message_id}_send">
+            <file>POST_push_v1_messageList_{mobilepush_message_id}_send.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/postMessageListSend.htm
+
+Sends a message to the specified mobile devices of a push-enabled app.</description>
+        </component>
+                <component name="POST_sms_v1_contacts_subscriptions">
+            <file>POST_sms_v1_contacts_subscriptions.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/contactsSubscriptions.htm
+
+Returns subscription status for a mobile number or subscriber key.</description>
+        </component>
+                <component name="POST_sms_v1_keyword">
+            <file>POST_sms_v1_keyword.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/createKeyword.htm
+
+Creates a keyword on an account.</description>
+        </component>
+                <component name="POST_sms_v1_messageContact_{sms_message_id}_send">
+            <file>POST_sms_v1_messageContact_{sms_message_id}_send.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/postMessageContactSend.htm
+
+Initiates a message to one or more mobile numbers.</description>
+        </component>
+                <component name="POST_sms_v1_message_optin">
+            <file>POST_sms_v1_message_optin.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/messageOptIn.htm
+
+Creates an SMS opt-in message permitting contacts to subscribe to further SMS messages.</description>
+        </component>
+                <component name="POST_sms_v1_queueMO">
+            <file>POST_sms_v1_queueMO.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/postQueueMO.htm
+
+Queues an MO message for send.</description>
+        </component>
+                <component name="POST_v2_token">
+            <file>POST_v2_token.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-app-development.meta/mc-app-development/access-token-s2s.htm
+
+When the access token expires, your application must request a new access token using the same v2/token route as before. The lifetime of an access token is 20 minutes.</description>
+        </component>
+                <component name="PUT_asset_v1_content_categories_{categoryId}">
+            <file>PUT_asset_v1_content_categories_{categoryId}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/updateCategory.htm
+
+Updates one Content Builder category by ID.</description>
+        </component>
+                <component name="PUT_hub_v1_dataevents_key:key:{DE_External_Key}_rows_Email:example@example.com">
+            <file>PUT_hub_v1_dataevents_key:key:{DE_External_Key}_rows_Email:example@example.com.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/putDataExtensionRowByKey.htm
+
+Upserts a data extension row by primary key using Data Extension&apos;s External Key.</description>
+        </component>
+                <component name="PUT_hub_v1_dataevents_key:{DE_External_Key}_rows_Email:someone@exacttarget.com_column_FollowerCount_increment">
+            <file>PUT_hub_v1_dataevents_key:{DE_External_Key}_rows_Email:someone@exacttarget.com_column_FollowerCount_increment.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/putIncrementColumnValueByKey.htm
+
+The API increments a numeric column in a single synchronous call using Data Extension&apos;s External Key.</description>
+        </component>
+                <component name="PUT_hub_v1_dataevents_{DE_ID}_rows_Email:example@example.com">
+            <file>PUT_hub_v1_dataevents_{DE_ID}_rows_Email:example@example.com.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/putDataExtensionRowByKey.htm
+
+Upserts a data extension row by primary key using Data Extension ID.</description>
+        </component>
+                <component name="PUT_hub_v1_dataevents_{DE_ID}_rows_Email:someone@exacttarget.com_column_FollowerCount_increment">
+            <file>PUT_hub_v1_dataevents_{DE_ID}_rows_Email:someone@exacttarget.com_column_FollowerCount_increment.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/putIncrementColumnValueByKey.htm
+
+The API increments a numeric column in a single synchronous call using Data Extension ID.</description>
+        </component>
+                <component name="PUT_hub_v1_dataeventsasync_key:{DE_External_Key}_rows_Email:example@example.com">
+            <file>PUT_hub_v1_dataeventsasync_key:{DE_External_Key}_rows_Email:example@example.com.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/putDataExtensionRowByKey.htm
+
+Upserts a data extension row by primary key using Data Extension&apos;s External Key.</description>
+        </component>
+                <component name="PUT_hub_v1_dataeventsasync_key:{DE_External_Key}_rows_Email:someone@exacttarget.com_column_FollowerCount_increment">
+            <file>PUT_hub_v1_dataeventsasync_key:{DE_External_Key}_rows_Email:someone@exacttarget.com_column_FollowerCount_increment.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/putIncrementColumnValueByKey.htm
+
+The API increments a numeric column in a single Asynchronous call using Data Extension&apos;s External Key.</description>
+        </component>
+                <component name="PUT_hub_v1_dataeventsasync_{DE_ID}_rows_Email:example@example.com">
+            <file>PUT_hub_v1_dataeventsasync_{DE_ID}_rows_Email:example@example.com.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/putDataExtensionRowByKey.htm
+
+Upserts a data extension row by primary key using Data Extension ID.</description>
+        </component>
+                <component name="PUT_hub_v1_dataeventsasync_{DE_ID}_rows_Email:someone@exacttarget.com_column_FollowerCount_increment">
+            <file>PUT_hub_v1_dataeventsasync_{DE_ID}_rows_Email:someone@exacttarget.com_column_FollowerCount_increment.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/putIncrementColumnValueByKey.htm
+
+The API increments a numeric column in a single Asynchronous call using Data Extension&apos;s ID.</description>
+        </component>
+                <component name="PUT_interaction_v1_eventDefinitions_key:{eventDefinitionKey}">
+            <file>PUT_interaction_v1_eventDefinitions_key:{eventDefinitionKey}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/jb-api-specification.htm
+
+Updates an event definition by key. Once an event definition is created, only a few properties can be updated.</description>
+        </component>
+                <component name="PUT_interaction_v1_eventDefinitions_{eventDefinitionId}">
+            <file>PUT_interaction_v1_eventDefinitions_{eventDefinitionId}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/jb-api-specification.htm
+
+Updates an event definition by ID. Once an event definition is created, only a few properties can be updated.</description>
+        </component>
+                <component name="PUT_platform_v1_ens-callbacks">
+            <file>PUT_platform_v1_ens-callbacks.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/updateCallback.htm
+
+Updates a registered callback. It can take up to two minutes for callback changes to become active.</description>
+        </component>
+                <component name="PUT_platform_v1_ens-subscriptions">
+            <file>PUT_platform_v1_ens-subscriptions.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/updateSubscription.htm
+
+Updates a single subscription. To pause an active subscription, set the status request parameter to paused. To unpause a paused subscription, set the status request parameter to active. Always supply a status reason in the request when you update the subscription status. Changes made to a subscription can take up to two minutes to become active.</description>
+        </component>
+                <component name="PUT_push_v1_location_{et_location_id}">
+            <file>PUT_push_v1_location_{et_location_id}.xml</file>
+            <description>https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/updateLocation.htm
+
+Updates an existing location by ID.</description>
+        </component>
+            </subComponents>
+</component>

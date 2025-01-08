@@ -1,0 +1,52 @@
+{
+    "connectorName": "salesforcemarketingcloud",
+    "operationName": "PUT_platform_v1_ens-subscriptions",
+    "title": "PUT Platform V 1 Ens Subscriptions",
+    "help": "https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/updateSubscription.htm
+
+Updates a single subscription. To pause an active subscription, set the status request parameter to paused. To unpause a paused subscription, set the status request parameter to active. Always supply a status reason in the request when you update the subscription status. Changes made to a subscription can take up to two minutes to become active.",
+    "elements": [
+        {
+            "type": "attributeGroup",
+            "value": {
+                "groupName": "General",
+                "elements": [
+                    {
+                        "type": "attribute",
+                        "value": {
+                          "name": "configRef",
+                          "displayName": "Connection",
+                          "inputType": "connection",
+                          "allowedConnectionTypes": [
+                            "salesforcemarketingcloud"
+                          ],
+                          "defaultType": "connection.salesforcemarketingcloud",
+                          "defaultValue": "",
+                          "required": "true",
+                          "helpTip": "Connection to be used"
+                        }
+                    },
+                    {
+                        "type": "attributeGroup",
+                        "value": {
+                            "groupName": "Search",
+                            "elements": [
+                                {
+                                    "type": "attribute",
+                                    "value": {
+                                        "name": "search",
+                                        "displayName": "Search",
+                                        "inputType": "searchBox",
+                                        "defaultValue": "",
+                                        "required": "false",
+                                        "helpTip": "Search for an attribute using the display name"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                                                                                                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+{
+    "connectorName": "salesforcemarketingcloud",
+    "operationName": "POST_asset_v1_content_assets_query",
+    "title": "POST Asset V 1 Content Assets Query",
+    "help": "https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/assetAdvancedQuery.htm
+
+A complex query is comprised of two or more simple queries joined with an AND or OR logical comparison operator. The simple queries are contained in a leftOperand JSON field and rightOperand JSON field. A third field, the logicalOperator, is used to compare the two operands. You can also embed queries inside other queries.",
+    "elements": [
+        {
+            "type": "attributeGroup",
+            "value": {
+                "groupName": "General",
+                "elements": [
+                    {
+                        "type": "attribute",
+                        "value": {
+                          "name": "configRef",
+                          "displayName": "Connection",
+                          "inputType": "connection",
+                          "allowedConnectionTypes": [
+                            "salesforcemarketingcloud"
+                          ],
+                          "defaultType": "connection.salesforcemarketingcloud",
+                          "defaultValue": "",
+                          "required": "true",
+                          "helpTip": "Connection to be used"
+                        }
+                    },
+                    {
+                        "type": "attributeGroup",
+                        "value": {
+                            "groupName": "Search",
+                            "elements": [
+                                {
+                                    "type": "attribute",
+                                    "value": {
+                                        "name": "search",
+                                        "displayName": "Search",
+                                        "inputType": "searchBox",
+                                        "defaultValue": "",
+                                        "required": "false",
+                                        "helpTip": "Search for an attribute using the display name"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                                                                                                ]
+            }
+        }
+    ]
+}
