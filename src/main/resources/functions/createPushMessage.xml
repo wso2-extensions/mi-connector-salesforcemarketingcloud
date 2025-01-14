@@ -17,11 +17,18 @@
  ~  under the License.
 -->
 
-<connector>
-    <component name="salesforcemarketingcloud" package="org.wso2.carbon.connector">
-        <dependency component="config"/>
-        <dependency component="functions"/>
-        <description>WSO2 salesforcemarketingcloud Connector Library</description>
-    </component>
-    <icon>icon/icon-small.png</icon>
-</connector>
+<template xmlns="http://ws.apache.org/ns/synapse" name="POST_push_v1_message">
+    <sequence>
+        <class name="org.wso2.carbon.salesforcemarketingcloudconnector.URLBuilderUtil">
+            <property name="operationPath" value="/push/v1/message"/>
+        </class>
+        <property name="messageType" value="application/json" scope="axis2"/>
+        <property name="ContentType" value="application/json" scope="axis2"/>
+        <header name="Accept" value="application/json" scope="transport" action="set"/>
+        <call>
+            <endpoint>
+                <http method="POST" uri-template="{uri.var.base}{+uri.var.urlPath}{+uri.var.urlQuery}"/>
+            </endpoint>
+        </call>
+    </sequence>
+</template>

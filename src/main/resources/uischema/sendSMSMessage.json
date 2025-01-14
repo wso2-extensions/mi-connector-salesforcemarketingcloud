@@ -1,14 +1,29 @@
 {
   "connectorName": "salesforcemarketingcloud",
-  "operationName": "init",
-  "title": "Init",
-  "help": "<h1>Init</h1> <b>The init operation.</b>",
+  "operationName": "POST_messaging_v1_sms_messages",
+  "title": "POST Messaging V 1 Sms Messages",
+  "help": "",
   "elements": [
     {
       "type": "attributeGroup",
       "value": {
         "groupName": "General",
         "elements": [
+          {
+            "type": "attribute",
+            "value": {
+              "name": "configRef",
+              "displayName": "Connection",
+              "inputType": "connection",
+              "allowedConnectionTypes": [
+                "salesforcemarketingcloud"
+              ],
+              "defaultType": "connection.salesforcemarketingcloud",
+              "defaultValue": "",
+              "required": "true",
+              "helpTip": "Connection to be used"
+            }
+          },
           {
             "type": "attributeGroup",
             "value": {
@@ -23,25 +38,6 @@
                     "defaultValue": "",
                     "required": "false",
                     "helpTip": "Search for an attribute using the display name"
-                  }
-                }
-              ]
-            }
-          },
-          {
-            "type": "attributeGroup",
-            "value": {
-              "groupName": "Basic",
-              "elements": [
-                {
-                  "type": "attribute",
-                  "value": {
-                    "name": "base",
-                    "displayName": "Base URL",
-                    "inputType": "stringOrExpression",
-                    "defaultValue": "",
-                    "required": "true",
-                    "helpTip": "The service root URL."
                   }
                 }
               ]

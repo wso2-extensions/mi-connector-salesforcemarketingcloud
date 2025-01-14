@@ -17,11 +17,16 @@
  ~  under the License.
 -->
 
-<connector>
-    <component name="salesforcemarketingcloud" package="org.wso2.carbon.connector">
-        <dependency component="config"/>
-        <dependency component="functions"/>
-        <description>WSO2 salesforcemarketingcloud Connector Library</description>
-    </component>
-    <icon>icon/icon-small.png</icon>
-</connector>
+<template xmlns="http://ws.apache.org/ns/synapse" name="GET_contacts_v1_contacts_analytics_deleterequests">
+    <sequence>
+        <class name="org.wso2.carbon.salesforcemarketingcloudconnector.URLBuilderUtil">
+            <property name="operationPath" value="/contacts/v1/contacts/analytics/deleterequests"/>
+        </class>
+        <header name="Accept" value="application/json" scope="transport" action="set"/>
+        <call>
+            <endpoint>
+                <http method="GET" uri-template="{uri.var.base}{+uri.var.urlPath}{+uri.var.urlQuery}"/>
+            </endpoint>
+        </call>
+    </sequence>
+</template>

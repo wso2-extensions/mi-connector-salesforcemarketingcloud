@@ -17,10 +17,10 @@
  ~  under the License.
 -->
 
-<template xmlns="http://ws.apache.org/ns/synapse" name="POST_v2_token">
+<template xmlns="http://ws.apache.org/ns/synapse" name="POST_contacts_v1_contacts">
     <sequence>
-        <class name="org.wso2.healthcare.integration.common.ehr.RestURLBuilder">
-            <property name="operationPath" value="/v2/token"/>
+        <class name="org.wso2.carbon.salesforcemarketingcloudconnector.URLBuilderUtil">
+            <property name="operationPath" value="/contacts/v1/contacts"/>
         </class>
         <property name="messageType" value="application/json" scope="axis2"/>
         <property name="ContentType" value="application/json" scope="axis2"/>
@@ -30,6 +30,5 @@
                 <http method="POST" uri-template="{uri.var.base}{+uri.var.urlPath}{+uri.var.urlQuery}"/>
             </endpoint>
         </call>
-        <class name="org.wso2.healthcare.integration.common.ehr.ResponseProcessingHandler"/>
     </sequence>
 </template>

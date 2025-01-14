@@ -1,0 +1,113 @@
+{
+  "connectorName": "salesforcemarketingcloud",
+  "operationName": "GET_asset_v1_content_assets",
+  "title": "GET Asset V 1 Content Assets",
+  "help": "",
+  "elements": [
+    {
+      "type": "attributeGroup",
+      "value": {
+        "groupName": "General",
+        "elements": [
+          {
+            "type": "attribute",
+            "value": {
+              "name": "configRef",
+              "displayName": "Connection",
+              "inputType": "connection",
+              "allowedConnectionTypes": [
+                "salesforcemarketingcloud"
+              ],
+              "defaultType": "connection.salesforcemarketingcloud",
+              "defaultValue": "",
+              "required": "true",
+              "helpTip": "Connection to be used"
+            }
+          },
+          {
+            "type": "attributeGroup",
+            "value": {
+              "groupName": "Search",
+              "elements": [
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "search",
+                    "displayName": "Search",
+                    "inputType": "searchBox",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "Search for an attribute using the display name"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "attributeGroup",
+            "value": {
+              "groupName": "Parameters",
+              "elements": [
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "$Page",
+                    "displayName": "$ Page",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": ""
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "$Pagesize",
+                    "displayName": "$ Pagesize",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": ""
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "$OrderBy",
+                    "displayName": "$ Order By",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": ""
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "$Filter",
+                    "displayName": "$ Filter",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": ""
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "$Fields",
+                    "displayName": "$ Fields",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": ""
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
