@@ -18,10 +18,10 @@
 -->
 
 <connector>
-    <component name="salesforcemarketingcloud" package="org.wso2.carbon.connector">
+    <component name="salesforceMarketingCloud" package="org.wso2.carbon.connector">
         <dependency component="config"/>
         <dependency component="functions"/>
-        <description>WSO2 salesforcemarketingcloud Connector Library</description>
+        <description>WSO2 Salesforce Marketing Cloud Connector Library</description>
     </component>
     <icon>icon/icon-small.png</icon>
 </connector>

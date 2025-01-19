@@ -16,17 +16,21 @@
  *  under the License.
  */
 
-package org.wso2.carbon.salesforcemarketingcloudconnector;
+package org.wso2.carbon.salesforce.marketingcloud.connector;
 
-public class Constants {
-    public static final String PROPERTY_ERROR_CODE = "ERROR_CODE";
-    public static final String PROPERTY_ERROR_MESSAGE = "ERROR_MESSAGE";
-    public static final String GENERAL_ERROR_MSG = "The Trade Desk connector encountered an error: ";
+import org.apache.synapse.MessageContext;
 
-    static class ErrorCodes {
-        public static final String INVALID_CONFIG = "701002";
-        public static final String GENERAL_ERROR = "701003";
+public class Utils {
+
+    /**
+     * Sets the error code and error message in message context.
+     *
+     * @param messageContext Message Context
+     * @param errorCode      Error Code
+     * @param errorMessage   Error Message
+     */
+    public static void setErrorPropertiesToMessage(MessageContext messageContext, String errorCode, String errorMessage) {
+        messageContext.setProperty(Constants.PROPERTY_ERROR_CODE, errorCode);
+        messageContext.setProperty(Constants.PROPERTY_ERROR_MESSAGE, errorMessage);
     }
-
-    public static final String PROPERTY_TTD_AUTH = "_TTD_AUTH_HEADER_";
 }

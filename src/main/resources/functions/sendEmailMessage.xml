@@ -17,11 +17,21 @@
  ~  under the License.
 -->
 
-<template xmlns="http://ws.apache.org/ns/synapse" name="POST_messaging_v1_email_messages">
+<template xmlns="http://ws.apache.org/ns/synapse" name="sendEmailMessage">
+    <parameter name="payload" description="The properties required to send an email message."/>
     <sequence>
-        <class name="org.wso2.carbon.salesforcemarketingcloudconnector.URLBuilderUtil">
+        <class name="org.wso2.carbon.salesforce.marketingcloud.connector.RestURLBuilder">
             <property name="operationPath" value="/messaging/v1/email/messages"/>
         </class>
+        <payloadFactory media-type="json" template-type="freemarker">
+            <format><![CDATA[
+${args.arg1}
+            ]]></format>
+            <args>
+                <arg evaluator="xml" expression="$func:payload"/>
+            </args>
+        </payloadFactory>
+        <property name="DISABLE_CHUNKING" scope="axis2" type="STRING" value="true"/>
         <property name="messageType" value="application/json" scope="axis2"/>
         <property name="ContentType" value="application/json" scope="axis2"/>
         <header name="Accept" value="application/json" scope="transport" action="set"/>

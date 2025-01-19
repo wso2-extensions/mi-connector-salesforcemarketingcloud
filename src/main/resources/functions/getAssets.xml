@@ -17,17 +17,17 @@
  ~  under the License.
 -->
 
-<template xmlns="http://ws.apache.org/ns/synapse" name="GET_asset_v1_content_assets">
+<template xmlns="http://ws.apache.org/ns/synapse" name="getAssets">
     <!-- Query Parameter List -->
-    <parameter name="$Page" description=""/>
-    <parameter name="$Pagesize" description=""/>
-    <parameter name="$OrderBy" description=""/>
-    <parameter name="$Filter" description=""/>
-    <parameter name="$Fields" description=""/>
+    <parameter name="$page" description="Page number to return from the paged results."/>
+    <parameter name="$pagesize" description="Number of results per page to return."/>
+    <parameter name="$orderBy" description="Determines which asset property to use for sorting, and also determines the direction in which to sort the data."/>
+    <parameter name="$filter" description="Filter by an asset's property using a simple operator and value."/>
+    <parameter name="$fields" description="Comma-delimited string of asset properties used to reduce the size of your results to only the properties you need."/>
     <sequence>
-        <class name="org.wso2.carbon.salesforcemarketingcloudconnector.URLBuilderUtil">
+        <class name="org.wso2.carbon.salesforce.marketingcloud.connector.RestURLBuilder">
             <property name="operationPath" value="/asset/v1/content/assets"/>
-            <property name="queryParameters" value="$Page,$Pagesize,$OrderBy,$Filter,$Fields,"/>
+            <property name="queryParameters" value="$page,$pagesize,$prderBy,$filter,$fields,"/>
         </class>
         <header name="Accept" value="application/json" scope="transport" action="set"/>
         <call>

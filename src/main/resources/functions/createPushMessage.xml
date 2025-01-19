@@ -17,11 +17,21 @@
  ~  under the License.
 -->
 
-<template xmlns="http://ws.apache.org/ns/synapse" name="POST_push_v1_message">
+<template xmlns="http://ws.apache.org/ns/synapse" name="createPushMessage">
+    <parameter name="payload" description="The properties required to create the journey."/>
     <sequence>
-        <class name="org.wso2.carbon.salesforcemarketingcloudconnector.URLBuilderUtil">
+        <class name="org.wso2.carbon.salesforce.marketingcloud.connector.RestURLBuilder">
             <property name="operationPath" value="/push/v1/message"/>
         </class>
+        <payloadFactory media-type="json" template-type="freemarker">
+            <format><![CDATA[
+${args.arg1}
+            ]]></format>
+            <args>
+                <arg evaluator="xml" expression="$func:payload"/>
+            </args>
+        </payloadFactory>
+        <property name="DISABLE_CHUNKING" scope="axis2" type="STRING" value="true"/>
         <property name="messageType" value="application/json" scope="axis2"/>
         <property name="ContentType" value="application/json" scope="axis2"/>
         <header name="Accept" value="application/json" scope="transport" action="set"/>

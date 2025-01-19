@@ -21,7 +21,8 @@
     <subComponents>
         <component name="init">
             <file>init.xml</file>
-            <description>Init configuration file for salesforcemarketingcloud connector.</description>
+            <description>Init configuration file for Salesforce Marketing Cloud connector.</description>
+            <hidden>true</hidden>
         </component>
     </subComponents>
 </component>

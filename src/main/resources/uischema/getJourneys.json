@@ -1,7 +1,7 @@
 {
-  "connectorName": "salesforcemarketingcloud",
-  "operationName": "GET_interaction_v1_interactions",
-  "title": "GET Interaction V 1 Interactions",
+  "connectorName": "getContactDeleteRequests",
+  "operationName": "getJourneys",
+  "title": "Retrieve a list of journeys.",
   "help": "",
   "elements": [
     {
@@ -16,9 +16,9 @@
               "displayName": "Connection",
               "inputType": "connection",
               "allowedConnectionTypes": [
-                "salesforcemarketingcloud"
+                "getContactDeleteRequests"
               ],
-              "defaultType": "connection.salesforcemarketingcloud",
+              "defaultType": "connection.getContactDeleteRequests",
               "defaultValue": "",
               "required": "true",
               "helpTip": "Connection to be used"
@@ -27,17 +27,149 @@
           {
             "type": "attributeGroup",
             "value": {
-              "groupName": "Search",
+              "groupName": "Parameters",
               "elements": [
                 {
                   "type": "attribute",
                   "value": {
-                    "name": "search",
-                    "displayName": "Search",
-                    "inputType": "searchBox",
+                    "name": "$page",
+                    "displayName": "Page",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "1",
+                    "required": "false",
+                    "helpTip": "The page number of results to retrieve. The default value is 1."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "$pageSize",
+                    "displayName": "Pagesize",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "50",
+                    "required": "false",
+                    "helpTip": "The number of items to return on a page of results. The default and maximum value is 50."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "$orderBy",
+                    "displayName": "Order By",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "ModifiedDate DESC",
+                    "required": "false",
+                    "helpTip": "The field and sort method to use to sort the results. You can sort on these fields: ModifiedDate, Name, Performance. Default is ModifiedDate DESC."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "definitionType",
+                    "displayName": "Definition Type",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "transactional",
+                    "required": "false",
+                    "helpTip": "The type of definition to retrieve. The only accepted value is 'transactional'."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "extras",
+                    "displayName": "Extras",
+                    "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "false",
-                    "helpTip": "Search for an attribute using the display name"
+                    "helpTip": "Additional information to include in the response. Possible values: activities, outcome, stats, all. 'All' provides all available extra details but may impact query performance."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "key",
+                    "displayName": "Key",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "The external key of a journey to retrieve."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "id",
+                    "displayName": "ID",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "The ID of a journey to retrieve. Returns all versions of the journey when specified."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "mostRecentVersionOnly",
+                    "displayName": "Most Recent Version Only",
+                    "inputType": "boolean",
+                    "defaultValue": "true",
+                    "required": "false",
+                    "helpTip": "Specifies whether to return the most recent version of each journey matching the filter criteria. Default is true."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "nameOrDescription",
+                    "displayName": "Name or Description",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "A search string to apply to the request. Matches name and description of each journey."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "specificApiVersionNumber",
+                    "displayName": "Specific API Version Number",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "1",
+                    "required": "false",
+                    "helpTip": "The version number of the workflowApiVersion value to retrieve. Default is 1."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "status",
+                    "displayName": "Status",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "A journey status value to filter the results. Possible values: Deleted, Draft, Published, ScheduledToPublish, Stopped, Unpublished."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "tag",
+                    "displayName": "Tag",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "A tag to filter the results. Returns only journeys with the specified tag."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "versionNumber",
+                    "displayName": "Version Number",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "The version number of the journey to retrieve. Default is the currently published version or the latest version number meeting the criteria."
                   }
                 }
               ]

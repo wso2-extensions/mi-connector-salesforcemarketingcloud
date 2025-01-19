@@ -18,9 +18,17 @@
 -->
 
 <template name="init" onError="fault" xmlns="http://ws.apache.org/ns/synapse">
-    <parameter name="base" description="The service root URL."/>
+    <parameter name="name" description="Unique name to identify the connection by."/>
+    <parameter name="subdomain" description="Your Salesforce Marketing Cloud domain."/>
+    <parameter name="clientId" description="Client ID issued when you create the API integration in Installed Packages."/>
+    <parameter name="clientSecret" description="Client secret issued when you create the API integration in Installed Packages."/>
+    <parameter name="accountId" description="Account identifier, or MID, of the target business unit."/>
     <sequence>
-        <property name="uri.var.base" expression="$func:base"/>
-        <class name="org.wso2.carbon.salesforcemarketingcloudconnector.URLBuilderUtil"/>
+        <class name="org.wso2.carbon.salesforce.marketingcloud.connector.ClientCredentialsAccessTokenHandler"/>
+        <log level="full">
+            <property name="AccessToken" expression="fn:concat('Token Value: ', $ctx:_OH_INTERNAL_ACCESS_TOKEN_)"/>
+        </log>
+        <header name="Authorization" expression="fn:concat('Bearer ', $ctx:_OH_INTERNAL_ACCESS_TOKEN_)" scope="transport"/>
     </sequence>
+
 </template>

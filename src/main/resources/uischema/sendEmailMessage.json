@@ -1,7 +1,7 @@
 {
-  "connectorName": "salesforcemarketingcloud",
-  "operationName": "POST_messaging_v1_email_messages",
-  "title": "POST Messaging V 1 Email Messages",
+  "connectorName": "salesforceMarketingCloud",
+  "operationName": "sendEmailMessage",
+  "title": "Sends a message to multiple recipients using a send definition.",
   "help": "",
   "elements": [
     {
@@ -16,9 +16,9 @@
               "displayName": "Connection",
               "inputType": "connection",
               "allowedConnectionTypes": [
-                "salesforcemarketingcloud"
+                "salesforceMarketingCloud"
               ],
-              "defaultType": "connection.salesforcemarketingcloud",
+              "defaultType": "connection.salesforceMarketingCloud",
               "defaultValue": "",
               "required": "true",
               "helpTip": "Connection to be used"
@@ -27,17 +27,17 @@
           {
             "type": "attributeGroup",
             "value": {
-              "groupName": "Search",
+              "groupName": "Request Body",
               "elements": [
                 {
                   "type": "attribute",
                   "value": {
-                    "name": "search",
-                    "displayName": "Search",
-                    "inputType": "searchBox",
+                    "name": "payload",
+                    "displayName": "Payload",
+                    "inputType": "stringOrExpression",
                     "defaultValue": "",
-                    "required": "false",
-                    "helpTip": "Search for an attribute using the display name"
+                    "required": "true",
+                    "helpTip": "The properties required to send an e-mail message."
                   }
                 }
               ]

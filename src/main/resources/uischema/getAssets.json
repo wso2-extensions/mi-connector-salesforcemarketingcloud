@@ -1,7 +1,7 @@
 {
-  "connectorName": "salesforcemarketingcloud",
-  "operationName": "GET_asset_v1_content_assets",
-  "title": "GET Asset V 1 Content Assets",
+  "connectorName": "salesforceMarketingCloud",
+  "operationName": "getAssets",
+  "title": "Get an asset collection by simple $filter parameters.",
   "help": "",
   "elements": [
     {
@@ -16,31 +16,12 @@
               "displayName": "Connection",
               "inputType": "connection",
               "allowedConnectionTypes": [
-                "salesforcemarketingcloud"
+                "salesforceMarketingCloud"
               ],
-              "defaultType": "connection.salesforcemarketingcloud",
+              "defaultType": "connection.salesforceMarketingCloud",
               "defaultValue": "",
               "required": "true",
               "helpTip": "Connection to be used"
-            }
-          },
-          {
-            "type": "attributeGroup",
-            "value": {
-              "groupName": "Search",
-              "elements": [
-                {
-                  "type": "attribute",
-                  "value": {
-                    "name": "search",
-                    "displayName": "Search",
-                    "inputType": "searchBox",
-                    "defaultValue": "",
-                    "required": "false",
-                    "helpTip": "Search for an attribute using the display name"
-                  }
-                }
-              ]
             }
           },
           {
@@ -51,56 +32,56 @@
                 {
                   "type": "attribute",
                   "value": {
-                    "name": "$Page",
-                    "displayName": "$ Page",
+                    "name": "$page",
+                    "displayName": "Page",
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "false",
-                    "helpTip": ""
+                    "helpTip": "Page number to return from the paged results."
                   }
                 },
                 {
                   "type": "attribute",
                   "value": {
-                    "name": "$Pagesize",
-                    "displayName": "$ Pagesize",
+                    "name": "$pagesize",
+                    "displayName": "Pagesize",
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "false",
-                    "helpTip": ""
+                    "helpTip": "Number of results per page to return."
                   }
                 },
                 {
                   "type": "attribute",
                   "value": {
-                    "name": "$OrderBy",
-                    "displayName": "$ Order By",
+                    "name": "$orderBy",
+                    "displayName": "Order By",
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "false",
-                    "helpTip": ""
+                    "helpTip": "Determines which asset property to use for sorting, and also determines the direction in which to sort the data."
                   }
                 },
                 {
                   "type": "attribute",
                   "value": {
-                    "name": "$Filter",
-                    "displayName": "$ Filter",
+                    "name": "$filter",
+                    "displayName": "Filter",
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "false",
-                    "helpTip": ""
+                    "helpTip": "Filter by an asset's property using a simple operator and value."
                   }
                 },
                 {
                   "type": "attribute",
                   "value": {
-                    "name": "$Fields",
-                    "displayName": "$ Fields",
+                    "name": "$fields",
+                    "displayName": "Fields",
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "false",
-                    "helpTip": ""
+                    "helpTip": "Comma-delimited string of asset properties used to reduce the size of your results to only the properties you need."
                   }
                 }
               ]
