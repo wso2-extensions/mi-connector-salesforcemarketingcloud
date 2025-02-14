@@ -32,7 +32,7 @@
                 {
                   "type": "attribute",
                   "value": {
-                    "name": "$page",
+                    "name": "page",
                     "displayName": "Page",
                     "inputType": "stringOrExpression",
                     "defaultValue": "1",
@@ -43,7 +43,7 @@
                 {
                   "type": "attribute",
                   "value": {
-                    "name": "$pageSize",
+                    "name": "pageSize",
                     "displayName": "Pagesize",
                     "inputType": "stringOrExpression",
                     "defaultValue": "50",
@@ -54,7 +54,7 @@
                 {
                   "type": "attribute",
                   "value": {
-                    "name": "$orderBy",
+                    "name": "orderBy",
                     "displayName": "Order By",
                     "inputType": "stringOrExpression",
                     "defaultValue": "ModifiedDate DESC",

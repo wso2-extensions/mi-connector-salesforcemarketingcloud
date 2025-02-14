@@ -1,7 +1,7 @@
 {
   "connectorName": "salesforceMarketingCloud",
   "operationName": "getAssets",
-  "title": "Get an asset collection by simple $filter parameters.",
+  "title": "Get an asset collection by simple filter parameters.",
   "help": "",
   "elements": [
     {
@@ -32,7 +32,7 @@
                 {
                   "type": "attribute",
                   "value": {
-                    "name": "$page",
+                    "name": "page",
                     "displayName": "Page",
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
@@ -43,7 +43,7 @@
                 {
                   "type": "attribute",
                   "value": {
-                    "name": "$pagesize",
+                    "name": "pagesize",
                     "displayName": "Pagesize",
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
@@ -54,7 +54,7 @@
                 {
                   "type": "attribute",
                   "value": {
-                    "name": "$orderBy",
+                    "name": "orderBy",
                     "displayName": "Order By",
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
@@ -65,7 +65,7 @@
                 {
                   "type": "attribute",
                   "value": {
-                    "name": "$filter",
+                    "name": "filter",
                     "displayName": "Filter",
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
@@ -76,7 +76,7 @@
                 {
                   "type": "attribute",
                   "value": {
-                    "name": "$fields",
+                    "name": "fields",
                     "displayName": "Fields",
                     "inputType": "stringOrExpression",
                     "defaultValue": "",

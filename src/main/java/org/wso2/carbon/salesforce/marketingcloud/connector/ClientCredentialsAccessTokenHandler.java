@@ -66,7 +66,7 @@ public class ClientCredentialsAccessTokenHandler extends AbstractConnector {
         }
 
         String base = String.format("https://%s.rest.marketingcloudapis.com", subdomain);
-        String authEndpoint = String.format("https://%s.auth.marketingcloudapis.com", subdomain);
+        String authEndpoint = String.format("https://%s.auth.marketingcloudapis.com/v2/token", subdomain);
 
         messageContext.setProperty(Constants.PROPERTY_BASE, base);
 
@@ -170,7 +170,6 @@ public class ClientCredentialsAccessTokenHandler extends AbstractConnector {
                 JsonObject jsonObject = jsonElement.getAsJsonObject();
                 String accessToken = jsonObject.get(Constants.OAuth2.ACCESS_TOKEN).getAsString();
                 long expireIn = jsonObject.get(Constants.OAuth2.EXPIRES_IN).getAsLong();
-                System.out.println("TOKEN: " + accessToken);
                 return new Token(accessToken, curTimeInMillis, expireIn * 1000);
             } else {
                 String errorMessage = Constants.GENERAL_ERROR_MSG + "Error occurred while retrieving access token. Response: "

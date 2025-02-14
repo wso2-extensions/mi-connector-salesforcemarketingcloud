@@ -50,7 +50,6 @@ public class Token {
     }
 
     public boolean isActive() {
-        System.out.println("CALL ISACTIVEEEEEEEEEE");
         long curTimeInMillis = System.currentTimeMillis();
         return (curTimeInMillis - createTimestamp) < expireIn;
     }

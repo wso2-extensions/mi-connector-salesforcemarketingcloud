@@ -25,9 +25,6 @@
     <parameter name="accountId" description="Account identifier, or MID, of the target business unit."/>
     <sequence>
         <class name="org.wso2.carbon.salesforce.marketingcloud.connector.ClientCredentialsAccessTokenHandler"/>
-        <log level="full">
-            <property name="AccessToken" expression="fn:concat('Token Value: ', $ctx:_OH_INTERNAL_ACCESS_TOKEN_)"/>
-        </log>
         <header name="Authorization" expression="fn:concat('Bearer ', $ctx:_OH_INTERNAL_ACCESS_TOKEN_)" scope="transport"/>
     </sequence>
 

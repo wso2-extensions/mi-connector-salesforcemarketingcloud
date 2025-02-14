@@ -17,7 +17,7 @@
  ~  under the License.
 -->
 
-<template xmlns="http://ws.apache.org/ns/synapse" name="POST_interaction_v1_interactions">
+<template xmlns="http://ws.apache.org/ns/synapse" name="createJourney">
     <parameter name="payload" description="The properties required to create the journey."/>
     <sequence>
         <class name="org.wso2.carbon.salesforce.marketingcloud.connector.RestURLBuilder">

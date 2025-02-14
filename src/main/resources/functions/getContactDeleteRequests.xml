@@ -21,9 +21,9 @@
     <parameter name="startdateutc" description="Start date and time in UTC of the date range."/>
     <parameter name="enddateutc" description="End date and time in UTC of the date range."/>
     <parameter name="statusid" description="Delete request status ID."/>
-    <parameter name="$page" description="Page number to return from the paged results."/>
-    <parameter name="$pagesize" description="Number of results per page to return."/>
-    <parameter name="$orderBy" description="Determines which asset property to use for sorting, and also determines the direction in which to sort the data."/>
+    <parameter name="page" description="Page number to return from the paged results."/>
+    <parameter name="pagesize" description="Number of results per page to return."/>
+    <parameter name="orderBy" description="Determines which asset property to use for sorting, and also determines the direction in which to sort the data."/>
     <sequence>
         <class name="org.wso2.carbon.salesforce.marketingcloud.connector.RestURLBuilder">
             <property name="operationPath" value="/contacts/v1/contacts/analytics/deleterequests"/>
