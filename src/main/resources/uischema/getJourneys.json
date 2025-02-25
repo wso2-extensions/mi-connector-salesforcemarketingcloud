@@ -1,5 +1,5 @@
 {
-  "connectorName": "getContactDeleteRequests",
+  "connectorName": "salesforceMarketingCloud",
   "operationName": "getJourneys",
   "title": "Retrieve a list of journeys.",
   "help": "",
@@ -16,9 +16,9 @@
               "displayName": "Connection",
               "inputType": "connection",
               "allowedConnectionTypes": [
-                "getContactDeleteRequests"
+                "salesforceMarketingCloud"
               ],
-              "defaultType": "connection.getContactDeleteRequests",
+              "defaultType": "connection.salesforceMarketingCloud",
               "defaultValue": "",
               "required": "true",
               "helpTip": "Connection to be used"
@@ -35,20 +35,20 @@
                     "name": "page",
                     "displayName": "Page",
                     "inputType": "stringOrExpression",
-                    "defaultValue": "1",
+                    "defaultValue": "",
                     "required": "false",
-                    "helpTip": "The page number of results to retrieve. The default value is 1."
+                    "helpTip": "The page number of results to retrieve."
                   }
                 },
                 {
                   "type": "attribute",
                   "value": {
                     "name": "pageSize",
-                    "displayName": "Pagesize",
+                    "displayName": "Page Size",
                     "inputType": "stringOrExpression",
-                    "defaultValue": "50",
+                    "defaultValue": "",
                     "required": "false",
-                    "helpTip": "The number of items to return on a page of results. The default and maximum value is 50."
+                    "helpTip": "The number of items to return on a page of results."
                   }
                 },
                 {
@@ -57,9 +57,9 @@
                     "name": "orderBy",
                     "displayName": "Order By",
                     "inputType": "stringOrExpression",
-                    "defaultValue": "ModifiedDate DESC",
+                    "defaultValue": "",
                     "required": "false",
-                    "helpTip": "The field and sort method to use to sort the results. You can sort on these fields: ModifiedDate, Name, Performance. Default is ModifiedDate DESC."
+                    "helpTip": "The field and sort method to use to sort the results. You can sort on these fields: ModifiedDate, Name, Performance."
                   }
                 },
                 {
@@ -68,7 +68,7 @@
                     "name": "definitionType",
                     "displayName": "Definition Type",
                     "inputType": "stringOrExpression",
-                    "defaultValue": "transactional",
+                    "defaultValue": "",
                     "required": "false",
                     "helpTip": "The type of definition to retrieve. The only accepted value is 'transactional'."
                   }
@@ -112,9 +112,9 @@
                     "name": "mostRecentVersionOnly",
                     "displayName": "Most Recent Version Only",
                     "inputType": "boolean",
-                    "defaultValue": "true",
+                    "defaultValue": "",
                     "required": "false",
-                    "helpTip": "Specifies whether to return the most recent version of each journey matching the filter criteria. Default is true."
+                    "helpTip": "Specifies whether to return the most recent version of each journey matching the filter criteria."
                   }
                 },
                 {
@@ -136,7 +136,7 @@
                     "inputType": "stringOrExpression",
                     "defaultValue": "1",
                     "required": "false",
-                    "helpTip": "The version number of the workflowApiVersion value to retrieve. Default is 1."
+                    "helpTip": "The version number of the workflowApiVersion value to retrieve."
                   }
                 },
                 {

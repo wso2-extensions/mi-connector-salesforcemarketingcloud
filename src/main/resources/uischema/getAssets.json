@@ -44,7 +44,7 @@
                   "type": "attribute",
                   "value": {
                     "name": "pagesize",
-                    "displayName": "Pagesize",
+                    "displayName": "Page Size",
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "false",

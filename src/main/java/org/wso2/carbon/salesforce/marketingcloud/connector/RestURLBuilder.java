@@ -25,6 +25,9 @@ import org.wso2.carbon.connector.core.ConnectException;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class RestURLBuilder extends AbstractConnector {
 
@@ -35,39 +38,36 @@ public class RestURLBuilder extends AbstractConnector {
     private String pathParameters = "";
     private String queryParameters = "";
 
-    public String getOperationPath() {
+    // Set of parameters that need to be prefixed with "$"
+    private static final Set<String> SPECIAL_PARAMETERS = new HashSet<>(Arrays.asList(
+            "page", "pagesize", "orderBy", "filter", "fields"));
 
+    public String getOperationPath() {
         return operationPath;
     }
 
     public void setOperationPath(String operationPath) {
-
         this.operationPath = operationPath;
     }
 
     public String getPathParameters() {
-
         return pathParameters;
     }
 
     public void setPathParameters(String pathParameters) {
-
         this.pathParameters = pathParameters;
     }
 
     public String getQueryParameters() {
-
         return queryParameters;
     }
 
     public void setQueryParameters(String queryParameters) {
-
         this.queryParameters = queryParameters;
     }
 
     @Override
     public void connect(MessageContext messageContext) throws ConnectException {
-
         try {
             String urlPath = getOperationPath();
             if (StringUtils.isNotEmpty(this.pathParameters)) {
@@ -78,8 +78,10 @@ public class RestURLBuilder extends AbstractConnector {
                         String encodedParamValue = URLEncoder.encode(paramValue, encoding);
                         urlPath = urlPath.replace("{" + pathParameter + "}", encodedParamValue);
                     } else {
-                        String errorMessage = Constants.GENERAL_ERROR_MSG + "Mapping parameter '" + pathParameter + "' is not set.";
-                        Utils.setErrorPropertiesToMessage(messageContext, Constants.ErrorCodes.INVALID_CONFIG, errorMessage);
+                        String errorMessage = Constants.GENERAL_ERROR_MSG + "Mapping parameter '"
+                                + pathParameter + "' is not set.";
+                        Utils.setErrorPropertiesToMessage(messageContext, Constants.ErrorCodes.INVALID_CONFIG,
+                                errorMessage);
                         handleException(errorMessage, messageContext);
                     }
                 }
@@ -89,10 +91,23 @@ public class RestURLBuilder extends AbstractConnector {
             if (StringUtils.isNotEmpty(this.queryParameters)) {
                 String[] queryParameterList = getQueryParameters().split(",");
                 for (String queryParameter : queryParameterList) {
-                    String paramValue = (String) getParameter(messageContext, queryParameter);
-                    if (StringUtils.isNotEmpty(paramValue)) {
-                        String encodedParamValue = URLEncoder.encode(paramValue, encoding);
-                        urlQueryBuilder.append(queryParameter).append('=').append(encodedParamValue).append('&');
+                    if (StringUtils.isNotEmpty(queryParameter)) {
+                        String paramValue = (String) getParameter(messageContext, queryParameter);
+                        if (StringUtils.isNotEmpty(paramValue)) {
+                            String encodedParamValue = URLEncoder.encode(paramValue, encoding);
+                            if (SPECIAL_PARAMETERS.contains(queryParameter)) {
+                                urlQueryBuilder.append("$")
+                                        .append(queryParameter)
+                                        .append('=')
+                                        .append(encodedParamValue)
+                                        .append('&');
+                            } else {
+                                urlQueryBuilder.append(queryParameter)
+                                        .append('=')
+                                        .append(encodedParamValue)
+                                        .append('&');
+                            }
+                        }
                     }
                 }
             }
