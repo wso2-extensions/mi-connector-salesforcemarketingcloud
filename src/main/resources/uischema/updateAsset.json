@@ -1,8 +1,8 @@
 {
   "connectorName": "salesforceMarketingCloud",
-  "operationName": "createPushMessage",
-  "title": "Creates a push message template for sending to a list of subscribers or an audience inclusion list or data extension.",
-  "help": "",
+  "operationName": "updateAsset",
+  "title": "Update Asset",
+  "help": "Updates a full asset.",
   "elements": [
     {
       "type": "attributeGroup",
@@ -32,12 +32,23 @@
                 {
                   "type": "attribute",
                   "value": {
+                    "name": "assetId",
+                    "displayName": "Asset ID",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "The ID of the asset to update."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
                     "name": "payload",
                     "displayName": "Payload",
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "true",
-                    "helpTip": "The properties required to create a new push message."
+                    "helpTip": "The properties required to update the asset."
                   }
                 }
               ]

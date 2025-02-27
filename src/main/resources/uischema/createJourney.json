@@ -2,7 +2,7 @@
   "connectorName": "salesforceMarketingCloud",
   "operationName": "createJourney",
   "title": "Creates or saves a journey.",
-  "help": "",
+  "help": "Creates or saves a journey.",
   "elements": [
     {
       "type": "attributeGroup",

@@ -31,10 +31,6 @@
             <file>createJourney.xml</file>
             <description>Creates a new interaction (journey).</description>
         </component>
-        <component name="createPushMessage">
-            <file>createPushMessage.xml</file>
-            <description>Creates a push message template for sending to a list of subscribers or an audience inclusion list or data extension.</description>
-        </component>
         <component name="getAssets">
             <file>getAssets.xml</file>
             <description>Fetches a list of all content assets.</description>
@@ -47,10 +43,6 @@
             <file>getJourneys.xml</file>
             <description>Retrieves all journey interactions.</description>
         </component>
-        <component name="importData">
-            <file>importData.xml</file>
-            <description>Initiates an asynchronous data import.</description>
-        </component>
         <component name="sendEmailMessage">
             <file>sendEmailMessage.xml</file>
             <description>Sends an email message.</description>
@@ -58,6 +50,22 @@
         <component name="sendSMSMessage">
             <file>sendSMSMessage.xml</file>
             <description>Sends an SMS message.</description>
+        </component>
+        <component name="deleteAsset">
+            <file>deleteAsset.xml</file>
+            <description>Deletes an asset.</description>
+        </component>
+        <component name="updateContact">
+            <file>updateContact.xml</file>
+            <description>Updates a contact record.</description>
+        </component>
+        <component name="updateAsset">
+            <file>updateAsset.xml</file>
+            <description>Updates a full asset.</description>
+        </component>
+        <component name="insertDataExtensionRowSet">
+            <file>insertDataExtensionRowSet.xml</file>
+            <description>Upsert one or more rows in a data extension synchronously by specifying the external key of the target data extension.</description>
         </component>
     </subComponents>
 </component>

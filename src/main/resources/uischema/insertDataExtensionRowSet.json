@@ -1,8 +1,8 @@
 {
   "connectorName": "salesforceMarketingCloud",
-  "operationName": "importData",
-  "title": "Queue and start a one-time import against a data extension without creating an import definition.",
-  "help": "",
+  "operationName": "insertDataExtensionRowSet",
+  "title": "Insert Data Extension RowSet.",
+  "help": "Upsert one or more rows in a data extension synchronously by specifying the external key of the target data extension.",
   "elements": [
     {
       "type": "attributeGroup",
@@ -27,8 +27,19 @@
           {
             "type": "attributeGroup",
             "value": {
-              "groupName": "Request Body",
+              "groupName": "Parameters",
               "elements": [
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "externalKey",
+                    "displayName": "External Key",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "The external ID, also known as the customer key, for the data extension."
+                  }
+                },
                 {
                   "type": "attribute",
                   "value": {
@@ -37,7 +48,7 @@
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "true",
-                    "helpTip": "The properties required to import data."
+                    "helpTip": "The properties required to insert data extension row set."
                   }
                 }
               ]

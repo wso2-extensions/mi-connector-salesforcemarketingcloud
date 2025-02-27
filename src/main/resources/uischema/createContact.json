@@ -2,7 +2,7 @@
   "connectorName": "salesforceMarketingCloud",
   "operationName": "createContact",
   "title": "Creates a new contact with the specified information in the specified attribute groups.",
-  "help": "",
+  "help": "Creates a new contact with the specified information in the specified attribute groups.",
   "elements": [
     {
       "type": "attributeGroup",

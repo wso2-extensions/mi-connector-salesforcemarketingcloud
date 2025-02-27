@@ -2,7 +2,7 @@
   "connectorName": "salesforceMarketingCloud",
   "operationName": "getAssets",
   "title": "Get an asset collection by simple filter parameters.",
-  "help": "",
+  "help": "Get an asset collection by simple filter parameters.",
   "elements": [
     {
       "type": "attributeGroup",

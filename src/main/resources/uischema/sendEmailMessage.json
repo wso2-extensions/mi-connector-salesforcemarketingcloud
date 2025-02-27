@@ -1,8 +1,8 @@
 {
   "connectorName": "salesforceMarketingCloud",
   "operationName": "sendEmailMessage",
-  "title": "Sends a message to multiple recipients using a send definition.",
-  "help": "",
+  "title": "Send Email Message",
+  "help": "Sends a message to multiple recipients using a send definition.",
   "elements": [
     {
       "type": "attributeGroup",

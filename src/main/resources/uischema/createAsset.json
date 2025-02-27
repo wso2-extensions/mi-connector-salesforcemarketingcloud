@@ -2,7 +2,7 @@
   "connectorName": "salesforceMarketingCloud",
   "operationName": "createAsset",
   "title": "Creates a new asset.",
-  "help": "",
+  "help": "Creates a new asset.",
   "elements": [
     {
       "type": "attributeGroup",

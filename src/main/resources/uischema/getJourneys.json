@@ -2,7 +2,7 @@
   "connectorName": "salesforceMarketingCloud",
   "operationName": "getJourneys",
   "title": "Retrieve a list of journeys.",
-  "help": "",
+  "help": "Retrieve a list of journeys.",
   "elements": [
     {
       "type": "attributeGroup",

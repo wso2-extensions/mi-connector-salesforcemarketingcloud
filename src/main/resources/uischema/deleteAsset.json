@@ -1,8 +1,8 @@
 {
   "connectorName": "salesforceMarketingCloud",
-  "operationName": "sendSMSMessage",
-  "title": "Send SMS Message",
-  "help": "Sends an SMS message to multiple recipients using a send definition.",
+  "operationName": "deleteAsset",
+  "title": "Deletes an asset.",
+  "help": "Deletes an asset.",
   "elements": [
     {
       "type": "attributeGroup",
@@ -27,17 +27,17 @@
           {
             "type": "attributeGroup",
             "value": {
-              "groupName": "Request Body",
+              "groupName": "Parameters",
               "elements": [
                 {
                   "type": "attribute",
                   "value": {
-                    "name": "payload",
-                    "displayName": "Payload",
+                    "name": "assetId",
+                    "displayName": "Asset ID",
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
-                    "required": "true",
-                    "helpTip": "The properties required to send SMS message."
+                    "required": "false",
+                    "helpTip": "The ID of the asset to delete."
                   }
                 }
               ]

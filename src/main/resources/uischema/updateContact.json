@@ -1,8 +1,8 @@
 {
   "connectorName": "salesforceMarketingCloud",
-  "operationName": "sendSMSMessage",
-  "title": "Send SMS Message",
-  "help": "Sends an SMS message to multiple recipients using a send definition.",
+  "operationName": "updateContact",
+  "title": "Update Contact",
+  "help": "Updates a contact record.",
   "elements": [
     {
       "type": "attributeGroup",
@@ -37,7 +37,7 @@
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "true",
-                    "helpTip": "The properties required to send SMS message."
+                    "helpTip": "The properties required to update the contact."
                   }
                 }
               ]

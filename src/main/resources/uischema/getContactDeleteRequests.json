@@ -2,7 +2,7 @@
   "connectorName": "salesforceMarketingCloud",
   "operationName": "getContactDeleteRequests",
   "title": "Retrieves details of contact delete requests for a date range.",
-  "help": "",
+  "help": "Retrieves details of contact delete requests for a date range.",
   "elements": [
     {
       "type": "attributeGroup",
