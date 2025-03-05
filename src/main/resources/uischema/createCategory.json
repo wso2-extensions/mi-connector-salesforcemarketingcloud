@@ -1,8 +1,8 @@
 {
   "connectorName": "salesforceMarketingCloud",
-  "operationName": "createContact",
-  "title": "Create Contact",
-  "help": "Creates a new contact with the specified information in the specified attribute groups.",
+  "operationName": "createCategory",
+  "title": "Create Category",
+  "help": "Creates a category (folder) in Content Builder.",
   "elements": [
     {
       "type": "attributeGroup",
@@ -37,7 +37,7 @@
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "true",
-                    "helpTip": "The properties required to create a new contact."
+                    "helpTip": "The properties required to create a new category."
                   }
                 }
               ]

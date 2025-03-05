@@ -1,8 +1,8 @@
 {
   "connectorName": "salesforceMarketingCloud",
-  "operationName": "createContact",
-  "title": "Create Contact",
-  "help": "Creates a new contact with the specified information in the specified attribute groups.",
+  "operationName": "createEmailDefinition",
+  "title": "Create Email Definition",
+  "help": "Creates a long-living send definition object that references the email template, subscriber list, sending options, journey, and metadata.",
   "elements": [
     {
       "type": "attributeGroup",
@@ -37,7 +37,7 @@
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "true",
-                    "helpTip": "The properties required to create a new contact."
+                    "helpTip": "The properties required to create a new email definition."
                   }
                 }
               ]

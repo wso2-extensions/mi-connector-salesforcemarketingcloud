@@ -67,5 +67,21 @@
             <file>insertDataExtensionRowSet.xml</file>
             <description>Upsert one or more rows in a data extension synchronously by specifying the external key of the target data extension.</description>
         </component>
+        <component name="createCategory">
+            <file>createCategory.xml</file>
+            <description>Creates a category (folder) in Content Builder.</description>
+        </component>
+        <component name="createEmailDefinition">
+            <file>createEmailDefinition.xml</file>
+            <description>Creates a long-living send definition object that references the email template, subscriber list, sending options, journey, and metadata..</description>
+        </component>
+        <component name="createSMSDefinition">
+            <file>createSMSDefinition.xml</file>
+            <description>Creates an SMS send definition..</description>
+        </component>
+        <component name="getCategories">
+            <file>getCategories.xml</file>
+            <description>Upsert one or more rows in a data extension synchronously by specifying the external key of the target data extension.</description>
+        </component>
     </subComponents>
 </component>

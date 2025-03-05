@@ -1,0 +1,83 @@
+{
+  "connectorName": "salesforceMarketingCloud",
+  "operationName": "getCategories",
+  "title": "Get Content Categories",
+  "help": "Returns one or more Content Builder categories that are owned by or reside in your MID.",
+  "elements": [
+    {
+      "type": "attributeGroup",
+      "value": {
+        "groupName": "General",
+        "elements": [
+          {
+            "type": "attribute",
+            "value": {
+              "name": "configRef",
+              "displayName": "Connection",
+              "inputType": "connection",
+              "allowedConnectionTypes": [
+                "salesforceMarketingCloud"
+              ],
+              "defaultType": "connection.salesforceMarketingCloud",
+              "defaultValue": "",
+              "required": "true",
+              "helpTip": "Connection to be used"
+            }
+          },
+          {
+            "type": "attributeGroup",
+            "value": {
+              "groupName": "Parameters",
+              "elements": [
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "page",
+                    "displayName": "Page",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "Page number to return from the paged results."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "pagesize",
+                    "displayName": "Page Size",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "Number of results per page to return."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "orderBy",
+                    "displayName": "Order By",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "Determines which category property to use for sorting, and also determines the direction in which to sort the data."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "filter",
+                    "displayName": "Filter",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "Filter by ParentId using a simple operator and value."
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

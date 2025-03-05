@@ -1,8 +1,8 @@
 {
   "connectorName": "salesforceMarketingCloud",
-  "operationName": "createContact",
-  "title": "Create Contact",
-  "help": "Creates a new contact with the specified information in the specified attribute groups.",
+  "operationName": "createSMSDefinition",
+  "title": "Create SMS Definition",
+  "help": "Creates an SMS send definition.",
   "elements": [
     {
       "type": "attributeGroup",
@@ -37,7 +37,7 @@
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "true",
-                    "helpTip": "The properties required to create a new contact."
+                    "helpTip": "The properties required to create a new SMS definition."
                   }
                 }
               ]
