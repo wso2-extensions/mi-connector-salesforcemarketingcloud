@@ -1,6 +1,6 @@
 {
   "connectorName": "salesforceMarketingCloud",
-  "operationName": "createSMSDefinition",
+  "operationName": "createSmsDefinition",
   "title": "Create SMS Definition",
   "help": "Creates an SMS send definition.",
   "elements": [

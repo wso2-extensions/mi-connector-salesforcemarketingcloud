@@ -47,8 +47,8 @@
             <file>sendEmailMessage.xml</file>
             <description>Sends an email message.</description>
         </component>
-        <component name="sendSMSMessage">
-            <file>sendSMSMessage.xml</file>
+        <component name="sendSmsMessage">
+            <file>sendSmsMessage.xml</file>
             <description>Sends an SMS message.</description>
         </component>
         <component name="deleteAsset">

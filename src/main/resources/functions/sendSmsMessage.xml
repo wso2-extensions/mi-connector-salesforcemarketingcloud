@@ -17,7 +17,7 @@
  ~  under the License.
 -->
 
-<template xmlns="http://ws.apache.org/ns/synapse" name="sendSMSMessage">
+<template xmlns="http://ws.apache.org/ns/synapse" name="sendSmsMessage">
     <parameter name="payload" description="The properties required to send SMS message."/>
     <sequence>
         <class name="org.wso2.carbon.salesforce.marketingcloud.connector.RestURLBuilder">

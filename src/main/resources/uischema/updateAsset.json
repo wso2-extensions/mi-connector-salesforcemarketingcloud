@@ -36,7 +36,7 @@
                     "displayName": "Asset ID",
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
-                    "required": "false",
+                    "required": "true",
                     "helpTip": "The ID of the asset to update."
                   }
                 },

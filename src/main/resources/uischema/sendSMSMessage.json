@@ -1,6 +1,6 @@
 {
   "connectorName": "salesforceMarketingCloud",
-  "operationName": "sendSMSMessage",
+  "operationName": "sendSmsMessage",
   "title": "Send SMS Message",
   "help": "Sends an SMS message to multiple recipients using a send definition.",
   "elements": [
