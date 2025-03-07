@@ -31,6 +31,8 @@
     <parameter name="status" description="A journey status value to filter the results. Possible values: Deleted, Draft, Published, ScheduledToPublish, Stopped, Unpublished."/>
     <parameter name="tag" description="A tag to filter the results. Returns only journeys with the specified tag."/>
     <parameter name="versionNumber" description="The version number of the journey to retrieve. Default is the currently published version or the latest version number meeting the criteria."/>
+    <parameter name="responseVariable" description="The name of the variable to which the response should be stored."/>
+    <parameter name="overwriteBody" description="Replace the Message Body in Message Context with the response of the operation."/>
     <sequence>
         <class name="org.wso2.carbon.salesforce.marketingcloud.connector.RestURLBuilder">
             <property name="operationPath" value="/interaction/v1/interactions"/>

@@ -23,6 +23,8 @@
     <parameter name="orderBy" description="Determines which asset property to use for sorting, and also determines the direction in which to sort the data."/>
     <parameter name="filter" description="Filter by an asset's property using a simple operator and value."/>
     <parameter name="fields" description="Comma-delimited string of asset properties used to reduce the size of your results to only the properties you need."/>
+    <parameter name="responseVariable" description="The name of the variable to which the response should be stored."/>
+    <parameter name="overwriteBody" description="Replace the Message Body in Message Context with the response of the operation."/>
     <sequence>
         <class name="org.wso2.carbon.salesforce.marketingcloud.connector.RestURLBuilder">
             <property name="operationPath" value="/asset/v1/content/assets"/>

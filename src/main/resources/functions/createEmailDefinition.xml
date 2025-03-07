@@ -19,6 +19,8 @@
 
 <template xmlns="http://ws.apache.org/ns/synapse" name="createEmailDefinition">
     <parameter name="payload" description="The properties required to create the email definition."/>
+    <parameter name="responseVariable" description="The name of the variable to which the response should be stored."/>
+    <parameter name="overwriteBody" description="Replace the Message Body in Message Context with the response of the operation."/>
     <sequence>
         <class name="org.wso2.carbon.salesforce.marketingcloud.connector.RestURLBuilder">
             <property name="operationPath" value="/messaging/v1/email/definitions"/>
