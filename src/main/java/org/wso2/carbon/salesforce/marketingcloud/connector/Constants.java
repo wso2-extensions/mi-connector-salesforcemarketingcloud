@@ -26,6 +26,7 @@ public class Constants {
     public static final String CLIENT_SECRET = "clientSecret";
     public static final String ACCOUNT_ID = "accountId";
     public static final String PROPERTY_BASE = "uri.var.base";
+    public static final String PROPERTY_AUTH = "uri.var.auth";
     public static final String PROPERTY_ACCESS_TOKEN = "_OH_INTERNAL_ACCESS_TOKEN_";
     public static final String PROPERTY_ERROR_CODE = "ERROR_CODE";
     public static final String PROPERTY_ERROR_MESSAGE = "ERROR_MESSAGE";

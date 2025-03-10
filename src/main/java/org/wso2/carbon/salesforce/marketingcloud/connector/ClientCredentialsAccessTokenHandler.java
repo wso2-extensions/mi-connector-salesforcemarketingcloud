@@ -67,8 +67,10 @@ public class ClientCredentialsAccessTokenHandler extends AbstractConnector {
 
         String base = String.format("https://%s.rest.marketingcloudapis.com", subdomain);
         String authEndpoint = String.format("https://%s.auth.marketingcloudapis.com/v2/token", subdomain);
+        String authBase = String.format("https://%s.auth.marketingcloudapis.com", subdomain);
 
         messageContext.setProperty(Constants.PROPERTY_BASE, base);
+        messageContext.setProperty(Constants.PROPERTY_AUTH, authBase);
 
 
         String clientId = (String) getParameter(messageContext, Constants.CLIENT_ID);
