@@ -1,5 +1,5 @@
 {
-  "connectorName": "salesforceMarketingCloud",
+  "connectorName": "SalesforceMarketingCloud",
   "operationName": "getContactDeleteRequests",
   "title": "Retrieves details of contact delete requests for a date range.",
   "help": "Retrieves details of contact delete requests for a date range.",
@@ -16,9 +16,9 @@
               "displayName": "Connection",
               "inputType": "connection",
               "allowedConnectionTypes": [
-                "salesforceMarketingCloud"
+                "SalesforceMarketingCloud"
               ],
-              "defaultType": "connection.salesforceMarketingCloud",
+              "defaultType": "connection.SalesforceMarketingCloud",
               "defaultValue": "",
               "required": "true",
               "helpTip": "Connection to be used"

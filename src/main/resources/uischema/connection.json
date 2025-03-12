@@ -1,6 +1,6 @@
 {
-  "connectorName": "salesforceMarketingCloud",
-  "connectionName": "salesforceMarketingCloud",
+  "connectorName": "SalesforceMarketingCloud",
+  "connectionName": "SalesforceMarketingCloud",
   "title": "Salesforce Marketing Cloud Connection",
   "help": "<h1>Salesforce Marketing Cloud Connection</h1> <b>The Salesforce Marketing Cloud Connector allows you to access the REST API of Salesforce MarketingCloud.</b>",
   "testConnectionEnabled": true,

@@ -1,5 +1,5 @@
 {
-  "connectorName": "salesforceMarketingCloud",
+  "connectorName": "SalesforceMarketingCloud",
   "operationName": "sendEmailMessage",
   "title": "Send Email Message",
   "help": "Sends a message to multiple recipients using a send definition.",
@@ -16,9 +16,9 @@
               "displayName": "Connection",
               "inputType": "connection",
               "allowedConnectionTypes": [
-                "salesforceMarketingCloud"
+                "SalesforceMarketingCloud"
               ],
-              "defaultType": "connection.salesforceMarketingCloud",
+              "defaultType": "connection.SalesforceMarketingCloud",
               "defaultValue": "",
               "required": "true",
               "helpTip": "Connection to be used"

@@ -1,5 +1,5 @@
 {
-  "connectorName": "salesforceMarketingCloud",
+  "connectorName": "SalesforceMarketingCloud",
   "operationName": "getCategories",
   "title": "Get Content Categories",
   "help": "Returns one or more Content Builder categories that are owned by or reside in your MID.",
@@ -16,9 +16,9 @@
               "displayName": "Connection",
               "inputType": "connection",
               "allowedConnectionTypes": [
-                "salesforceMarketingCloud"
+                "SalesforceMarketingCloud"
               ],
-              "defaultType": "connection.salesforceMarketingCloud",
+              "defaultType": "connection.SalesforceMarketingCloud",
               "defaultValue": "",
               "required": "true",
               "helpTip": "Connection to be used"

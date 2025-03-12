@@ -1,5 +1,5 @@
 {
-  "connectorName": "salesforceMarketingCloud",
+  "connectorName": "SalesforceMarketingCloud",
   "operationName": "insertDataExtensionRowSet",
   "title": "Insert Data Extension RowSet.",
   "help": "Upsert one or more rows in a data extension synchronously by specifying the external key of the target data extension.",
@@ -16,9 +16,9 @@
               "displayName": "Connection",
               "inputType": "connection",
               "allowedConnectionTypes": [
-                "salesforceMarketingCloud"
+                "SalesforceMarketingCloud"
               ],
-              "defaultType": "connection.salesforceMarketingCloud",
+              "defaultType": "connection.SalesforceMarketingCloud",
               "defaultValue": "",
               "required": "true",
               "helpTip": "Connection to be used"

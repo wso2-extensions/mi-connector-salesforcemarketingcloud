@@ -1,5 +1,5 @@
 {
-  "connectorName": "salesforceMarketingCloud",
+  "connectorName": "SalesforceMarketingCloud",
   "operationName": "createEmailDefinition",
   "title": "Create Email Definition",
   "help": "Creates a long-living send definition object that references the email template, subscriber list, sending options, journey, and metadata.",
@@ -16,9 +16,9 @@
               "displayName": "Connection",
               "inputType": "connection",
               "allowedConnectionTypes": [
-                "salesforceMarketingCloud"
+                "SalesforceMarketingCloud"
               ],
-              "defaultType": "connection.salesforceMarketingCloud",
+              "defaultType": "connection.SalesforceMarketingCloud",
               "defaultValue": "",
               "required": "true",
               "helpTip": "Connection to be used"

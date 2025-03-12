@@ -2,9 +2,9 @@
 
 ### Compatibility
 
-|Connector Version|Supported WSO2 MI Version|Supported WSO2 Integration Studio Version|
-| ------------- | -----------|-------|
-| 1.0.0 | MI 4.3.0 | 8.0.0 |
+|Connector Version| Supported WSO2 MI Version |Supported WSO2 Integration Studio Version|
+| ------------- |---------------------------|-------|
+| 1.0.0 | MI 4.3.0, MI 4.4.0        | 8.0.0 |
 
 ### Getting Started
 
