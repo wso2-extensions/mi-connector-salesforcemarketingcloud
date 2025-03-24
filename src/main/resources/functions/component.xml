@@ -20,68 +20,93 @@
 <component name="functions" type="synapse/template">
     <subComponents>
         <component name="createAsset">
+            <displayName>Create Asset</displayName>
             <file>createAsset.xml</file>
             <description>Creates a new content asset.</description>
         </component>
+        <component name="createCategory">
+            <displayName>Create Category</displayName>
+            <file>createCategory.xml</file>
+            <description>Creates a category (folder) in Content Builder.</description>
+        </component>
         <component name="createContact">
+            <displayName>Create Contact</displayName>
             <file>createContact.xml</file>
             <description>Adds a new contact.</description>
         </component>
+        <component name="createEmailDefinition">
+            <displayName>Create Email Definition</displayName>
+            <file>createEmailDefinition.xml</file>
+            <description>Creates a long-living send definition object that references the email template, subscriber
+                list, sending options, journey, and metadata..
+            </description>
+        </component>
         <component name="createJourney">
+            <displayName>Create Journey</displayName>
             <file>createJourney.xml</file>
             <description>Creates a new interaction (journey).</description>
         </component>
+        <component name="createSmsDefinition">
+            <displayName>Create SMS Definition</displayName>
+            <file>createSMSDefinition.xml</file>
+            <description>Creates an SMS send definition.</description>
+        </component>
+        <component name="deleteAsset">
+            <displayName>Delete Asset</displayName>
+            <file>deleteAsset.xml</file>
+            <description>Deletes an asset.</description>
+        </component>
         <component name="getAssets">
+            <displayName>Get Assets</displayName>
             <file>getAssets.xml</file>
             <description>Fetches a list of all content assets.</description>
         </component>
+        <component name="getCategories">
+            <displayName>Get Categories</displayName>
+            <file>getCategories.xml</file>
+            <description>Upsert one or more rows in a data extension synchronously by specifying the external key of the
+                target data extension.
+            </description>
+        </component>
         <component name="getContactDeleteRequests">
+            <displayName>Get Contact Delete Requests</displayName>
             <file>getContactDeleteRequests.xml</file>
-            <description>Retrieves data deletion requests, important for ensuring GDPR and other data privacy compliance.</description>
+            <description>Retrieves data deletion requests, important for ensuring GDPR and other data privacy
+                compliance.
+            </description>
         </component>
         <component name="getJourneys">
+            <displayName>Get Journeys</displayName>
             <file>getJourneys.xml</file>
             <description>Retrieves all journey interactions.</description>
         </component>
+        <component name="insertDataExtensionRowSet">
+            <displayName>Insert Data Extension RowSet</displayName>
+            <file>insertDataExtensionRowSet.xml</file>
+            <description>Upsert one or more rows in a data extension synchronously by specifying the external key of the
+                target data extension.
+            </description>
+        </component>
         <component name="sendEmailMessage">
+            <displayName>Send Email Message</displayName>
             <file>sendEmailMessage.xml</file>
             <description>Sends an email message.</description>
         </component>
         <component name="sendSmsMessage">
+            <displayName>Send SMS Message</displayName>
             <file>sendSmsMessage.xml</file>
             <description>Sends an SMS message.</description>
         </component>
-        <component name="deleteAsset">
-            <file>deleteAsset.xml</file>
-            <description>Deletes an asset.</description>
-        </component>
-        <component name="updateContact">
-            <file>updateContact.xml</file>
-            <description>Updates a contact record.</description>
-        </component>
         <component name="updateAsset">
+            <displayName>Update Asset</displayName>
             <file>updateAsset.xml</file>
             <description>Updates a full asset.</description>
         </component>
-        <component name="insertDataExtensionRowSet">
-            <file>insertDataExtensionRowSet.xml</file>
-            <description>Upsert one or more rows in a data extension synchronously by specifying the external key of the target data extension.</description>
+        <component name="updateContact">
+            <displayName>Update Contact</displayName>
+            <file>updateContact.xml</file>
+            <description>Updates a contact record.</description>
         </component>
-        <component name="createCategory">
-            <file>createCategory.xml</file>
-            <description>Creates a category (folder) in Content Builder.</description>
-        </component>
-        <component name="createEmailDefinition">
-            <file>createEmailDefinition.xml</file>
-            <description>Creates a long-living send definition object that references the email template, subscriber list, sending options, journey, and metadata..</description>
-        </component>
-        <component name="createSMSDefinition">
-            <file>createSMSDefinition.xml</file>
-            <description>Creates an SMS send definition..</description>
-        </component>
-        <component name="getCategories">
-            <file>getCategories.xml</file>
-            <description>Upsert one or more rows in a data extension synchronously by specifying the external key of the target data extension.</description>
-        </component>
+
     </subComponents>
 </component>

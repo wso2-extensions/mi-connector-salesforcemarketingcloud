@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "title": "Output Schema for Insert Data Extension Row Set Operation",
+  "description": "Output schema for inserting a set of rows into a Data Extension.",
+  "items": {
+    "type": "object",
+    "properties": {
+      "keys": {
+        "type": "object",
+        "description": "Key fields for the data extension row.",
+        "additionalProperties": true
+      },
+      "values": {
+        "type": "object",
+        "description": "Value fields for the data extension row.",
+        "additionalProperties": true
+      }
+    },
+    "required": [
+      "keys",
+      "values"
+    ],
+    "additionalProperties": false
+  }
+}

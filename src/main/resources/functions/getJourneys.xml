@@ -21,17 +21,7 @@
     <parameter name="page" description="Page number to return from the paged results."/>
     <parameter name="pageSize" description="Number of items to return on a page of results. The default and maximum value is 50."/>
     <parameter name="orderBy" description="Determines which asset property to use for sorting, and also determines the direction in which to sort the data."/>
-    <parameter name="definitionType" description="The type of definition to retrieve. The only accepted value is 'transactional'."/>
-    <parameter name="extras" description="Additional information to include in the response. Possible values: activities, outcome, stats, all. 'All' provides all available extra details but may impact query performance."/>
-    <parameter name="key" description="The external key of a journey to retrieve."/>
-    <parameter name="id" description="The ID of a journey to retrieve. Returns all versions of the journey when specified."/>
-    <parameter name="mostRecentVersionOnly" description="Specifies whether to return the most recent version of each journey matching the filter criteria. Default is true."/>
-    <parameter name="nameOrDescription" description="A search string to apply to the request. Matches name and description of each journey."/>
-    <parameter name="specificApiVersionNumber" description="The version number of the workflowApiVersion value to retrieve. Default is 1."/>
-    <parameter name="status" description="A journey status value to filter the results. Possible values: Deleted, Draft, Published, ScheduledToPublish, Stopped, Unpublished."/>
-    <parameter name="tag" description="A tag to filter the results. Returns only journeys with the specified tag."/>
-    <parameter name="versionNumber" description="The version number of the journey to retrieve. Default is the currently published version or the latest version number meeting the criteria."/>
-    <parameter name="responseVariable" description="The name of the variable to which the response should be stored."/>
+   <parameter name="responseVariable" description="The name of the variable to which the response should be stored."/>
     <parameter name="overwriteBody" description="Replace the Message Body in Message Context with the response of the operation."/>
     <sequence>
         <class name="org.wso2.carbon.salesforce.marketingcloud.connector.RestURLBuilder">

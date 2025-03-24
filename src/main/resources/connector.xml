@@ -23,5 +23,6 @@
         <dependency component="functions"/>
         <description>WSO2 Salesforce Marketing Cloud Connector Library</description>
     </component>
+    <displayName>Salesforce Marketing Cloud</displayName>
     <icon>icon/icon-small.png</icon>
 </connector>

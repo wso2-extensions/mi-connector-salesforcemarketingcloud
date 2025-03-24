@@ -1,0 +1,120 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Output Schema for Get Journeys Operation",
+  "description": "Output schema for retrieving a list of journeys.",
+  "properties": {
+    "count": {
+      "type": "integer",
+      "description": "Total number of journeys."
+    },
+    "page": {
+      "type": "integer",
+      "description": "Current page number."
+    },
+    "pageSize": {
+      "type": "integer",
+      "description": "Number of items per page."
+    },
+    "links": {
+      "type": "object",
+      "description": "Pagination links.",
+      "additionalProperties": true
+    },
+    "items": {
+      "type": "array",
+      "description": "List of journeys.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier of the journey."
+          },
+          "key": {
+            "type": "string",
+            "description": "Key of the journey."
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the journey."
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the journey."
+          },
+          "version": {
+            "type": "integer",
+            "description": "Version number of the journey."
+          },
+          "workflowApiVersion": {
+            "type": "number",
+            "description": "API version of the workflow."
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Creation date of the journey."
+          },
+          "modifiedDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Last modification date of the journey."
+          },
+          "stats": {
+            "type": "object",
+            "description": "Statistics related to the journey.",
+            "additionalProperties": true
+          },
+          "entryMode": {
+            "type": "string",
+            "description": "Entry mode of the journey."
+          },
+          "definitionType": {
+            "type": "string",
+            "description": "Definition type of the journey."
+          },
+          "executionMode": {
+            "type": "string",
+            "description": "Execution mode of the journey."
+          },
+          "categoryId": {
+            "type": "integer",
+            "description": "Category ID associated with the journey."
+          },
+          "status": {
+            "type": "string",
+            "description": "Current status of the journey."
+          },
+          "definitionId": {
+            "type": "string",
+            "description": "Definition ID of the journey."
+          },
+          "scheduledStatus": {
+            "type": "string",
+            "description": "Scheduled status of the journey."
+          }
+        },
+        "required": [
+          "id",
+          "key",
+          "name",
+          "description",
+          "version",
+          "workflowApiVersion",
+          "createdDate",
+          "modifiedDate",
+          "status"
+        ],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": [
+    "count",
+    "page",
+    "pageSize",
+    "items"
+  ],
+  "additionalProperties": false
+}

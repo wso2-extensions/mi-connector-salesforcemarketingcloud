@@ -1,0 +1,99 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Output Schema for Update Asset Operation",
+  "description": "Output schema for the update asset operation.",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "customerKey": {
+      "type": "string"
+    },
+    "objectID": {
+      "type": "string"
+    },
+    "contentType": {
+      "type": "string"
+    },
+    "assetType": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "createdDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "createdBy": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "modifiedDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "modifiedBy": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "enterpriseId": {
+      "type": "integer"
+    },
+    "memberId": {
+      "type": "integer"
+    },
+    "status": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "thumbnail": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "category": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "views": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "availableViews": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "legacyData": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "modelVersion": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "id",
+    "customerKey",
+    "objectID",
+    "contentType",
+    "name",
+    "createdDate",
+    "modifiedDate",
+    "enterpriseId",
+    "memberId",
+    "modelVersion"
+  ],
+  "additionalProperties": false
+}
