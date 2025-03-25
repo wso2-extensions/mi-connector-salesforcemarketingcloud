@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Output Schema for Get Campaigns Operation",
+  "description": "Output schema for retrieving campaigns.",
+  "properties": {
+    "count": {
+      "type": "integer",
+      "description": "Total number of campaigns."
+    },
+    "page": {
+      "type": "integer",
+      "description": "Current page number."
+    },
+    "pageSize": {
+      "type": "integer",
+      "description": "Number of items per page."
+    },
+    "links": {
+      "type": "object",
+      "description": "Navigation links.",
+      "additionalProperties": true
+    },
+    "items": {
+      "type": "array",
+      "description": "List of campaign items.",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": [
+    "count",
+    "page",
+    "pageSize",
+    "links",
+    "items"
+  ],
+  "additionalProperties": false
+}

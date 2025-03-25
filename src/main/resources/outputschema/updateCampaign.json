@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Output Schema for Update Campaign Operation",
+  "description": "Output schema for updating a campaign.",
+  "properties": {
+    "createdDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The creation date of the campaign."
+    },
+    "modifiedDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The last modification date of the campaign."
+    },
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the campaign."
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the campaign."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the campaign."
+    },
+    "campaignCode": {
+      "type": "string",
+      "description": "Code associated with the campaign."
+    },
+    "color": {
+      "type": "string",
+      "description": "Color code for the campaign."
+    },
+    "favorite": {
+      "type": "boolean",
+      "description": "Flag indicating if the campaign is marked as favorite."
+    }
+  },
+  "required": [
+    "createdDate",
+    "modifiedDate",
+    "id",
+    "name",
+    "description",
+    "campaignCode",
+    "color",
+    "favorite"
+  ],
+  "additionalProperties": false
+}

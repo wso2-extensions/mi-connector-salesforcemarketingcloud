@@ -1,8 +1,8 @@
 {
   "connectorName": "SalesforceMarketingCloud",
-  "operationName": "updateContact",
-  "title": "Update Contact",
-  "help": "Updates a contact record.",
+  "operationName": "createCampaign",
+  "title": "Create Campaign.",
+  "help": "Create a campaign.",
   "elements": [
     {
       "type": "attributeGroup",
@@ -37,7 +37,7 @@
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "true",
-                    "helpTip": "The properties required to update the contact."
+                    "helpTip": "The properties required to create a new campaign."
                   }
                 }
               ]

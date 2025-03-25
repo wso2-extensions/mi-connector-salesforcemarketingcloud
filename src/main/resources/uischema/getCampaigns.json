@@ -1,8 +1,8 @@
 {
   "connectorName": "SalesforceMarketingCloud",
-  "operationName": "updateContact",
-  "title": "Update Contact",
-  "help": "Updates a contact record.",
+  "operationName": "getCampaigns",
+  "title": "Retrieve a list of campaigns in your account.",
+  "help": "Retrieve a list of campaigns in your account.",
   "elements": [
     {
       "type": "attributeGroup",
@@ -27,17 +27,39 @@
           {
             "type": "attributeGroup",
             "value": {
-              "groupName": "Request Body",
+              "groupName": "Parameters",
               "elements": [
                 {
                   "type": "attribute",
                   "value": {
-                    "name": "payload",
-                    "displayName": "Payload",
+                    "name": "page",
+                    "displayName": "Page",
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
-                    "required": "true",
-                    "helpTip": "The properties required to update the contact."
+                    "required": "false",
+                    "helpTip": "Page number to return from the paged results."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "pagesize",
+                    "displayName": "Page Size",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "Number of results per page to return."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "orderBy",
+                    "displayName": "Order By",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "The field and sort method to use to sort the results."
                   }
                 }
               ]

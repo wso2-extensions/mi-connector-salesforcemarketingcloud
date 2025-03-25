@@ -17,15 +17,15 @@
  ~  under the License.
 -->
 
-<template xmlns="http://ws.apache.org/ns/synapse" name="updateAsset">
-    <parameter name="assetId" description="ID of the asset to be updated."/>
-    <parameter name="payload" description="The properties required to update the asset."/>
+<template xmlns="http://ws.apache.org/ns/synapse" name="updateCampaign">
+    <parameter name="campaignId" description="ID of the campaign to be updated."/>
+    <parameter name="payload" description="The properties required to update the campaign."/>
     <parameter name="responseVariable" description="The name of the variable to which the response should be stored."/>
     <parameter name="overwriteBody" description="Replace the Message Body in Message Context with the response of the operation."/>
     <sequence>
         <class name="org.wso2.carbon.salesforce.marketingcloud.connector.RestURLBuilder">
-            <property name="operationPath" value="/asset/v1/content/assets/{assetId}"/>
-            <property name="pathParameters" value="assetId,"/>
+            <property name="operationPath" value="/hub/v1/campaigns/{campaignId}"/>
+            <property name="pathParameters" value="campaignId,"/>
         </class>
         <payloadFactory media-type="json" template-type="freemarker">
             <format><![CDATA[

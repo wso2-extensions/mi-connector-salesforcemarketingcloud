@@ -1,8 +1,8 @@
 {
   "connectorName": "SalesforceMarketingCloud",
-  "operationName": "updateContact",
-  "title": "Update Contact",
-  "help": "Updates a contact record.",
+  "operationName": "deleteContact",
+  "title": "Deletes Contact.",
+  "help": "Deletes a contact.",
   "elements": [
     {
       "type": "attributeGroup",
@@ -27,17 +27,28 @@
           {
             "type": "attributeGroup",
             "value": {
-              "groupName": "Request Body",
+              "groupName": "Parameters",
               "elements": [
                 {
                   "type": "attribute",
                   "value": {
-                    "name": "payload",
-                    "displayName": "Payload",
+                    "name": "values",
+                    "displayName": "ID Values",
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "true",
-                    "helpTip": "The properties required to update the contact."
+                    "helpTip": "Array of contact ID values to delete."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "deleteOperationType",
+                    "displayName": "Delete Operation Type",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "ContactAndAttributes",
+                    "required": "true",
+                    "helpTip": "Type of delete operation to perform."
                   }
                 }
               ]

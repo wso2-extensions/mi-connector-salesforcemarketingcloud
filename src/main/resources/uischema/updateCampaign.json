@@ -1,8 +1,8 @@
 {
   "connectorName": "SalesforceMarketingCloud",
-  "operationName": "updateContact",
-  "title": "Update Contact",
-  "help": "Updates a contact record.",
+  "operationName": "updateCampaign",
+  "title": "Update Campaign",
+  "help": "Updates a campaign.",
   "elements": [
     {
       "type": "attributeGroup",
@@ -32,12 +32,23 @@
                 {
                   "type": "attribute",
                   "value": {
+                    "name": "campaignId",
+                    "displayName": "Campaign ID",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "helpTip": "ID of the campaign to be updated."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
                     "name": "payload",
                     "displayName": "Payload",
                     "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "true",
-                    "helpTip": "The properties required to update the contact."
+                    "helpTip": "The properties required to update the asset."
                   }
                 }
               ]
