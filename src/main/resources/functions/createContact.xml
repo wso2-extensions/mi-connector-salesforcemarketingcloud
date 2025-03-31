@@ -18,10 +18,20 @@
 -->
 
 <template xmlns="http://ws.apache.org/ns/synapse" name="createContact">
+    <parameter name="inputStructure" description="The type of input data structure. Possible values: FORM or INLINE."/>
     <parameter name="payload" description="The properties required to create the contact."/>
     <parameter name="responseVariable" description="The name of the variable to which the response should be stored."/>
     <parameter name="overwriteBody" description="Replace the Message Body in Message Context with the response of the operation."/>
+    <parameter name="contactKey" description="Primary address for the contact. You must provide either a value for contactKey or contactID."/>
+    <parameter name="contactID" description="Unique ID for the contact. You must provide either a value for contactKey or contactID."/>
+    <parameter name="attributeSets" description="Required. Array of information used to create a new contact"/>
+    <parameter name="attributeSets.name" description="Required. Name of attribute group to which to add the contact information"/>
+    <parameter name="attributeSets.values" description="Name and value pairs indicating the attribute and applicable value"/>
     <sequence>
+        <class name="org.wso2.carbon.salesforce.marketingcloud.connector.PayloadBuilder">
+            <property name="payloadParameters" value="contactKey,contactID,attributeSets,attributeSets.name,attributeSets.values"/>
+            <property name="jsonParameters" value="attributeSets,attributeSets.values"/>
+        </class>
         <class name="org.wso2.carbon.salesforce.marketingcloud.connector.RestURLBuilder">
             <property name="operationPath" value="/contacts/v1/contacts"/>
         </class>
@@ -30,7 +40,7 @@
 ${args.arg1}
             ]]></format>
             <args>
-                <arg evaluator="xml" expression="$func:payload"/>
+                <arg evaluator="xml" expression="$ctx:normalized.parameters"/>
             </args>
         </payloadFactory>
         <property name="DISABLE_CHUNKING" scope="axis2" type="STRING" value="true"/>

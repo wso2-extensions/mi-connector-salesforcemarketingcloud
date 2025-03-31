@@ -25,6 +25,21 @@
             }
           },
           {
+            "type": "attribute",
+            "value": {
+              "name": "inputStructure",
+              "displayName": "Input Data Structure",
+              "inputType": "comboOrExpression",
+              "comboValues": [
+                "FORM",
+                "INLINE"
+              ],
+              "defaultValue": "FORM",
+              "required": "false",
+              "helpTip": "The type of input data structure."
+            }
+          },
+          {
             "type": "attributeGroup",
             "value": {
               "groupName": "Request Body",
@@ -35,9 +50,238 @@
                     "name": "payload",
                     "displayName": "Payload",
                     "inputType": "stringOrExpression",
+                    "defaultValue": "{\n    \"definitionKey\": \"2FA_order_accounts\",\n    \"status\": \"Active\",\n    \"name\": \"My Unique Definition Name\",\n    \"description\": \"Created via REST\",\n    \"classification\": \"Default Transactional\",\n    \"content\": {\n        \"customerKey\": \"bebf8650-137a-494c-8727-cdeb32534961\"\n    },\n    \"subscriptions\": {\n        \"list\": \"test-list\",\n        \"dataExtension\": \"test-de\",\n        \"autoAddSubscriber\": true,\n        \"updateSubscriber\": true\n    },\n    \"options\": {\n        \"trackLinks\": true,\n        \"cc\": [\n            \"cc_address@example.com\"\n        ],\n        \"bcc\": [\n            \"bcc_address@example.com\"\n        ],\n        \"createJourney\": true\n    }\n}",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "INLINE"
+                      }
+                    ],
+                    "helpTip": "The properties required to create a new email definition."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "definitionKey",
+                    "displayName": "Definition Key",
+                    "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "true",
-                    "helpTip": "The properties required to create a new email definition."
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Required. Unique, user-generated key to access the definition object."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "name",
+                    "displayName": "Name",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Required. Name of the definition. Must be unique."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "content.customerKey",
+                    "displayName": "Content Customer Key",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Required. Unique identifier of the content asset."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "status",
+                    "displayName": "Status",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Operational state of the definition: active, inactive, or deleted. A message sent to an active definition is processed and delivered. A message sent to an inactive definition isn’t processed or delivered. Instead, the message is queued for later processing for up to three days."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "description",
+                    "displayName": "Description",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "User-provided description of the send definition."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "classification",
+                    "displayName": "Classification",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "The external key of a sending classification defined in Email Studio Administration. Only transactional classifications are permitted. Default is default transactional."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "subscriptions.list",
+                    "displayName": "Subscriptions List",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Required. The external key of the list or all subscribers. Contains the subscriber keys and profile attributes."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "subscriptions.dataExtension",
+                    "displayName": "Subscriptions Data Extension",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "The external key of the triggered send data extension. Each request inserts as a new row in the data extension. To deduplicate at send time, use messageKey. Don’t use a primary key on the triggered send data extension."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "subscriptions.autoAddSubscriber",
+                    "displayName": "Subscriptions Auto Add Subscriber",
+                    "inputType": "boolean",
+                    "defaultValue": "true",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Adds the recipient’s email address and contact key as a subscriber key to subscriptions.list. Default is true."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "subscriptions.updateSubscriber",
+                    "displayName": "Subscriptions Update Subscriber",
+                    "inputType": "boolean",
+                    "defaultValue": "true",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Updates the recipient’s contact key as a subscriber key with the provided email address and profile attributes to subscriptions.list. Default is true."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "options.trackLinks",
+                    "displayName": "Options Track Links",
+                    "inputType": "boolean",
+                    "defaultValue": "true",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Wraps links for tracking and reporting. Default is true."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "options.cc",
+                    "displayName": "Options CC",
+                    "inputType": "array",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Include CC email addresses with every send. To CC dynamically at send time, create a profile attribute and use the %%attribute%% syntax."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "options.bcc",
+                    "displayName": "Options BCC",
+                    "inputType": "array",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Include BCC email addresses with every send. To BCC dynamically at send time, create a profile attribute and use the %%attribute%% syntax."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "options.createJourney",
+                    "displayName": "Options Create Journey",
+                    "inputType": "boolean",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "A value of true updates the send definition to make it available in Journey Builder as a Transactional Send Journey. After the definition is tied to a Transactional Send Journey, the definition remains part of Journey Builder. You can’t unlink a journey from a definition without recreating the transactional send definition."
                   }
                 }
               ]

@@ -18,10 +18,30 @@
 -->
 
 <template xmlns="http://ws.apache.org/ns/synapse" name="createEmailDefinition">
+    <parameter name="inputStructure" description="The type of input data structure. Possible values: FORM or INLINE."/>
     <parameter name="payload" description="The properties required to create the email definition."/>
     <parameter name="responseVariable" description="The name of the variable to which the response should be stored."/>
     <parameter name="overwriteBody" description="Replace the Message Body in Message Context with the response of the operation."/>
+    <parameter name="definitionKey" description="Required. Unique, user-generated key to access the definition object."/>
+    <parameter name="name" description="Required. Name of the definition. Must be unique."/>
+    <parameter name="content.customerKey" description="Required. Unique identifier of the content asset."/>
+    <parameter name="status" description="Operational state of the definition: active, inactive, or deleted. A message sent to an active definition is processed and delivered. A message sent to an inactive definition isn’t processed or delivered. Instead, the message is queued for later processing for up to three days."/>
+    <parameter name="description" description="User-provided description of the send definition."/>
+    <parameter name="classification" description="The external key of a sending classification defined in Email Studio Administration. Only transactional classifications are permitted. Default is default transactional."/>
+    <parameter name="subscriptions.list" description="Required. The external key of the list or all subscribers. Contains the subscriber keys and profile attributes."/>
+    <parameter name="subscriptions.dataExtension" description="The external key of the triggered send data extension. Each request inserts as a new row in the data extension. To deduplicate at send time, use messageKey. Don’t use a primary key on the triggered send data extension."/>
+    <parameter name="subscriptions.autoAddSubscriber" description="Adds the recipient’s email address and contact key as a subscriber key to subscriptions.list. Default is true."/>
+    <parameter name="subscriptions.updateSubscriber" description="Updates the recipient’s contact key as a subscriber key with the provided email address and profile attributes to subscriptions.list. Default is true."/>
+    <parameter name="options.trackLinks" description="Wraps links for tracking and reporting. Default is true."/>
+    <parameter name="options.cc" description="Include CC email addresses with every send. To CC dynamically at send time, create a profile attribute and use the %%attribute%% syntax."/>
+    <parameter name="options.bcc" description="Include BCC email addresses with every send. To BCC dynamically at send time, create a profile attribute and use the %%attribute%% syntax."/>
+    <parameter name="options.createJourney" description="A value of true updates the send definition to make it available in Journey Builder as a Transactional Send Journey. After the definition is tied to a Transactional Send Journey, the definition remains part of Journey Builder. You can’t unlink a journey from a definition without recreating the transactional send definition."/>
     <sequence>
+        <class name="org.wso2.carbon.salesforce.marketingcloud.connector.PayloadBuilder">
+            <property name="payloadParameters"
+                      value="definitionKey,name,content.customerKey,status,description,classification,subscriptions.list,subscriptions.dataExtension,subscriptions.autoAddSubscriber,subscriptions.updateSubscriber,options.trackLinks,options.cc,options.bcc,options.createJourney"/>
+            <property name="jsonParameters" value="options.cc,options.bcc"/>
+        </class>
         <class name="org.wso2.carbon.salesforce.marketingcloud.connector.RestURLBuilder">
             <property name="operationPath" value="/messaging/v1/email/definitions"/>
         </class>
@@ -30,7 +50,7 @@
 ${args.arg1}
             ]]></format>
             <args>
-                <arg evaluator="xml" expression="$func:payload"/>
+                <arg evaluator="xml" expression="$ctx:normalized.parameters"/>
             </args>
         </payloadFactory>
         <property name="DISABLE_CHUNKING" scope="axis2" type="STRING" value="true"/>

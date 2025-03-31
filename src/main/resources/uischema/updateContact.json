@@ -25,6 +25,21 @@
             }
           },
           {
+            "type": "attribute",
+            "value": {
+              "name": "inputStructure",
+              "displayName": "Input Data Structure",
+              "inputType": "comboOrExpression",
+              "comboValues": [
+                "FORM",
+                "INLINE"
+              ],
+              "defaultValue": "FORM",
+              "required": "false",
+              "helpTip": "The type of input data structure."
+            }
+          },
+          {
             "type": "attributeGroup",
             "value": {
               "groupName": "Request Body",
@@ -35,9 +50,94 @@
                     "name": "payload",
                     "displayName": "Payload",
                     "inputType": "stringOrExpression",
+                    "defaultValue": "{\n    \"contactKey\": \"acruz@example.com\",\n    \"contactId\": 12345678,\n    \"attributeSets\": [\n        {\n            \"name\": \"Email Addresses\",\n            \"items\": [\n                {\n                    \"values\": [\n                        {\n                            \"name\": \"Email Address\",\n                            \"value\": \"acruz@example.com\"\n                        },\n                        {\n                            \"name\": \"HTML Enabled\",\n                            \"value\": true\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"name\": \"Email Demographics\",\n            \"items\": [\n                {\n                    \"values\": [\n                        {\n                            \"name\": \"Last Name\",\n                            \"value\": \"Cruz\"\n                        },\n                        {\n                            \"name\": \"First Name\",\n                            \"value\": \"Angela\"\n                        },\n                        {\n                            \"name\": \"Text Profile Attribute\",\n                            \"value\": \"value 1\"\n                        },\n                        {\n                            \"name\": \"Number Profile Attribute\",\n                            \"value\": 12345\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "INLINE"
+                      }
+                    ],
+                    "helpTip": "The properties required to create a new contact."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "contactKey",
+                    "displayName": "Contact Key",
+                    "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "true",
-                    "helpTip": "The properties required to update the contact."
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Primary address for the contact. You must provide either a value for contactKey or contactID."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "contactID",
+                    "displayName": "Contact ID",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Unique ID for the contact. You must provide either a value for contactKey or contactID."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "attributeSets",
+                    "displayName": "Attribute Sets",
+                    "inputType": "array",
+                    "defaultValue": "",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Array of information used to create a new contact."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "attributeSets.name",
+                    "displayName": "Attribute Sets Name",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Required. Name of attribute group to which to add the contact information."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "attributeSets.values",
+                    "displayName": "Attribute Sets Values",
+                    "inputType": "array",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Name and value pairs indicating the attribute and applicable value."
                   }
                 }
               ]

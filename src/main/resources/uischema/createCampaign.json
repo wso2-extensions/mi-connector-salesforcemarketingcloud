@@ -25,6 +25,21 @@
             }
           },
           {
+            "type": "attribute",
+            "value": {
+              "name": "inputStructure",
+              "displayName": "Input Data Structure",
+              "inputType": "comboOrExpression",
+              "comboValues": [
+                "FORM",
+                "INLINE"
+              ],
+              "defaultValue": "FORM",
+              "required": "false",
+              "helpTip": "The type of input data structure."
+            }
+          },
+          {
             "type": "attributeGroup",
             "value": {
               "groupName": "Request Body",
@@ -35,9 +50,94 @@
                     "name": "payload",
                     "displayName": "Payload",
                     "inputType": "stringOrExpression",
+                    "defaultValue": "{\n    \"name\": \"Final Hours for Summer Sale\",\n    \"description\": \"Invite our most engaged customers to shop our Summer Sale before it ends.\",\n    \"campaignCode\": \"summer2023\",\n    \"color\": \"800080\",\n    \"favorite\": false\n}",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "INLINE"
+                      }
+                    ],
+                    "helpTip": "The properties required to create a new campaign."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "name",
+                    "displayName": "Name",
+                    "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "true",
-                    "helpTip": "The properties required to create a new campaign."
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "The name of the campaign."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "description",
+                    "displayName": "Description",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "A description of the campaign."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "campaignCode",
+                    "displayName": "Campaign Code",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "A campaign code to associate with the campaign."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "color",
+                    "displayName": "Color",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "The color used to identify the campaign in the Marketing Cloud Engagement web interface, expressed as an HTML color code."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "favorite",
+                    "displayName": "Favorite",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Indicates whether to identify the campaign as a favorite."
                   }
                 }
               ]

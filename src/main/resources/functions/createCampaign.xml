@@ -18,10 +18,19 @@
 -->
 
 <template xmlns="http://ws.apache.org/ns/synapse" name="createCampaign">
+    <parameter name="inputStructure" description="The type of input data structure. Possible values: FORM or INLINE."/>
     <parameter name="payload" description="The properties required to create the campaign."/>
     <parameter name="responseVariable" description="The name of the variable to which the response should be stored."/>
     <parameter name="overwriteBody" description="Replace the Message Body in Message Context with the response of the operation."/>
+    <parameter name="name" description="The name of the campaign."/>
+    <parameter name="description" description="A description of the campaign."/>
+    <parameter name="campaignCode" description="A campaign code to associate with the campaign."/>
+    <parameter name="color" description="The color used to identify the campaign in the Marketing Cloud Engagement web interface, expressed as an HTML color code."/>
+    <parameter name="favorite" description="Indicates whether to identify the campaign as a favorite."/>
     <sequence>
+        <class name="org.wso2.carbon.salesforce.marketingcloud.connector.PayloadBuilder">
+            <property name="payloadParameters" value="name,description,campaignCode,color,favorite"/>
+        </class>
         <class name="org.wso2.carbon.salesforce.marketingcloud.connector.RestURLBuilder">
             <property name="operationPath" value="/hub/v1/campaigns"/>
         </class>
@@ -30,7 +39,7 @@
 ${args.arg1}
             ]]></format>
             <args>
-                <arg evaluator="xml" expression="$func:payload"/>
+                <arg evaluator="xml" expression="$ctx:normalized.parameters"/>
             </args>
         </payloadFactory>
         <property name="DISABLE_CHUNKING" scope="axis2" type="STRING" value="true"/>

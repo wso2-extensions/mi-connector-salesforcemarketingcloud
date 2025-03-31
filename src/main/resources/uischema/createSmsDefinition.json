@@ -25,6 +25,21 @@
             }
           },
           {
+            "type": "attribute",
+            "value": {
+              "name": "inputStructure",
+              "displayName": "Input Data Structure",
+              "inputType": "comboOrExpression",
+              "comboValues": [
+                "FORM",
+                "INLINE"
+              ],
+              "defaultValue": "FORM",
+              "required": "false",
+              "helpTip": "The type of input data structure."
+            }
+          },
+          {
             "type": "attributeGroup",
             "value": {
               "groupName": "Request Body",
@@ -35,9 +50,222 @@
                     "name": "payload",
                     "displayName": "Payload",
                     "inputType": "stringOrExpression",
+                    "defaultValue": "{\n    \"definitionKey\": \"account-reset\",\n    \"name\": \"account-reset\",\n    \"description\": \"Using SMS Transactional API\",\n    \"content\": {\n        \"message\": \"%%FirstName%%, your 2FA token is %%password%%\"\n    },\n    \"subscriptions\": {\n        \"shortCode\": \"8201221\",\n        \"countryCode\": \"US\",\n        \"keyword\": \"PASSWORD\"\n    },\n    \"options\": {\n        \"urlShortenerOptions\": {\n            \"isLinkShorteningEnabled\": true,\n            \"isSubscriberTrackingEnabled\": true,\n            \"shortenerType\": \"SFMC\"\n        },\n        \"smsMessageRegulatoryAuthorityTemplateId\": \"1107170833298425627\"\n    }\n}",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "INLINE"
+                      }
+                    ],
+                    "helpTip": "The properties required to create a new SMS definition."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "definitionKey",
+                    "displayName": "Definition Key",
+                    "inputType": "stringOrExpression",
                     "defaultValue": "",
                     "required": "true",
-                    "helpTip": "The properties required to create a new SMS definition."
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Required. Unique, user-generated key to access the definition object."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "name",
+                    "displayName": "Name",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Required. Name of the definition. Must be unique."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "content.message",
+                    "displayName": "Content Message",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Required. The message content that you want sent with each message. Use substitution strings and AMPscript to personalize the message."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "status",
+                    "displayName": "Status",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Operational state of the definition: active, inactive, or deleted. A message sent to an active definition is processed and delivered. A message sent to an inactive definition isn’t processed or delivered. Instead, the message is queued for later processing for up to three days."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "description",
+                    "displayName": "Description",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "User-provided description of the send definition."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "subscriptions.shortCode",
+                    "displayName": "Subscriptions Short Code",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Required. The short or long code for the mobile transmissions for each message on this definition."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "subscriptions.countryCode",
+                    "displayName": "Subscriptions Country Code",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "The country code associated with the shortCode for the mobile transmissions for each message on this definition. Don't use for long codes, unless your account configuration requires it."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "subscriptions.keyword",
+                    "displayName": "Subscriptions Keyword",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Required. The keyword used to track messages."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "subscriptions.autoAddSubscriber",
+                    "displayName": "Subscriptions Auto Add Subscriber",
+                    "inputType": "boolean",
+                    "defaultValue": "true",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Allows you to add a recipient as subscriber against the shortCode using contactKey. When false, the message is rejected if contactKey doesn’t exist as a subscriber. Default is true."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "options.urlShortenerOptions.IsLinkShorteningEnabled",
+                    "displayName": "Is Link Shortening Enabled",
+                    "inputType": "boolean",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Indicates if URL shortening is enabled for URLs in the message body. The values are true and false."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "options.urlShortenerOptions.isSubscriberTrackingEnabled",
+                    "displayName": "Is Subscriber Tracking Enabled",
+                    "inputType": "boolean",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Indicates if subscriber level tracking is enabled for URLs in the message body. The values are true and false. The value is true if the value of shortenerType is SFMC."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "options.urlShortenerOptions.shortenerType",
+                    "displayName": "Shortener Type",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "The type of URL shortener. The value is SFMC."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "options.SmsMessageRegulatoryAuthorityTemplateId",
+                    "displayName": "SMS Message Regulatory Authority Template Id",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "The ID of the DLT template used in the SMS. This attribute is available only for customers in India."
                   }
                 }
               ]
