@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ ~  Copyright (c) 2025, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~  WSO2 LLC. licenses this file to you under the Apache License,
+ ~  Version 2.0 (the "License"); you may not use this file except
+ ~  in compliance with the License.
+ ~  You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~  Unless required by applicable law or agreed to in writing,
+ ~  software distributed under the License is distributed on an
+ ~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~  KIND, either express or implied.  See the License for the
+ ~  specific language governing permissions and limitations
+ ~  under the License.
+-->
+
+<template xmlns="http://ws.apache.org/ns/synapse" name="createAsset">
+    <parameter name="inputStructure" description="The type of input data structure. Possible values: FORM or INLINE."/>
+    <parameter name="customerKey" description="Reference to customer's private ID/name for the asset."/>
+    <parameter name="contentType" description="The type that the content attribute will be in."/>
+    <parameter name="data" description="Property bag containing the asset data."/>
+    <parameter name="assetType" description="The type of the asset, stored as a name/ID pair."/>
+    <parameter name="version" description="The version of the asset."/>
+    <parameter name="locked" description="Specifies if the asset can be modified or not."/>
+    <parameter name="fileProperties" description="Stores properties of a file-type asset."/>
+    <parameter name="name" description="Name of the asset (200 characters max)."/>
+    <parameter name="description" description="Description of the asset."/>
+    <parameter name="category" description="ID of the category to which the asset belongs."/>
+    <parameter name="tags" description="List of tags associated with the asset."/>
+    <parameter name="content" description="The actual content of the asset."/>
+    <parameter name="design" description="Fallback display if neither content nor superContent is provided."/>
+    <parameter name="superContent" description="Content that supersedes content in display."/>
+    <parameter name="customFields" description="Custom fields within an asset."/>
+    <parameter name="views" description="Views within the asset."/>
+    <parameter name="blocks" description="Blocks within the asset."/>
+    <parameter name="minBlocks" description="Minimum number of blocks within an asset."/>
+    <parameter name="maxBlocks" description="Maximum number of blocks within an asset."/>
+    <parameter name="channels" description="List of channels that are allowed to use this asset."/>
+    <parameter name="allowedBlocks" description="List of blocks that are allowed in the asset."/>
+    <parameter name="slots" description="Slots within the asset."/>
+    <parameter name="businessUnitAvailability" description="Dictionary of member IDs granted access to the asset."/>
+    <parameter name="sharingProperties"
+               description="Enables content sharing with business units that have Content Builder Sharing enabled."/>
+    <parameter name="sharingProperties.sharedWith" description="List of MID IDs the asset is shared with."/>
+    <parameter name="sharingProperties.sharingType"
+               description="Permission granted to the MIDs in sharedWith (view, edit, or local)."/>
+    <parameter name="template" description="Template the asset follows."/>
+    <parameter name="file" description="Base64-encoded string of a file associated with the asset."/>
+    <parameter name="generateFrom" description="Which view to use for generating content for this asset."/>
+    <parameter name="payload"
+               description="JSON payload required to create the asset (used when inputStructure = INLINE)."/>
+    <parameter name="responseVariable" description="The variable name to store the operation response."/>
+    <parameter name="overwriteBody"
+               description="Replace the Message Body in Message Context with the operation response."/>
+    <sequence>
+        <class name="org.wso2.carbon.salesforce.marketingcloud.connector.PayloadBuilder">
+            <property name="payloadParameters"
+                      value="customerKey,contentType,data,assetType,version,locked,fileProperties,name,description,category,tags,content,design,superContent,customFields,views,blocks,minBlocks,maxBlocks,channels,allowedBlocks,slots,businessUnitAvailability,sharingProperties,sharingProperties.sharedWith,sharingProperties.sharingType,template,file,generateFrom"/>
+            <property name="numericParameters"
+                      value="version,minBlocks,maxBlocks"/>
+            <property name="jsonParameters"
+                      value="data,assetType,fileProperties,category,tags,customFields,views,blocks,channels,allowedBlocks,slots,businessUnitAvailability,sharingProperties,sharingProperties.sharedWith,template"/>
+        </class>
+        <class name="org.wso2.carbon.salesforce.marketingcloud.connector.RestURLBuilder">
+            <property name="operationPath" value="/asset/v1/content/assets"/>
+        </class>
+        <payloadFactory media-type="json" template-type="freemarker">
+            <format><![CDATA[
+${args.arg1}
+            ]]></format>
+            <args>
+                <arg evaluator="xml" expression="$ctx:normalized.parameters"/>
+            </args>
+        </payloadFactory>
+        <property name="DISABLE_CHUNKING" scope="axis2" type="STRING" value="true"/>
+        <property name="messageType" value="application/json" scope="axis2"/>
+        <property name="ContentType" value="application/json" scope="axis2"/>
+        <header name="Accept" value="application/json" scope="transport" action="set"/>
+        <call>
+            <endpoint>
+                <http method="POST" uri-template="{uri.var.base}{+uri.var.urlPath}{+uri.var.urlQuery}"/>
+            </endpoint>
+        </call>
+    </sequence>
+</template>
+

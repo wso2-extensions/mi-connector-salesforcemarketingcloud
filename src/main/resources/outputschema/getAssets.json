@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Output Schema for Get Assets Operation",
+  "description": "Output schema for retrieving a list of assets.",
+  "properties": {
+    "count": {
+      "type": "integer",
+      "description": "Total number of assets."
+    },
+    "page": {
+      "type": "integer",
+      "description": "Current page number."
+    },
+    "pageSize": {
+      "type": "integer",
+      "description": "Number of items per page."
+    },
+    "links": {
+      "type": "object",
+      "description": "Pagination links.",
+      "additionalProperties": true
+    },
+    "items": {
+      "type": "array",
+      "description": "List of asset items.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Unique identifier of the asset."
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the asset."
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of asset."
+          },
+          "owner": {
+            "type": "object",
+            "description": "Owner details.",
+            "additionalProperties": true
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Creation date of the asset."
+          },
+          "modifiedDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Last modification date of the asset."
+          },
+          "status": {
+            "type": "string",
+            "description": "Current status of the asset."
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Additional asset metadata.",
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "type",
+          "owner",
+          "createdDate",
+          "modifiedDate",
+          "status"
+        ],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": [
+    "count",
+    "page",
+    "pageSize",
+    "items"
+  ],
+  "additionalProperties": false
+}

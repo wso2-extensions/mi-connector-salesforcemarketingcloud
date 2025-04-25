@@ -1,0 +1,102 @@
+{
+  "connectorName": "SalesforceMarketingCloud",
+  "operationName": "getJourneys",
+  "title": "Retrieve a list of journeys.",
+  "help": "Retrieve a list of journeys.",
+  "elements": [
+    {
+      "type": "attributeGroup",
+      "value": {
+        "groupName": "General",
+        "elements": [
+          {
+            "type": "attribute",
+            "value": {
+              "name": "configRef",
+              "displayName": "Connection",
+              "inputType": "connection",
+              "allowedConnectionTypes": [
+                "SalesforceMarketingCloud"
+              ],
+              "defaultType": "connection.SalesforceMarketingCloud",
+              "defaultValue": "",
+              "required": "true",
+              "helpTip": "Connection to be used"
+            }
+          },
+          {
+            "type": "attributeGroup",
+            "value": {
+              "groupName": "Parameters",
+              "elements": [
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "page",
+                    "displayName": "Page",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "The page number of results to retrieve."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "pageSize",
+                    "displayName": "Page Size",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "The number of items to return on a page of results."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "orderBy",
+                    "displayName": "Order By",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "The field and sort method to use to sort the results. You can sort on these fields: ModifiedDate, Name, Performance."
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "attributeGroup",
+            "value": {
+              "groupName": "Output",
+              "elements": [
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "responseVariable",
+                    "displayName": "Output Variable Name",
+                    "inputType": "string",
+                    "deriveResponseVariable": "true",
+                    "required": "true",
+                    "helpTip": "Name of the variable to which the output of the operation should be assigned"
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "overwriteBody",
+                    "displayName": "Overwrite Message Body",
+                    "inputType": "checkbox",
+                    "defaultValue": "false",
+                    "helpTip": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable).",
+                    "required": "false"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

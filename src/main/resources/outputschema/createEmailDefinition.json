@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Output Schema for Create Email Definition Operation",
+  "description": "Output schema for the create email definition operation.",
+  "properties": {
+    "requestId": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "definitionKey": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "classification": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "createdDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "modifiedDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "content": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "subscriptions": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "options": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "journey": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "requestId",
+    "name",
+    "definitionKey",
+    "status"
+  ],
+  "additionalProperties": false
+}

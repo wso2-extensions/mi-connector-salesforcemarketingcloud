@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ ~  Copyright (c) 2025, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~  WSO2 LLC. licenses this file to you under the Apache License,
+ ~  Version 2.0 (the "License"); you may not use this file except
+ ~  in compliance with the License.
+ ~  You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~  Unless required by applicable law or agreed to in writing,
+ ~  software distributed under the License is distributed on an
+ ~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~  KIND, either express or implied.  See the License for the
+ ~  specific language governing permissions and limitations
+ ~  under the License.
+-->
+
+<template xmlns="http://ws.apache.org/ns/synapse" name="getCategories">
+    <parameter name="page" description="Page number to return from the paged results."/>
+    <parameter name="pagesize" description="Number of results per page to return."/>
+    <parameter name="orderBy" description="Determines which category property to use for sorting, and also determines the direction in which to sort the data."/>
+    <parameter name="filter" description="Filter by ParentId using a simple operator and value."/>
+    <parameter name="responseVariable" description="The name of the variable to which the response should be stored."/>
+    <parameter name="overwriteBody" description="Replace the Message Body in Message Context with the response of the operation."/>
+    <sequence>
+        <class name="org.wso2.carbon.salesforce.marketingcloud.connector.RestURLBuilder">
+            <property name="operationPath" value="/asset/v1/content/categories"/>
+            <property name="queryParameters" value="page,pagesize,orderBy,filter,"/>
+        </class>
+        <header name="Accept" value="application/json" scope="transport" action="set"/>
+        <call>
+            <endpoint>
+                <http method="GET" uri-template="{uri.var.base}{+uri.var.urlPath}{+uri.var.urlQuery}"/>
+            </endpoint>
+        </call>
+    </sequence>
+</template>

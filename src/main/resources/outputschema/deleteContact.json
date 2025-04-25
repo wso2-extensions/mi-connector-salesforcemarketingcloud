@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Output Schema for Delete Contact Operation",
+  "description": "Output schema for deleting a contact.",
+  "properties": {
+    "suppressionType": {
+      "type": "string"
+    },
+    "operationInitiated": {
+      "type": "boolean"
+    },
+    "operationID": {
+      "type": "integer"
+    },
+    "priority": {
+      "type": "string"
+    },
+    "requestServiceMessageID": {
+      "type": "string"
+    },
+    "responseDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "hasErrors": {
+      "type": "boolean"
+    },
+    "resultMessages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "serviceMessageID": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "suppressionType",
+    "operationInitiated",
+    "operationID",
+    "priority",
+    "requestServiceMessageID",
+    "responseDateTime",
+    "hasErrors",
+    "resultMessages",
+    "serviceMessageID"
+  ],
+  "additionalProperties": false
+}

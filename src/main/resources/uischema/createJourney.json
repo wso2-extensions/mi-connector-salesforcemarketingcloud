@@ -1,0 +1,212 @@
+{
+  "connectorName": "SalesforceMarketingCloud",
+  "operationName": "createJourney",
+  "title": "Creates or saves a journey.",
+  "help": "Creates or saves a journey.",
+  "elements": [
+    {
+      "type": "attributeGroup",
+      "value": {
+        "groupName": "General",
+        "elements": [
+          {
+            "type": "attribute",
+            "value": {
+              "name": "configRef",
+              "displayName": "Connection",
+              "inputType": "connection",
+              "allowedConnectionTypes": [
+                "SalesforceMarketingCloud"
+              ],
+              "defaultType": "connection.SalesforceMarketingCloud",
+              "defaultValue": "",
+              "required": "true",
+              "helpTip": "Connection to be used"
+            }
+          },
+          {
+            "type": "attribute",
+            "value": {
+              "name": "inputStructure",
+              "displayName": "Input Data Structure",
+              "inputType": "comboOrExpression",
+              "comboValues": [
+                "FORM",
+                "INLINE"
+              ],
+              "defaultValue": "FORM",
+              "required": "false",
+              "helpTip": "The type of input data structure."
+            }
+          },
+          {
+            "type": "attributeGroup",
+            "value": {
+              "groupName": "Request Body",
+              "elements": [
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "payload",
+                    "displayName": "Payload",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "{\n    \"key\": \"ixn-created-via-the-api\",\n    \"name\": \"API-Created journey\",\n    \"workflowApiVersion\": 1.0,\n    \"triggers\": [],\n    \"goals\": [],\n    \"activities\": []\n}",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "INLINE"
+                      }
+                    ],
+                    "helpTip": "The properties required to create a new journey."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "key",
+                    "displayName": "Key",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Required. The customer key as a GUID (UUID) to be used while referencing this journey."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "name",
+                    "displayName": "Name",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Required. The name of this journey."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "description",
+                    "displayName": "Description",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "A description of this journey."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "workflowApiVersion",
+                    "displayName": "Workflow API Version",
+                    "inputType": "number",
+                    "defaultValue": "",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Required. The Journey Spec version to use for this journey. Possible values: 0.5, 1.0."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "goals",
+                    "displayName": "Goals",
+                    "inputType": "array",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "The goal for this particular journey. Expressed as an object of type ContactDecision from the Journey Spec."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "triggers",
+                    "displayName": "Triggers",
+                    "inputType": "array",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "The trigger for this particular journey. Expressed as an object of type ContactEvent from the Journey Spec."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "activities",
+                    "displayName": "Activities",
+                    "inputType": "array",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "The activities which compose this particular journey. Expressed as objects of types supported by the Journey Spec."
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "attributeGroup",
+            "value": {
+              "groupName": "Output",
+              "elements": [
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "responseVariable",
+                    "displayName": "Output Variable Name",
+                    "inputType": "string",
+                    "deriveResponseVariable": "true",
+                    "required": "true",
+                    "helpTip": "Name of the variable to which the output of the operation should be assigned"
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "overwriteBody",
+                    "displayName": "Overwrite Message Body",
+                    "inputType": "checkbox",
+                    "defaultValue": "false",
+                    "helpTip": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable).",
+                    "required": "false"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

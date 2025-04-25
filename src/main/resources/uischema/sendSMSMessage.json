@@ -1,0 +1,179 @@
+{
+  "connectorName": "SalesforceMarketingCloud",
+  "operationName": "sendSmsMessage",
+  "title": "Send SMS Message",
+  "help": "Sends an SMS message to multiple recipients using a send definition.",
+  "elements": [
+    {
+      "type": "attributeGroup",
+      "value": {
+        "groupName": "General",
+        "elements": [
+          {
+            "type": "attribute",
+            "value": {
+              "name": "configRef",
+              "displayName": "Connection",
+              "inputType": "connection",
+              "allowedConnectionTypes": [
+                "SalesforceMarketingCloud"
+              ],
+              "defaultType": "connection.SalesforceMarketingCloud",
+              "defaultValue": "",
+              "required": "true",
+              "helpTip": "Connection to be used"
+            }
+          },
+          {
+            "type": "attribute",
+            "value": {
+              "name": "inputStructure",
+              "displayName": "Input Data Structure",
+              "inputType": "comboOrExpression",
+              "comboValues": [
+                "FORM",
+                "INLINE"
+              ],
+              "defaultValue": "FORM",
+              "required": "false",
+              "helpTip": "The type of input data structure."
+            }
+          },
+          {
+            "type": "attributeGroup",
+            "value": {
+              "groupName": "Request Body",
+              "elements": [
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "payload",
+                    "displayName": "Payload",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "{\n    \"definitionKey\": \"SEND_DEFINITION\",\n    \"recipients\": [\n        {\n            \"contactKey\": \"Astro25\",\n            \"to\": \"15555551234\",\n            \"messageKey\": \"nFL4ULgheUeaGbPIMzJJSw\",\n            \"attributes\": {\n                \"FirstName\": \"Astro\",\n                \"Password\": \"1234567\"\n            }\n        },\n        {\n            \"contactKey\": \"Codey36\",\n            \"to\": \"15555554321\",\n            \"messageKey\": \"GV1LhQ6NFkqFUAE1IsoQ9Q\",\n            \"attributes\": {\n                \"FirstName\": \"Code\",\n                \"Password\": \"2345678\"\n            }\n        }\n    ],\n    \"attributes\": {\n        \"RequestTrackingAttribute\": \"2\"\n    }\n}",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "INLINE"
+                      }
+                    ],
+                    "helpTip": "The properties required to send SMS message."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "definitionKey",
+                    "displayName": "Definition Key",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "The ID of the send definition."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "recipients",
+                    "displayName": "Recipients",
+                    "inputType": "stringOrExpression",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "An array of recipient objects that contain tracking and personalization metadata."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "subscriptions",
+                    "displayName": "Force Resubscribe",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "false",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Resubscribe the recipient even if previously opted out."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "content",
+                    "displayName": "Message Content Override",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Overrides content in send definition. Supports substitution strings."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "attributes",
+                    "displayName": "Global Attributes",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Key-value pairs used to personalize the message globally."
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "attributeGroup",
+            "value": {
+              "groupName": "Output",
+              "elements": [
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "responseVariable",
+                    "displayName": "Output Variable Name",
+                    "inputType": "string",
+                    "deriveResponseVariable": "true",
+                    "required": "true",
+                    "helpTip": "Name of the variable to which the output of the operation should be assigned"
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "overwriteBody",
+                    "displayName": "Overwrite Message Body",
+                    "inputType": "checkbox",
+                    "defaultValue": "false",
+                    "helpTip": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable).",
+                    "required": "false"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

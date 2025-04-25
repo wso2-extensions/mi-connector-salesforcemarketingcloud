@@ -1,0 +1,575 @@
+{
+  "connectorName": "SalesforceMarketingCloud",
+  "operationName": "updateAsset",
+  "title": "Update Asset",
+  "help": "Updates a full asset.",
+  "elements": [
+    {
+      "type": "attributeGroup",
+      "value": {
+        "groupName": "General",
+        "elements": [
+          {
+            "type": "attribute",
+            "value": {
+              "name": "configRef",
+              "displayName": "Connection",
+              "inputType": "connection",
+              "allowedConnectionTypes": [
+                "SalesforceMarketingCloud"
+              ],
+              "defaultType": "connection.SalesforceMarketingCloud",
+              "defaultValue": "",
+              "required": "true",
+              "helpTip": "Connection to be used"
+            }
+          },
+          {
+            "type": "attribute",
+            "value": {
+              "name": "inputStructure",
+              "displayName": "Input Data Structure",
+              "inputType": "comboOrExpression",
+              "comboValues": [
+                "FORM",
+                "INLINE"
+              ],
+              "defaultValue": "FORM",
+              "required": "false",
+              "helpTip": "The type of input data structure."
+            }
+          },
+          {
+            "type": "attributeGroup",
+            "value": {
+              "groupName": "Request Body",
+              "elements": [
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "assetId",
+                    "displayName": "Asset ID",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "helpTip": "The ID of the asset to be updated."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "payload",
+                    "displayName": "Payload",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "{\n    \"assetType\": {\n        \"name\": \"htmlemail\",\n        \"id\": 208\n    },\n    \"name\": \"Example Email Created via API\",\n    \"customerKey\": \"MyUniqueEmailAssetKey\",\n    \"views\": {\n        \"html\": {\n            \"content\": \"<html><body><p>Hello, this is an email from the SFMC API!</p></body></html>\"\n        }\n    }\n}",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "INLINE"
+                      }
+                    ],
+                    "helpTip": "The JSON payload required to create a new asset."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "customerKey",
+                    "displayName": "Customer Key",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Reference to customer's private ID/name for the asset."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "contentType",
+                    "displayName": "Content Type",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "The type that the content attribute will be in."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "data",
+                    "displayName": "Data",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Property bag containing the asset data."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "assetType",
+                    "displayName": "Asset Type",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "The type of the asset saved as a name/ID pair."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "version",
+                    "displayName": "Version",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "The version of the asset."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "locked",
+                    "displayName": "Locked",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Specifies if the asset can be modified or not."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "fileProperties",
+                    "displayName": "File Properties",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Stores the different properties that this asset refers to if it is a file type."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "name",
+                    "displayName": "Name",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Name of the asset, set by the client. 200 character maximum."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "description",
+                    "displayName": "Description",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Description of the asset, set by the client."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "category",
+                    "displayName": "Category",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "ID of the category the asset belongs to."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "tags",
+                    "displayName": "Tags",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "List of tags associated with the asset."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "content",
+                    "displayName": "Content",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "The actual content of the asset."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "design",
+                    "displayName": "Design",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Fallback for display when neither content nor supercontent are provided."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "superContent",
+                    "displayName": "Super Content",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Content that supersedes content in terms of display."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "customFields",
+                    "displayName": "Custom Fields",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Custom fields within an asset."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "views",
+                    "displayName": "Views",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Views within an asset."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "blocks",
+                    "displayName": "Blocks",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Blocks within the asset."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "minBlocks",
+                    "displayName": "Minimum Blocks",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Minimum number of blocks within an asset."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "maxBlocks",
+                    "displayName": "Maximum Blocks",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Maximum number of blocks within an asset."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "channels",
+                    "displayName": "Channels",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "List of channels that are allowed to use this asset."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "allowedBlocks",
+                    "displayName": "Allowed Blocks",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "List of blocks that are allowed in the asset."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "slots",
+                    "displayName": "Slots",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Slots within the asset."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "businessUnitAvailability",
+                    "displayName": "Business Unit Availability",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "A dictionary of member IDs that have been granted access to the asset."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "template",
+                    "displayName": "Template",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Template the asset follows."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "file",
+                    "displayName": "File",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Base64-encoded string of a file associated with an asset."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "generateFrom",
+                    "displayName": "Generate From",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Tells the sending compiler what view to use for generating this view's content."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "sharingProperties",
+                    "displayName": "Sharing Properties",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Allows you to share content with one or more business units that have Content Builder Sharing enabled."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "sharingProperties.sharedWith",
+                    "displayName": "Shared With",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "List of MID IDs the asset is shared with."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "sharingProperties.sharingType",
+                    "displayName": "Sharing Type",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Indicates the permission that you are granting to the list of MIDs in sharedWith. Possible values are view, edit, or local."
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "attributeGroup",
+            "value": {
+              "groupName": "Output",
+              "elements": [
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "responseVariable",
+                    "displayName": "Output Variable Name",
+                    "inputType": "string",
+                    "deriveResponseVariable": "true",
+                    "required": "true",
+                    "helpTip": "Name of the variable to which the output of the operation should be assigned"
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "overwriteBody",
+                    "displayName": "Overwrite Message Body",
+                    "inputType": "checkbox",
+                    "defaultValue": "false",
+                    "helpTip": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable).",
+                    "required": "false"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

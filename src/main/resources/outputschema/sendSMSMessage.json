@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Output Schema for Send SMS Message Operation",
+  "description": "Output schema for sending an SMS message.",
+  "properties": {
+    "requestId": {
+      "type": "string",
+      "description": "Unique identifier for the SMS request."
+    },
+    "errorcode": {
+      "type": "integer",
+      "description": "Error code for the request, with 0 indicating success."
+    },
+    "responses": {
+      "type": "array",
+      "description": "List of responses for the SMS message operation.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "messageKey": {
+            "type": "string",
+            "description": "Unique key for the sent SMS message."
+          }
+        },
+        "required": [
+          "messageKey"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "requestId",
+    "errorcode",
+    "responses"
+  ],
+  "additionalProperties": false
+}

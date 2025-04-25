@@ -1,0 +1,244 @@
+{
+  "connectorName": "SalesforceMarketingCloud",
+  "operationName": "createCategory",
+  "title": "Create Category",
+  "help": "Creates a category (folder) in Content Builder.",
+  "elements": [
+    {
+      "type": "attributeGroup",
+      "value": {
+        "groupName": "General",
+        "elements": [
+          {
+            "type": "attribute",
+            "value": {
+              "name": "configRef",
+              "displayName": "Connection",
+              "inputType": "connection",
+              "allowedConnectionTypes": [
+                "SalesforceMarketingCloud"
+              ],
+              "defaultType": "connection.SalesforceMarketingCloud",
+              "defaultValue": "",
+              "required": "true",
+              "helpTip": "Connection to be used"
+            }
+          },
+          {
+            "type": "attribute",
+            "value": {
+              "name": "inputStructure",
+              "displayName": "Input Data Structure",
+              "inputType": "comboOrExpression",
+              "comboValues": [
+                "FORM",
+                "INLINE"
+              ],
+              "defaultValue": "FORM",
+              "required": "false",
+              "helpTip": "The type of input data structure."
+            }
+          },
+          {
+            "type": "attributeGroup",
+            "value": {
+              "groupName": "Request Body",
+              "elements": [
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "payload",
+                    "displayName": "Payload",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "{\n    \"Id\": 27,\n    \"Name\": \"My Pictures\",\n    \"ParentId\": 99,\n    \"CategoryType\": \"asset\",\n    \"MemberId\": 1500,\n    \"EnterpriseId\": 1575\n}",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "INLINE"
+                      }
+                    ],
+                    "helpTip": "The properties required to create a new category."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "name",
+                    "displayName": "Name",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Required. Name of the category."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "parentId",
+                    "displayName": "Parent ID",
+                    "inputType": "number",
+                    "defaultValue": "",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Required. ID of the parent category."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "categoryType",
+                    "displayName": "CategoryType",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "The type of category, either asset or asset-shared, which is automatically set to the CategoryType of the parent category. If set to asset-shared, include the SharingProperties in the call."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "enterpriseId",
+                    "displayName": "Enterprise ID",
+                    "inputType": "number",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "ID of the enterprise this business unit belongs to."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "memberId",
+                    "displayName": "Member ID",
+                    "inputType": "number",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "ID of the member who creates the category."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "description",
+                    "displayName": "Description",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Description of the category."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "sharingProperties",
+                    "displayName": "Sharing Properties",
+                    "inputType": "object",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Allows you to share categories with one or more business units that have Content Builder Sharing enabled. Stores the MIDs of business units this category is shared with and the sharing type."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "sharingProperties.sharedWith",
+                    "displayName": "Shared With",
+                    "inputType": "object",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "List of up to 100 MID IDs the category is shared with. To share the category with all business units in the enterprise, and if your account has access to Content Builder Across Enterprise Sharing, set this to 0."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "sharingProperties.sharingType",
+                    "displayName": "Sharing Type",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Indicates the permission that you are granting to the list of MIDs in SharedWith. The only possible value for categories is edit."
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "attributeGroup",
+            "value": {
+              "groupName": "Output",
+              "elements": [
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "responseVariable",
+                    "displayName": "Output Variable Name",
+                    "inputType": "string",
+                    "deriveResponseVariable": "true",
+                    "required": "true",
+                    "helpTip": "Name of the variable to which the output of the operation should be assigned"
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "overwriteBody",
+                    "displayName": "Overwrite Message Body",
+                    "inputType": "checkbox",
+                    "defaultValue": "false",
+                    "helpTip": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable).",
+                    "required": "false"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

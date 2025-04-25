@@ -1,0 +1,147 @@
+{
+  "connectorName": "SalesforceMarketingCloud",
+  "operationName": "sendEmailMessage",
+  "title": "Send Email Message",
+  "help": "Sends a message to multiple recipients using a send definition.",
+  "elements": [
+    {
+      "type": "attributeGroup",
+      "value": {
+        "groupName": "General",
+        "elements": [
+          {
+            "type": "attribute",
+            "value": {
+              "name": "configRef",
+              "displayName": "Connection",
+              "inputType": "connection",
+              "allowedConnectionTypes": [
+                "SalesforceMarketingCloud"
+              ],
+              "defaultType": "connection.SalesforceMarketingCloud",
+              "defaultValue": "",
+              "required": "true",
+              "helpTip": "Connection to be used"
+            }
+          },
+          {
+            "type": "attribute",
+            "value": {
+              "name": "inputStructure",
+              "displayName": "Input Data Structure",
+              "inputType": "comboOrExpression",
+              "comboValues": [
+                "FORM",
+                "INLINE"
+              ],
+              "defaultValue": "FORM",
+              "required": "false",
+              "helpTip": "The type of input data structure."
+            }
+          },
+          {
+            "type": "attributeGroup",
+            "value": {
+              "groupName": "Request Body",
+              "elements": [
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "payload",
+                    "displayName": "Payload",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "{\n    \"definitionKey\": \"2FA_order_accounts\",\n    \"recipients\": [\n        {\n            \"contactKey\": \"recipient1\",\n            \"to\": \"recipient1@example.com\",\n            \"messageKey\": \"nFL4ULgheUeaGbPIMzJJSw\",\n            \"attributes\": {\n                \"RequestAttribute_1\": \"value_1\",\n                \"RequestAttribute_2\": \"value_2\",\n                \"Attribute1\": \"This is one for recipient1\",\n                \"Attribute2\": \"This is two for recipient1\"\n            }\n        },\n        {\n            \"contactKey\": \"recipient2\",\n            \"to\": \"recipient2@example.com\",\n            \"messageKey\": \"GV1LhQ6NFkqFUAE1IsoQ9Q\",\n            \"attributes\": {\n                \"UserAttribute\": \"value_3\"\n            }\n        }\n    ],\n    \"attributes\": {\n        \"UserAttribute_a\": \"value_a\",\n        \"UserAttribute_b\": \"value_b\"\n    }\n}",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "INLINE"
+                      }
+                    ],
+                    "helpTip": "The properties required to send an e-mail message."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "definitionKey",
+                    "displayName": "Definition Key",
+                    "inputType": "string",
+                    "defaultValue": "",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "The ID of the send definition."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "recipients",
+                    "displayName": "Recipients",
+                    "inputType": "object",
+                    "required": "true",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Recipient parameters and metadata. Cannot be used with single recipient array."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "attributes",
+                    "displayName": "Attributes",
+                    "inputType": "object",
+                    "defaultValue": "",
+                    "required": "false",
+                    "enableCondition": [
+                      {
+                        "inputStructure": "FORM"
+                      }
+                    ],
+                    "helpTip": "Personalization attributes for the message as key-value pairs."
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "attributeGroup",
+            "value": {
+              "groupName": "Output",
+              "elements": [
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "responseVariable",
+                    "displayName": "Output Variable Name",
+                    "inputType": "string",
+                    "deriveResponseVariable": "true",
+                    "required": "true",
+                    "helpTip": "Name of the variable to which the output of the operation should be assigned"
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "overwriteBody",
+                    "displayName": "Overwrite Message Body",
+                    "inputType": "checkbox",
+                    "defaultValue": "false",
+                    "helpTip": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable).",
+                    "required": "false"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

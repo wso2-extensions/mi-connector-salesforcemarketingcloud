@@ -1,0 +1,81 @@
+{
+  "connectorName": "SalesforceMarketingCloud",
+  "connectionName": "SalesforceMarketingCloud",
+  "title": "Salesforce Marketing Cloud Connection",
+  "help": "<h1>Salesforce Marketing Cloud Connection</h1> <b>The Salesforce Marketing Cloud Connector allows you to access the REST API of Salesforce MarketingCloud.</b>",
+  "testConnectionEnabled": true,
+  "elements": [
+    {
+      "type": "attribute",
+      "value": {
+        "name": "connectionName",
+        "displayName": "Connection Name",
+        "inputType": "string",
+        "defaultValue": "SFMC_1",
+        "required": "true",
+        "helpTip": "The name for the Salesforce Marketing Cloud connection.",
+        "validation": "nameWithoutSpecialCharactors"
+      }
+    },
+    {
+      "type": "attributeGroup",
+      "value": {
+        "groupName": "General",
+        "elements": [
+          {
+            "type": "attributeGroup",
+            "value": {
+              "groupName": "Basic",
+              "elements": [
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "subdomain",
+                    "displayName": "Sub Domain",
+                    "inputType": "string",
+                    "defaultValue": "",
+                    "required": "true",
+                    "helpTip": "Your Salesforce Marketing Cloud sub domain."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "clientId",
+                    "displayName": "Client ID",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "helpTip": "Client ID issued when you create the API integration in Installed Packages."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "clientSecret",
+                    "displayName": "Client Secret",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "true",
+                    "helpTip": "Client secret issued when you create the API integration in Installed Packages."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "accountId",
+                    "displayName": "Account ID",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "Account identifier, or MID, of the target business unit."
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

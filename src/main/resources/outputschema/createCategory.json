@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Output Schema for Create Category Operation",
+  "description": "Output schema for the create category operation.",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Unique identifier of the category."
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the category."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the category."
+    },
+    "enterpriseId": {
+      "type": "integer",
+      "description": "Enterprise ID associated with the category."
+    },
+    "memberId": {
+      "type": "integer",
+      "description": "Member ID associated with the category."
+    },
+    "parentId": {
+      "type": "integer",
+      "description": "ID of the parent category."
+    },
+    "categoryType": {
+      "type": "string",
+      "description": "Type of the category (e.g., asset)."
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "enterpriseId",
+    "memberId",
+    "categoryType"
+  ],
+  "additionalProperties": false
+}

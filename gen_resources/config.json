@@ -1,0 +1,17 @@
+{
+    "connectors": [
+        {
+            "connectorName": "SalesforceMarketingCloud",
+            "auth": "none",
+            "openapiSpecificationPath": [
+                "./sfmc.json"
+            ],
+            "project": {
+                "groupId": "org.wso2.carbon.esb.connector",
+                "artifactId": "SalesforceMarketingCloud",
+                "version": "1.0.0-SNAPSHOT"
+            },
+            "iconFolderPath": ""
+        }
+    ]
+}

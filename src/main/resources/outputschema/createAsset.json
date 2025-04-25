@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Output Schema for Create Asset Operation",
+  "description": "Output schema for the create asset operation.",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Unique identifier of the asset."
+    },
+    "customerKey": {
+      "type": "string",
+      "description": "Customer key associated with the asset."
+    },
+    "objectID": {
+      "type": "string",
+      "description": "Object ID of the asset."
+    },
+    "contentType": {
+      "type": "string",
+      "description": "Content type of the asset."
+    },
+    "assetType": {
+      "type": "object",
+      "description": "Type of the asset.",
+      "additionalProperties": true
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the asset."
+    },
+    "owner": {
+      "type": "object",
+      "description": "Details of the owner.",
+      "additionalProperties": true
+    },
+    "createdDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Creation date of the asset."
+    },
+    "modifiedDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last modification date of the asset."
+    },
+    "status": {
+      "type": "object",
+      "description": "Current status of the asset.",
+      "additionalProperties": true
+    },
+    "thumbnail": {
+      "type": "object",
+      "description": "Thumbnail details.",
+      "additionalProperties": true
+    },
+    "category": {
+      "type": "object",
+      "description": "Category details.",
+      "additionalProperties": true
+    },
+    "views": {
+      "type": "object",
+      "description": "Different views available for the asset.",
+      "additionalProperties": true
+    },
+    "availableViews": {
+      "type": "array",
+      "description": "Available views for the asset.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "data": {
+      "type": "object",
+      "description": "Additional asset data.",
+      "additionalProperties": true
+    },
+    "legacyData": {
+      "type": "object",
+      "description": "Legacy data related to the asset.",
+      "additionalProperties": true
+    },
+    "modelVersion": {
+      "type": "integer",
+      "description": "Model version of the asset."
+    }
+  },
+  "required": [
+    "id",
+    "customerKey",
+    "objectID",
+    "contentType",
+    "name",
+    "createdDate",
+    "modifiedDate",
+    "status",
+    "modelVersion"
+  ],
+  "additionalProperties": false
+}

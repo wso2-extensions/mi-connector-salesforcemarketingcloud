@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ ~  Copyright (c) 2025, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~  WSO2 LLC. licenses this file to you under the Apache License,
+ ~  Version 2.0 (the "License"); you may not use this file except
+ ~  in compliance with the License.
+ ~  You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~  Unless required by applicable law or agreed to in writing,
+ ~  software distributed under the License is distributed on an
+ ~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~  KIND, either express or implied.  See the License for the
+ ~  specific language governing permissions and limitations
+ ~  under the License.
+-->
+
+<template xmlns="http://ws.apache.org/ns/synapse" name="createCategory">
+    <parameter name="inputStructure" description="The type of input data structure. Possible values: FORM or INLINE."/>
+    <parameter name="payload" description="The properties required to create the category."/>
+    <parameter name="responseVariable" description="The name of the variable to which the response should be stored."/>
+    <parameter name="overwriteBody"
+               description="Replace the Message Body in Message Context with the response of the operation."/>
+    <parameter name="name" description="Required. Name of the category."/>
+    <parameter name="parentId" description="Required. ID of the parent category."/>
+    <parameter name="categoryType"
+               description="The type of category, either asset or asset-shared, automatically set to the CategoryType of the parent category. If set to asset-shared, include the SharingProperties in the call."/>
+    <parameter name="enterpriseId" description="ID of the enterprise this business unit belongs to."/>
+    <parameter name="memberId" description="ID of the member who creates the category."/>
+    <parameter name="sharingProperties"
+               description="Allows you to share categories with one or more business units that have Content Builder Sharing enabled. See Sharing for additional information. Stores the MIDs of business units this category is shared with and the sharing type. Only included in the response if CategoryType is asset-shared."/>
+    <parameter name="sharingProperties.sharedWith"
+               description="List of up to 100 MID IDs the category is shared with. To share the category with all business units in the enterprise, and if your account has access to Content Builder Across Enterprise Sharing, set this to 0. SharedWith can’t contain 0 and other MIDs simultaneously. Since shared categories live in and are owned by the enterprise business unit, don't include the enterprise business unit in the SharedWith property."/>
+    <parameter name="sharingProperties.sharingType"
+               description="Indicates the permission that you are granting to the list of MIDs in sharedWith. The only possible value for categories is edit."/>
+    <parameter name="description" description="Description of the category."/>
+    <sequence>
+        <class name="org.wso2.carbon.salesforce.marketingcloud.connector.PayloadBuilder">
+            <property name="payloadParameters"
+                      value="name,parentId,categoryType,enterpriseId,memberId,sharingProperties,sharingProperties.sharedWith,sharingProperties.sharingType,description"/>
+            <property name="numericParameters" value="parentId,enterpriseId,memberId"/>
+            <property name="jsonParameters" value="sharingProperties,sharingProperties.sharedWith"/>
+        </class>
+        <class name="org.wso2.carbon.salesforce.marketingcloud.connector.RestURLBuilder">
+            <property name="operationPath" value="/asset/v1/content/categories"/>
+        </class>
+        <payloadFactory media-type="json" template-type="freemarker">
+            <format><![CDATA[
+${args.arg1}
+            ]]></format>
+            <args>
+                <arg evaluator="xml" expression="$ctx:normalized.parameters"/>
+            </args>
+        </payloadFactory>
+        <property name="DISABLE_CHUNKING" scope="axis2" type="STRING" value="true"/>
+        <property name="messageType" value="application/json" scope="axis2"/>
+        <property name="ContentType" value="application/json" scope="axis2"/>
+        <header name="Accept" value="application/json" scope="transport" action="set"/>
+        <call>
+            <endpoint>
+                <http method="POST" uri-template="{uri.var.base}{+uri.var.urlPath}{+uri.var.urlQuery}"/>
+            </endpoint>
+        </call>
+    </sequence>
+</template>

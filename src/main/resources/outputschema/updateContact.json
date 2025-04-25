@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Output Schema for Update Contact Operation",
+  "description": "Output schema for updating a contact.",
+  "properties": {
+    "operationStatus": {
+      "type": "string",
+      "description": "Status of the operation (e.g., OK)."
+    },
+    "rowsAffected": {
+      "type": "integer",
+      "description": "Number of rows affected by the update."
+    },
+    "contactKey": {
+      "type": "string",
+      "description": "Unique key of the contact."
+    },
+    "contactId": {
+      "type": "integer",
+      "description": "The system-generated contact ID."
+    },
+    "contactTypeID": {
+      "type": "integer",
+      "description": "Type ID of the contact."
+    },
+    "isNewContactKey": {
+      "type": "boolean",
+      "description": "Indicates if the contact key is newly created."
+    },
+    "requestServiceMessageID": {
+      "type": "string",
+      "description": "ID of the request service message."
+    },
+    "hasErrors": {
+      "type": "boolean",
+      "description": "Indicates whether the update operation encountered errors."
+    },
+    "resultMessages": {
+      "type": "array",
+      "description": "Array of result messages.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "serviceMessageID": {
+      "type": "string",
+      "description": "ID of the service message."
+    }
+  },
+  "required": [
+    "operationStatus",
+    "rowsAffected",
+    "contactKey",
+    "contactId",
+    "isNewContactKey",
+    "hasErrors"
+  ],
+  "additionalProperties": false
+}

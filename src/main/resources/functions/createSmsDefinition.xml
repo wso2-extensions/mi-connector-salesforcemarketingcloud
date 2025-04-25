@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ ~  Copyright (c) 2025, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~  WSO2 LLC. licenses this file to you under the Apache License,
+ ~  Version 2.0 (the "License"); you may not use this file except
+ ~  in compliance with the License.
+ ~  You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~  Unless required by applicable law or agreed to in writing,
+ ~  software distributed under the License is distributed on an
+ ~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~  KIND, either express or implied.  See the License for the
+ ~  specific language governing permissions and limitations
+ ~  under the License.
+-->
+
+<template xmlns="http://ws.apache.org/ns/synapse" name="createSmsDefinition">
+    <parameter name="inputStructure" description="The type of input data structure. Possible values: FORM or INLINE."/>
+    <parameter name="payload" description="The properties required to create the SMS definition."/>
+    <parameter name="responseVariable" description="The name of the variable to which the response should be stored."/>
+    <parameter name="overwriteBody"
+               description="Replace the Message Body in Message Context with the response of the operation."/>
+    <parameter name="definitionKey"
+               description="Required. Unique, user-generated key to access the definition object."/>
+    <parameter name="name" description="Required. Name of the definition. Must be unique."/>
+    <parameter name="content.message"
+               description="Required. The message content that you want sent with each message. Use substitution strings and AMPscript to personalize the message."/>
+    <parameter name="status"
+               description="Operational state of the definition: active, inactive, or deleted. A message sent to an active definition is processed and delivered. A message sent to an inactive definition isn’t processed or delivered. Instead, the message is queued for later processing for up to three days."/>
+    <parameter name="description" description="User-provided description of the send definition."/>
+    <parameter name="subscriptions.shortCode"
+               description="Required. The short or long code for the mobile transmissions for each message on this definition."/>
+    <parameter name="subscriptions.countryCode"
+               description="The country code associated with the shortCode for the mobile transmissions for each message on this definition. Don't use for long codes, unless your account configuration requires it."/>
+    <parameter name="subscriptions.keyword" description="Required. The keyword used to track messages."/>
+    <parameter name="subscriptions.autoAddSubscriber"
+               description="Allows you to add a recipient as subscriber against the shortCode using contactKey. When false, the message is rejected if contactKey doesn’t exist as a subscriber. Default is true."/>
+    <parameter name="options.urlShortenerOptions.IsLinkShorteningEnabled"
+               description="Indicates if URL shortening is enabled for URLs in the message body. The values are true and false."/>
+    <parameter name="options.urlShortenerOptions.isSubscriberTrackingEnabled"
+               description="Indicates if subscriber level tracking is enabled for URLs in the message body. The values are true and false. The value is true if the value of shortenerType is SFMC."/>
+    <parameter name="options.urlShortenerOptions.shortenerType"
+               description="The type of URL shortener. The values is SFMC."/>
+    <parameter name="options.SmsMessageRegulatoryAuthorityTemplateId"
+               description="The ID of the DLT template used in the SMS. This attribute is available only for customers in India."/>
+    <sequence>
+        <class name="org.wso2.carbon.salesforce.marketingcloud.connector.PayloadBuilder">
+            <property name="payloadParameters"
+                      value="definitionKey,name,content.message,status,description,subscriptions.shortCode,subscriptions.countryCode,subscriptions.keyword,subscriptions.autoAddSubscriber,options.urlShortenerOptions.IsLinkShorteningEnabled,options.urlShortenerOptions.isSubscriberTrackingEnabled,options.urlShortenerOptions.shortenerType,options.SmsMessageRegulatoryAuthorityTemplateId"/>
+        </class>
+        <class name="org.wso2.carbon.salesforce.marketingcloud.connector.RestURLBuilder">
+            <property name="operationPath" value="/messaging/v1/sms/definitions"/>
+        </class>
+        <payloadFactory media-type="json" template-type="freemarker">
+            <format><![CDATA[
+${args.arg1}
+            ]]></format>
+            <args>
+                <arg evaluator="xml" expression="$ctx:normalized.parameters"/>
+            </args>
+        </payloadFactory>
+        <property name="DISABLE_CHUNKING" scope="axis2" type="STRING" value="true"/>
+        <property name="messageType" value="application/json" scope="axis2"/>
+        <property name="ContentType" value="application/json" scope="axis2"/>
+        <header name="Accept" value="application/json" scope="transport" action="set"/>
+        <call>
+            <endpoint>
+                <http method="POST" uri-template="{uri.var.base}{+uri.var.urlPath}{+uri.var.urlQuery}"/>
+            </endpoint>
+        </call>
+    </sequence>
+</template>

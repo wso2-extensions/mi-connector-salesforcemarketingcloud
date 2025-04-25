@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Output Schema for Create Journey Operation",
+  "description": "Output schema for the create journey operation.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the journey."
+    },
+    "key": {
+      "type": "string",
+      "description": "Key of the journey."
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the journey."
+    },
+    "lastPublishedDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last published date of the journey."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the journey."
+    },
+    "version": {
+      "type": "integer",
+      "description": "Version of the journey."
+    },
+    "workflowApiVersion": {
+      "type": "number",
+      "description": "Workflow API version."
+    },
+    "createdDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Creation date of the journey."
+    },
+    "modifiedDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last modification date of the journey."
+    },
+    "entryMode": {
+      "type": "string",
+      "description": "Entry mode of the journey."
+    },
+    "definitionType": {
+      "type": "string",
+      "description": "Definition type of the journey."
+    },
+    "defaults": {
+      "type": "object",
+      "description": "Default settings.",
+      "additionalProperties": true
+    },
+    "metaData": {
+      "type": "object",
+      "description": "Metadata for the journey.",
+      "additionalProperties": true
+    },
+    "executionMode": {
+      "type": "string",
+      "description": "Execution mode of the journey."
+    },
+    "categoryId": {
+      "type": "integer",
+      "description": "Category ID of the journey."
+    },
+    "status": {
+      "type": "string",
+      "description": "Current status of the journey."
+    },
+    "definitionId": {
+      "type": "string",
+      "description": "Definition ID of the journey."
+    },
+    "scheduledStatus": {
+      "type": "string",
+      "description": "Scheduled status of the journey."
+    }
+  },
+  "required": [
+    "id",
+    "key",
+    "name",
+    "description",
+    "version",
+    "workflowApiVersion",
+    "createdDate",
+    "modifiedDate",
+    "entryMode",
+    "definitionType",
+    "executionMode",
+    "categoryId",
+    "status",
+    "definitionId",
+    "scheduledStatus"
+  ],
+  "additionalProperties": false
+}

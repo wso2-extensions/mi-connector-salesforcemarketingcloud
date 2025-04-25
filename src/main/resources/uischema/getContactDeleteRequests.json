@@ -1,0 +1,135 @@
+{
+  "connectorName": "SalesforceMarketingCloud",
+  "operationName": "getContactDeleteRequests",
+  "title": "Retrieves details of contact delete requests for a date range.",
+  "help": "Retrieves details of contact delete requests for a date range.",
+  "elements": [
+    {
+      "type": "attributeGroup",
+      "value": {
+        "groupName": "General",
+        "elements": [
+          {
+            "type": "attribute",
+            "value": {
+              "name": "configRef",
+              "displayName": "Connection",
+              "inputType": "connection",
+              "allowedConnectionTypes": [
+                "SalesforceMarketingCloud"
+              ],
+              "defaultType": "connection.SalesforceMarketingCloud",
+              "defaultValue": "",
+              "required": "true",
+              "helpTip": "Connection to be used"
+            }
+          },
+          {
+            "type": "attributeGroup",
+            "value": {
+              "groupName": "Parameters",
+              "elements": [
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "startdateutc",
+                    "displayName": "Start date UTC",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "Start date and time in UTC of the date range."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "enddateutc",
+                    "displayName": "End date UTC",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "End date and time in UTC of the date range."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "statusid",
+                    "displayName": "Status ID",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "Delete request status ID."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "page",
+                    "displayName": "Page",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "Page number to return from the paged results."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "pagesize",
+                    "displayName": "Page Size",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "Number of results per page to return."
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "orderBy",
+                    "displayName": "Order By",
+                    "inputType": "stringOrExpression",
+                    "defaultValue": "",
+                    "required": "false",
+                    "helpTip": "Determines which asset property to use for sorting, and also determines the direction in which to sort the data."
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "attributeGroup",
+            "value": {
+              "groupName": "Output",
+              "elements": [
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "responseVariable",
+                    "displayName": "Output Variable Name",
+                    "inputType": "string",
+                    "deriveResponseVariable": "true",
+                    "required": "true",
+                    "helpTip": "Name of the variable to which the output of the operation should be assigned"
+                  }
+                },
+                {
+                  "type": "attribute",
+                  "value": {
+                    "name": "overwriteBody",
+                    "displayName": "Overwrite Message Body",
+                    "inputType": "checkbox",
+                    "defaultValue": "false",
+                    "helpTip": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable).",
+                    "required": "false"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

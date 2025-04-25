@@ -1,0 +1,20 @@
+{
+    "name": "Salesforce Marketing Cloud",
+    "owner": "WSO2",
+    "category": "Sales and Marketing",
+    "documentationUrl": "https://mi.docs.wso2.com/en/latest/reference/connectors/salesforce-marketing-cloud-connector/salesforce-marketing-cloud-overview/",
+    "description": "The Salesforce Marketing Cloud Connector allows you to access the Salesforce Marketing Cloud Engagement APIs, enabling you to manage journeys, contacts, and marketing campaigns efficiently.",
+    "status": "Active",
+    "releases": [
+        {
+            "tagName": "v1.0.0",
+            "products": [
+                "MI 4.4.0"
+            ],
+            "isHidden": false
+        }
+    ],
+    "labels": [
+        "marketing"
+    ]
+}

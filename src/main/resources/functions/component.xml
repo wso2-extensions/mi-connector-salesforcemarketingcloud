@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ ~  Copyright (c) 2025, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~  WSO2 LLC. licenses this file to you under the Apache License,
+ ~  Version 2.0 (the "License"); you may not use this file except
+ ~  in compliance with the License.
+ ~  You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~  Unless required by applicable law or agreed to in writing,
+ ~  software distributed under the License is distributed on an
+ ~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~  KIND, either express or implied.  See the License for the
+ ~  specific language governing permissions and limitations
+ ~  under the License.
+-->
+
+<component name="functions" type="synapse/template">
+    <subComponents>
+        <component name="createAsset">
+            <displayName>Create Asset</displayName>
+            <file>createAsset.xml</file>
+            <description>Creates a new content asset.</description>
+        </component>
+        <component name="createCampaign">
+            <displayName>Create Campaign</displayName>
+            <file>createCampaign.xml</file>
+            <description>Establishes a new marketing campaign with defined objectives, target audience, and
+                parameters.
+            </description>
+        </component>
+        <component name="createCategory">
+            <displayName>Create Category</displayName>
+            <file>createCategory.xml</file>
+            <description>Creates a category (folder) in Content Builder.</description>
+        </component>
+        <component name="createContact">
+            <displayName>Create Contact</displayName>
+            <file>createContact.xml</file>
+            <description>Adds a new contact.</description>
+        </component>
+        <component name="createEmailDefinition">
+            <displayName>Create Email Definition</displayName>
+            <file>createEmailDefinition.xml</file>
+            <description>Creates a long-living send definition object that references the email template, subscriber
+                list, sending options, journey, and metadata.
+            </description>
+        </component>
+        <component name="createJourney">
+            <displayName>Create Journey</displayName>
+            <file>createJourney.xml</file>
+            <description>Creates a new interaction (journey).</description>
+        </component>
+        <component name="createSmsDefinition">
+            <displayName>Create SMS Definition</displayName>
+            <file>createSMSDefinition.xml</file>
+            <description>Creates an SMS send definition.</description>
+        </component>
+        <component name="deleteAsset">
+            <displayName>Delete Asset</displayName>
+            <file>deleteAsset.xml</file>
+            <description>Deletes an asset.</description>
+        </component>
+        <component name="deleteCampaign">
+            <displayName>Delete Campaign</displayName>
+            <file>deleteCampaign.xml</file>
+            <description>Deletes an existing marketing campaign.</description>
+        </component>
+        <component name="deleteContact">
+            <displayName>Delete Contact</displayName>
+            <file>deleteContact.xml</file>
+            <description>Deletes a contact record.</description>
+        </component>
+        <component name="getAssets">
+            <displayName>Get Assets</displayName>
+            <file>getAssets.xml</file>
+            <description>Fetches a list of all content assets.</description>
+        </component>
+        <component name="getCampaigns">
+            <displayName>Get Campaigns</displayName>
+            <file>getCampaigns.xml</file>
+            <description>Retrieves a list or details of existing marketing campaigns.</description>
+        </component>
+        <component name="getCategories">
+            <displayName>Get Categories</displayName>
+            <file>getCategories.xml</file>
+            <description>Upsert one or more rows in a data extension synchronously by specifying the external key of the
+                target data extension.
+            </description>
+        </component>
+        <component name="getContactDeleteRequests">
+            <displayName>Get Contact Delete Requests</displayName>
+            <file>getContactDeleteRequests.xml</file>
+            <description>Retrieves data deletion requests, important for ensuring GDPR and other data privacy
+                compliance.
+            </description>
+        </component>
+        <component name="getJourneys">
+            <displayName>Get Journeys</displayName>
+            <file>getJourneys.xml</file>
+            <description>Retrieves all journey interactions.</description>
+        </component>
+        <component name="insertDataExtensionRowSet">
+            <displayName>Insert Data Extension RowSet</displayName>
+            <file>insertDataExtensionRowSet.xml</file>
+            <description>Upsert one or more rows in a data extension synchronously by specifying the external key of the
+                target data extension.
+            </description>
+        </component>
+        <component name="sendEmailMessage">
+            <displayName>Send Email Message</displayName>
+            <file>sendEmailMessage.xml</file>
+            <description>Sends an email message.</description>
+        </component>
+        <component name="sendSmsMessage">
+            <displayName>Send SMS Message</displayName>
+            <file>sendSmsMessage.xml</file>
+            <description>Sends an SMS message.</description>
+        </component>
+        <component name="updateAsset">
+            <displayName>Update Asset</displayName>
+            <file>updateAsset.xml</file>
+            <description>Updates a full asset.</description>
+        </component>
+        <component name="updateCampaign">
+            <displayName>Update Campaign</displayName>
+            <file>updateCampaign.xml</file>
+            <description>Updates an existing marketing campaign.</description>
+        </component>
+        <component name="updateContact">
+            <displayName>Update Contact</displayName>
+            <file>updateContact.xml</file>
+            <description>Updates a contact record.</description>
+        </component>
+    </subComponents>
+</component>

@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Output Schema for Get Contact Delete Requests Operation",
+  "description": "Output schema for retrieving contact delete requests.",
+  "properties": {
+    "startDateUtc": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The start date in UTC for the query."
+    },
+    "endDateUtc": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The end date in UTC for the query."
+    },
+    "statusAsOfDateUtc": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The status date in UTC."
+    },
+    "pageNumber": {
+      "type": "integer",
+      "description": "The current page number."
+    },
+    "pageSize": {
+      "type": "integer",
+      "description": "The number of items per page."
+    },
+    "operations": {
+      "type": "array",
+      "description": "List of operations.",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "requestServiceMessageID": {
+      "type": "string",
+      "description": "ID of the request service message."
+    },
+    "responseDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The response date and time."
+    },
+    "resultMessages": {
+      "type": "array",
+      "description": "Array of result messages.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "serviceMessageID": {
+      "type": "string",
+      "description": "ID of the service message."
+    }
+  },
+  "required": [
+    "startDateUtc",
+    "endDateUtc",
+    "statusAsOfDateUtc",
+    "pageNumber",
+    "pageSize",
+    "operations",
+    "requestServiceMessageID",
+    "responseDateTime",
+    "resultMessages",
+    "serviceMessageID"
+  ],
+  "additionalProperties": false
+}

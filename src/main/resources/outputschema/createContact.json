@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Output Schema for Create Contact Operation",
+  "description": "Output schema for the create contact operation.",
+  "properties": {
+    "operationStatus": {
+      "type": "string",
+      "description": "Status of the operation (e.g., OK)."
+    },
+    "rowsAffected": {
+      "type": "integer",
+      "description": "Number of rows affected by the operation."
+    },
+    "contactKey": {
+      "type": "string",
+      "description": "The unique key of the contact."
+    },
+    "contactID": {
+      "type": "integer",
+      "description": "The system-generated ID of the contact."
+    },
+    "contactTypeID": {
+      "type": "integer",
+      "description": "The type ID of the contact."
+    },
+    "isNewContactKey": {
+      "type": "boolean",
+      "description": "Indicates whether the contact key is newly created."
+    },
+    "requestServiceMessageID": {
+      "type": "string",
+      "description": "The ID of the request message."
+    },
+    "responseDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The date and time of the response."
+    },
+    "hasErrors": {
+      "type": "boolean",
+      "description": "Indicates if any errors occurred during the operation."
+    },
+    "resultMessages": {
+      "type": "array",
+      "description": "List of result messages.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "serviceMessageID": {
+      "type": "string",
+      "description": "The ID of the service message."
+    }
+  },
+  "required": [
+    "operationStatus",
+    "rowsAffected",
+    "contactKey",
+    "contactID",
+    "isNewContactKey",
+    "responseDateTime",
+    "hasErrors"
+  ],
+  "additionalProperties": false
+}
