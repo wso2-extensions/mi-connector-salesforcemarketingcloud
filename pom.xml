@@ -59,9 +59,9 @@
         </dependency>
     </dependencies>
     <scm>
-        <connection>scm:git:https://github.com/wso2-extensions//mi-connector-salesforcemarketingcloud.git</connection>
-        <url>https://github.com/wso2-extensions//mi-connector-salesforcemarketingcloud.git</url>
-        <developerConnection>scm:git:https://github.com/wso2-extensions//mi-connector-salesforcemarketingcloud</developerConnection>
+        <connection>scm:git:https://github.com/wso2-extensions/mi-connector-salesforcemarketingcloud.git</connection>
+        <url>https://github.com/wso2-extensions/mi-connector-salesforcemarketingcloud.git</url>
+        <developerConnection>scm:git:https://github.com/wso2-extensions/mi-connector-salesforcemarketingcloud</developerConnection>
         <tag>HEAD</tag>
     </scm>
     <build>
