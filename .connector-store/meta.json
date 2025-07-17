@@ -17,124 +17,1756 @@
     ],
     "releases": [
         {
-            "tagName": "v1.0.0",
+            "tagName": "v1.0.1",
             "products": [
                 "MI 4.4.0"
             ],
             "operations": [
                 {
-                    "name": "createAsset",
-                    "description": "Creates a new content asset.",
+                    "name": "getJourneys",
+                    "description": "Retrieve a list of journeys.",
+                    "params": [
+                        {
+                            "name": "page",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The page number of results to retrieve."
+                        },
+                        {
+                            "name": "pageSize",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The number of items to return on a page of results."
+                        },
+                        {
+                            "name": "orderBy",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The field and sort method to use to sort the results. You can sort on these fields: ModifiedDate, Name, Performance."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
                     "isHidden": false
                 },
                 {
-                    "name": "createCampaign",
-                    "description": "Establishes a new marketing campaign with defined objectives, target audience, and parameters.",
-                    "isHidden": false
-                },
-                {
-                    "name": "createCategory",
-                    "description": "Creates a category (folder) in Content Builder.",
-                    "isHidden": false
-                },
-                {
-                    "name": "createContact",
-                    "description": "Adds a new contact.",
-                    "isHidden": false
-                },
-                {
-                    "name": "createEmailDefinition",
-                    "description": "Creates a send definition referencing email templates and sending options.",
-                    "isHidden": false
-                },
-                {
-                    "name": "createJourney",
-                    "description": "Creates a new journey interaction.",
-                    "isHidden": false
-                },
-                {
-                    "name": "createSmsDefinition",
-                    "description": "Creates an SMS send definition.",
+                    "name": "getContactDeleteRequests",
+                    "description": "Retrieves details of contact delete requests for a date range.",
+                    "params": [
+                        {
+                            "name": "startdateutc",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Start date and time in UTC of the date range."
+                        },
+                        {
+                            "name": "enddateutc",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "End date and time in UTC of the date range."
+                        },
+                        {
+                            "name": "statusid",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Delete request status ID."
+                        },
+                        {
+                            "name": "page",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Page number to return from the paged results."
+                        },
+                        {
+                            "name": "pagesize",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Number of results per page to return."
+                        },
+                        {
+                            "name": "orderBy",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Determines which asset property to use for sorting, and also determines the direction in which to sort the data."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
                     "isHidden": false
                 },
                 {
                     "name": "deleteAsset",
                     "description": "Deletes an asset.",
-                    "isHidden": false
-                },
-                {
-                    "name": "deleteCampaign",
-                    "description": "Deletes an existing marketing campaign.",
-                    "isHidden": false
-                },
-                {
-                    "name": "deleteContact",
-                    "description": "Deletes a contact record.",
-                    "isHidden": false
-                },
-                {
-                    "name": "getAssets",
-                    "description": "Fetches a list of all content assets.",
-                    "isHidden": false
-                },
-                {
-                    "name": "getCampaigns",
-                    "description": "Retrieves details of existing marketing campaigns.",
-                    "isHidden": false
-                },
-                {
-                    "name": "getCategories",
-                    "description": "Retrieves a list of Content Builder categories (folders).",
-                    "isHidden": false
-                },
-                {
-                    "name": "getContactDeleteRequests",
-                    "description": "Retrieves contact data deletion requests for GDPR compliance.",
-                    "isHidden": false
-                },
-                {
-                    "name": "getJourneys",
-                    "description": "Retrieves all journey interactions.",
-                    "isHidden": false
-                },
-                {
-                    "name": "insertDataExtensionRowSet",
-                    "description": "Upserts rows in a data extension using its external key.",
-                    "isHidden": false
-                },
-                {
-                    "name": "sendEmailMessage",
-                    "description": "Sends an email message.",
-                    "isHidden": false
-                },
-                {
-                    "name": "sendSmsMessage",
-                    "description": "Sends an SMS message.",
-                    "isHidden": false
-                },
-                {
-                    "name": "updateAsset",
-                    "description": "Updates a full asset.",
-                    "isHidden": false
-                },
-                {
-                    "name": "updateCampaign",
-                    "description": "Updates an existing marketing campaign.",
+                    "params": [
+                        {
+                            "name": "assetId",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The ID of the asset to delete."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
                     "isHidden": false
                 },
                 {
                     "name": "updateContact",
-                    "description": "Updates a contact record.",
+                    "description": "Update Contact",
+                    "params": [
+                        {
+                            "name": "inputStructure",
+                            "type": "comboOrExpression",
+                            "required": false,
+                            "defaultValue": "FORM",
+                            "description": "The type of input data structure. Supported values: FORM, INLINE"
+                        },
+                        {
+                            "name": "payload",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "{\n    \"contactKey\": \"acruz@example.com\",\n    \"contactId\": 12345678,\n    \"attributeSets\": [\n        {\n            \"name\": \"Email Addresses\",\n            \"items\": [\n                {\n                    \"values\": [\n                        {\n                            \"name\": \"Email Address\",\n                            \"value\": \"acruz@example.com\"\n                        },\n                        {\n                            \"name\": \"HTML Enabled\",\n                            \"value\": true\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"name\": \"Email Demographics\",\n            \"items\": [\n                {\n                    \"values\": [\n                        {\n                            \"name\": \"Last Name\",\n                            \"value\": \"Cruz\"\n                        },\n                        {\n                            \"name\": \"First Name\",\n                            \"value\": \"Angela\"\n                        },\n                        {\n                            \"name\": \"Text Profile Attribute\",\n                            \"value\": \"value 1\"\n                        },\n                        {\n                            \"name\": \"Number Profile Attribute\",\n                            \"value\": 12345\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+                            "description": "The properties required to create a new contact."
+                        },
+                        {
+                            "name": "contactKey",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Primary address for the contact. You must provide either a value for contactKey or contactID."
+                        },
+                        {
+                            "name": "contactID",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Unique ID for the contact. You must provide either a value for contactKey or contactID."
+                        },
+                        {
+                            "name": "attributeSets",
+                            "type": "array",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Array of information used to create a new contact."
+                        },
+                        {
+                            "name": "attributeSets.name",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Required. Name of attribute group to which to add the contact information."
+                        },
+                        {
+                            "name": "attributeSets.values",
+                            "type": "array",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Name and value pairs indicating the attribute and applicable value."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "getCategories",
+                    "description": "Get Content Categories",
+                    "params": [
+                        {
+                            "name": "page",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Page number to return from the paged results."
+                        },
+                        {
+                            "name": "pagesize",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Number of results per page to return."
+                        },
+                        {
+                            "name": "orderBy",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Determines which category property to use for sorting, and also determines the direction in which to sort the data."
+                        },
+                        {
+                            "name": "filter",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Filter by ParentId using a simple operator and value."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "getAssets",
+                    "description": "Get an asset collection by simple filter parameters.",
+                    "params": [
+                        {
+                            "name": "page",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Page number to return from the paged results."
+                        },
+                        {
+                            "name": "pagesize",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Number of results per page to return."
+                        },
+                        {
+                            "name": "orderBy",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Determines which asset property to use for sorting, and also determines the direction in which to sort the data."
+                        },
+                        {
+                            "name": "filter",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Filter by an asset's property using a simple operator and value."
+                        },
+                        {
+                            "name": "fields",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Comma-delimited string of asset properties used to reduce the size of your results to only the properties you need."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "createContact",
+                    "description": "Create Contact",
+                    "params": [
+                        {
+                            "name": "inputStructure",
+                            "type": "comboOrExpression",
+                            "required": false,
+                            "defaultValue": "FORM",
+                            "description": "The type of input data structure. Supported values: FORM, INLINE"
+                        },
+                        {
+                            "name": "payload",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "{\n    \"contactKey\": \"acruz@example.com\",\n    \"contactId\": 12345678,\n    \"attributeSets\": [\n        {\n            \"name\": \"Email Addresses\",\n            \"items\": [\n                {\n                    \"values\": [\n                        {\n                            \"name\": \"Email Address\",\n                            \"value\": \"acruz@example.com\"\n                        },\n                        {\n                            \"name\": \"HTML Enabled\",\n                            \"value\": true\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"name\": \"Email Demographics\",\n            \"items\": [\n                {\n                    \"values\": [\n                        {\n                            \"name\": \"Last Name\",\n                            \"value\": \"Cruz\"\n                        },\n                        {\n                            \"name\": \"First Name\",\n                            \"value\": \"Angela\"\n                        },\n                        {\n                            \"name\": \"Text Profile Attribute\",\n                            \"value\": \"value 1\"\n                        },\n                        {\n                            \"name\": \"Number Profile Attribute\",\n                            \"value\": 12345\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+                            "description": "The properties required to create a new contact."
+                        },
+                        {
+                            "name": "contactKey",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Primary address for the contact. You must provide either a value for contactKey or contactID."
+                        },
+                        {
+                            "name": "contactID",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Unique ID for the contact. You must provide either a value for contactKey or contactID."
+                        },
+                        {
+                            "name": "attributeSets",
+                            "type": "array",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Array of information used to create a new contact."
+                        },
+                        {
+                            "name": "attributeSets.name",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Required. Name of attribute group to which to add the contact information."
+                        },
+                        {
+                            "name": "attributeSets.values",
+                            "type": "array",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Name and value pairs indicating the attribute and applicable value."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "getCampaigns",
+                    "description": "Retrieve a list of campaigns in your account.",
+                    "params": [
+                        {
+                            "name": "page",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Page number to return from the paged results."
+                        },
+                        {
+                            "name": "pagesize",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Number of results per page to return."
+                        },
+                        {
+                            "name": "orderBy",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The field and sort method to use to sort the results."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "createJourney",
+                    "description": "Creates or saves a journey.",
+                    "params": [
+                        {
+                            "name": "inputStructure",
+                            "type": "comboOrExpression",
+                            "required": false,
+                            "defaultValue": "FORM",
+                            "description": "The type of input data structure. Supported values: FORM, INLINE"
+                        },
+                        {
+                            "name": "payload",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "{\n    \"key\": \"ixn-created-via-the-api\",\n    \"name\": \"API-Created journey\",\n    \"workflowApiVersion\": 1.0,\n    \"triggers\": [],\n    \"goals\": [],\n    \"activities\": []\n}",
+                            "description": "The properties required to create a new journey."
+                        },
+                        {
+                            "name": "key",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Required. The customer key as a GUID (UUID) to be used while referencing this journey."
+                        },
+                        {
+                            "name": "name",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Required. The name of this journey."
+                        },
+                        {
+                            "name": "description",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "A description of this journey."
+                        },
+                        {
+                            "name": "workflowApiVersion",
+                            "type": "number",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Required. The Journey Spec version to use for this journey. Possible values: 0.5, 1.0."
+                        },
+                        {
+                            "name": "goals",
+                            "type": "array",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The goal for this particular journey. Expressed as an object of type ContactDecision from the Journey Spec."
+                        },
+                        {
+                            "name": "triggers",
+                            "type": "array",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The trigger for this particular journey. Expressed as an object of type ContactEvent from the Journey Spec."
+                        },
+                        {
+                            "name": "activities",
+                            "type": "array",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The activities which compose this particular journey. Expressed as objects of types supported by the Journey Spec."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "insertDataExtensionRowSet",
+                    "description": "Insert Data Extension RowSet.",
+                    "params": [
+                        {
+                            "name": "externalKey",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The external ID, also known as the customer key, for the data extension."
+                        },
+                        {
+                            "name": "payload",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The properties required to insert data extension row set."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "sendEmailMessage",
+                    "description": "Send Email Message",
+                    "params": [
+                        {
+                            "name": "inputStructure",
+                            "type": "comboOrExpression",
+                            "required": false,
+                            "defaultValue": "FORM",
+                            "description": "The type of input data structure. Supported values: FORM, INLINE"
+                        },
+                        {
+                            "name": "payload",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "{\n    \"definitionKey\": \"2FA_order_accounts\",\n    \"recipients\": [\n        {\n            \"contactKey\": \"recipient1\",\n            \"to\": \"recipient1@example.com\",\n            \"messageKey\": \"nFL4ULgheUeaGbPIMzJJSw\",\n            \"attributes\": {\n                \"RequestAttribute_1\": \"value_1\",\n                \"RequestAttribute_2\": \"value_2\",\n                \"Attribute1\": \"This is one for recipient1\",\n                \"Attribute2\": \"This is two for recipient1\"\n            }\n        },\n        {\n            \"contactKey\": \"recipient2\",\n            \"to\": \"recipient2@example.com\",\n            \"messageKey\": \"GV1LhQ6NFkqFUAE1IsoQ9Q\",\n            \"attributes\": {\n                \"UserAttribute\": \"value_3\"\n            }\n        }\n    ],\n    \"attributes\": {\n        \"UserAttribute_a\": \"value_a\",\n        \"UserAttribute_b\": \"value_b\"\n    }\n}",
+                            "description": "The properties required to send an e-mail message."
+                        },
+                        {
+                            "name": "definitionKey",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The ID of the send definition."
+                        },
+                        {
+                            "name": "recipients",
+                            "type": "object",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Recipient parameters and metadata. Cannot be used with single recipient array."
+                        },
+                        {
+                            "name": "attributes",
+                            "type": "object",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Personalization attributes for the message as key-value pairs."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "updateAsset",
+                    "description": "Update Asset",
+                    "params": [
+                        {
+                            "name": "inputStructure",
+                            "type": "comboOrExpression",
+                            "required": false,
+                            "defaultValue": "FORM",
+                            "description": "The type of input data structure. Supported values: FORM, INLINE"
+                        },
+                        {
+                            "name": "assetId",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The ID of the asset to be updated."
+                        },
+                        {
+                            "name": "payload",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "{\n    \"assetType\": {\n        \"name\": \"htmlemail\",\n        \"id\": 208\n    },\n    \"name\": \"Example Email Created via API\",\n    \"customerKey\": \"MyUniqueEmailAssetKey\",\n    \"views\": {\n        \"html\": {\n            \"content\": \"<html><body><p>Hello, this is an email from the SFMC API!</p></body></html>\"\n        }\n    }\n}",
+                            "description": "The JSON payload required to create a new asset."
+                        },
+                        {
+                            "name": "customerKey",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Reference to customer's private ID/name for the asset."
+                        },
+                        {
+                            "name": "contentType",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The type that the content attribute will be in."
+                        },
+                        {
+                            "name": "data",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Property bag containing the asset data."
+                        },
+                        {
+                            "name": "assetType",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The type of the asset saved as a name/ID pair."
+                        },
+                        {
+                            "name": "version",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The version of the asset."
+                        },
+                        {
+                            "name": "locked",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Specifies if the asset can be modified or not."
+                        },
+                        {
+                            "name": "fileProperties",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Stores the different properties that this asset refers to if it is a file type."
+                        },
+                        {
+                            "name": "name",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Name of the asset, set by the client. 200 character maximum."
+                        },
+                        {
+                            "name": "description",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Description of the asset, set by the client."
+                        },
+                        {
+                            "name": "category",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "ID of the category the asset belongs to."
+                        },
+                        {
+                            "name": "tags",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "List of tags associated with the asset."
+                        },
+                        {
+                            "name": "content",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The actual content of the asset."
+                        },
+                        {
+                            "name": "design",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Fallback for display when neither content nor supercontent are provided."
+                        },
+                        {
+                            "name": "superContent",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Content that supersedes content in terms of display."
+                        },
+                        {
+                            "name": "customFields",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Custom fields within an asset."
+                        },
+                        {
+                            "name": "views",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Views within an asset."
+                        },
+                        {
+                            "name": "blocks",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Blocks within the asset."
+                        },
+                        {
+                            "name": "minBlocks",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Minimum number of blocks within an asset."
+                        },
+                        {
+                            "name": "maxBlocks",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Maximum number of blocks within an asset."
+                        },
+                        {
+                            "name": "channels",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "List of channels that are allowed to use this asset."
+                        },
+                        {
+                            "name": "allowedBlocks",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "List of blocks that are allowed in the asset."
+                        },
+                        {
+                            "name": "slots",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Slots within the asset."
+                        },
+                        {
+                            "name": "businessUnitAvailability",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "A dictionary of member IDs that have been granted access to the asset."
+                        },
+                        {
+                            "name": "template",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Template the asset follows."
+                        },
+                        {
+                            "name": "file",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Base64-encoded string of a file associated with an asset."
+                        },
+                        {
+                            "name": "generateFrom",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Tells the sending compiler what view to use for generating this view's content."
+                        },
+                        {
+                            "name": "sharingProperties",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Allows you to share content with one or more business units that have Content Builder Sharing enabled."
+                        },
+                        {
+                            "name": "sharingProperties.sharedWith",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "List of MID IDs the asset is shared with."
+                        },
+                        {
+                            "name": "sharingProperties.sharingType",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Indicates the permission that you are granting to the list of MIDs in sharedWith. Possible values are view, edit, or local."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "createAsset",
+                    "description": "Creates a new asset.",
+                    "params": [
+                        {
+                            "name": "inputStructure",
+                            "type": "comboOrExpression",
+                            "required": false,
+                            "defaultValue": "FORM",
+                            "description": "The type of input data structure. Supported values: FORM, INLINE"
+                        },
+                        {
+                            "name": "payload",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "{\n    \"assetType\": {\n        \"name\": \"htmlemail\",\n        \"id\": 208\n    },\n    \"name\": \"Example Email Created via API\",\n    \"customerKey\": \"MyUniqueEmailAssetKey\",\n    \"views\": {\n        \"html\": {\n            \"content\": \"<html><body><p>Hello, this is an email from the SFMC API!</p></body></html>\"\n        }\n    }\n}",
+                            "description": "The JSON payload required to create a new asset."
+                        },
+                        {
+                            "name": "customerKey",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Reference to customer's private ID/name for the asset."
+                        },
+                        {
+                            "name": "contentType",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The type that the content attribute will be in."
+                        },
+                        {
+                            "name": "data",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Property bag containing the asset data."
+                        },
+                        {
+                            "name": "assetType",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The type of the asset saved as a name/ID pair."
+                        },
+                        {
+                            "name": "version",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The version of the asset."
+                        },
+                        {
+                            "name": "locked",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Specifies if the asset can be modified or not."
+                        },
+                        {
+                            "name": "fileProperties",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Stores the different properties that this asset refers to if it is a file type."
+                        },
+                        {
+                            "name": "name",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Name of the asset, set by the client. 200 character maximum."
+                        },
+                        {
+                            "name": "description",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Description of the asset, set by the client."
+                        },
+                        {
+                            "name": "category",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "ID of the category the asset belongs to."
+                        },
+                        {
+                            "name": "tags",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "List of tags associated with the asset."
+                        },
+                        {
+                            "name": "content",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The actual content of the asset."
+                        },
+                        {
+                            "name": "design",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Fallback for display when neither content nor supercontent are provided."
+                        },
+                        {
+                            "name": "superContent",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Content that supersedes content in terms of display."
+                        },
+                        {
+                            "name": "customFields",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Custom fields within an asset."
+                        },
+                        {
+                            "name": "views",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Views within an asset."
+                        },
+                        {
+                            "name": "blocks",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Blocks within the asset."
+                        },
+                        {
+                            "name": "minBlocks",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Minimum number of blocks within an asset."
+                        },
+                        {
+                            "name": "maxBlocks",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Maximum number of blocks within an asset."
+                        },
+                        {
+                            "name": "channels",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "List of channels that are allowed to use this asset."
+                        },
+                        {
+                            "name": "allowedBlocks",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "List of blocks that are allowed in the asset."
+                        },
+                        {
+                            "name": "slots",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Slots within the asset."
+                        },
+                        {
+                            "name": "businessUnitAvailability",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "A dictionary of member IDs that have been granted access to the asset."
+                        },
+                        {
+                            "name": "template",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Template the asset follows."
+                        },
+                        {
+                            "name": "file",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Base64-encoded string of a file associated with an asset."
+                        },
+                        {
+                            "name": "generateFrom",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Tells the sending compiler what view to use for generating this view's content."
+                        },
+                        {
+                            "name": "sharingProperties",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Allows you to share content with one or more business units that have Content Builder Sharing enabled."
+                        },
+                        {
+                            "name": "sharingProperties.sharedWith",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "List of MID IDs the asset is shared with."
+                        },
+                        {
+                            "name": "sharingProperties.sharingType",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Indicates the permission that you are granting to the list of MIDs in sharedWith. Possible values are view, edit, or local."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "updateCampaign",
+                    "description": "Update Campaign",
+                    "params": [
+                        {
+                            "name": "inputStructure",
+                            "type": "comboOrExpression",
+                            "required": false,
+                            "defaultValue": "FORM",
+                            "description": "The type of input data structure. Supported values: FORM, INLINE"
+                        },
+                        {
+                            "name": "campaignId",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "ID of the campaign to be updated."
+                        },
+                        {
+                            "name": "payload",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "{\n    \"name\": \"Final Hours for Summer Sale\",\n    \"description\": \"Invite our most engaged customers to shop our Summer Sale before it ends.\",\n    \"campaignCode\": \"summer2023\",\n    \"color\": \"800080\",\n    \"favorite\": false\n}",
+                            "description": "The properties required to create a new campaign."
+                        },
+                        {
+                            "name": "name",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The name of the campaign."
+                        },
+                        {
+                            "name": "description",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "A description of the campaign."
+                        },
+                        {
+                            "name": "campaignCode",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "A campaign code to associate with the campaign."
+                        },
+                        {
+                            "name": "color",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The color used to identify the campaign in the Marketing Cloud Engagement web interface, expressed as an HTML color code."
+                        },
+                        {
+                            "name": "favorite",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Indicates whether to identify the campaign as a favorite."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "createCategory",
+                    "description": "Create Category",
+                    "params": [
+                        {
+                            "name": "inputStructure",
+                            "type": "comboOrExpression",
+                            "required": false,
+                            "defaultValue": "FORM",
+                            "description": "The type of input data structure. Supported values: FORM, INLINE"
+                        },
+                        {
+                            "name": "payload",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "{\n    \"Id\": 27,\n    \"Name\": \"My Pictures\",\n    \"ParentId\": 99,\n    \"CategoryType\": \"asset\",\n    \"MemberId\": 1500,\n    \"EnterpriseId\": 1575\n}",
+                            "description": "The properties required to create a new category."
+                        },
+                        {
+                            "name": "name",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Required. Name of the category."
+                        },
+                        {
+                            "name": "parentId",
+                            "type": "number",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Required. ID of the parent category."
+                        },
+                        {
+                            "name": "categoryType",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The type of category, either asset or asset-shared, which is automatically set to the CategoryType of the parent category. If set to asset-shared, include the SharingProperties in the call."
+                        },
+                        {
+                            "name": "enterpriseId",
+                            "type": "number",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "ID of the enterprise this business unit belongs to."
+                        },
+                        {
+                            "name": "memberId",
+                            "type": "number",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "ID of the member who creates the category."
+                        },
+                        {
+                            "name": "description",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Description of the category."
+                        },
+                        {
+                            "name": "sharingProperties",
+                            "type": "object",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Allows you to share categories with one or more business units that have Content Builder Sharing enabled. Stores the MIDs of business units this category is shared with and the sharing type."
+                        },
+                        {
+                            "name": "sharingProperties.sharedWith",
+                            "type": "object",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "List of up to 100 MID IDs the category is shared with. To share the category with all business units in the enterprise, and if your account has access to Content Builder Across Enterprise Sharing, set this to 0."
+                        },
+                        {
+                            "name": "sharingProperties.sharingType",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Indicates the permission that you are granting to the list of MIDs in SharedWith. The only possible value for categories is edit."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "createCampaign",
+                    "description": "Create Campaign.",
+                    "params": [
+                        {
+                            "name": "inputStructure",
+                            "type": "comboOrExpression",
+                            "required": false,
+                            "defaultValue": "FORM",
+                            "description": "The type of input data structure. Supported values: FORM, INLINE"
+                        },
+                        {
+                            "name": "payload",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "{\n    \"name\": \"Final Hours for Summer Sale\",\n    \"description\": \"Invite our most engaged customers to shop our Summer Sale before it ends.\",\n    \"campaignCode\": \"summer2023\",\n    \"color\": \"800080\",\n    \"favorite\": false\n}",
+                            "description": "The properties required to create a new campaign."
+                        },
+                        {
+                            "name": "name",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The name of the campaign."
+                        },
+                        {
+                            "name": "description",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "A description of the campaign."
+                        },
+                        {
+                            "name": "campaignCode",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "A campaign code to associate with the campaign."
+                        },
+                        {
+                            "name": "color",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The color used to identify the campaign in the Marketing Cloud Engagement web interface, expressed as an HTML color code."
+                        },
+                        {
+                            "name": "favorite",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Indicates whether to identify the campaign as a favorite."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "createEmailDefinition",
+                    "description": "Create Email Definition",
+                    "params": [
+                        {
+                            "name": "inputStructure",
+                            "type": "comboOrExpression",
+                            "required": false,
+                            "defaultValue": "FORM",
+                            "description": "The type of input data structure. Supported values: FORM, INLINE"
+                        },
+                        {
+                            "name": "payload",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "{\n    \"definitionKey\": \"2FA_order_accounts\",\n    \"status\": \"Active\",\n    \"name\": \"My Unique Definition Name\",\n    \"description\": \"Created via REST\",\n    \"classification\": \"Default Transactional\",\n    \"content\": {\n        \"customerKey\": \"bebf8650-137a-494c-8727-cdeb32534961\"\n    },\n    \"subscriptions\": {\n        \"list\": \"test-list\",\n        \"dataExtension\": \"test-de\",\n        \"autoAddSubscriber\": true,\n        \"updateSubscriber\": true\n    },\n    \"options\": {\n        \"trackLinks\": true,\n        \"cc\": [\n            \"cc_address@example.com\"\n        ],\n        \"bcc\": [\n            \"bcc_address@example.com\"\n        ],\n        \"createJourney\": true\n    }\n}",
+                            "description": "The properties required to create a new email definition."
+                        },
+                        {
+                            "name": "definitionKey",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Required. Unique, user-generated key to access the definition object."
+                        },
+                        {
+                            "name": "name",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Required. Name of the definition. Must be unique."
+                        },
+                        {
+                            "name": "content.customerKey",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Required. Unique identifier of the content asset."
+                        },
+                        {
+                            "name": "status",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Operational state of the definition: active, inactive, or deleted. A message sent to an active definition is processed and delivered. A message sent to an inactive definition isn\u2019t processed or delivered. Instead, the message is queued for later processing for up to three days."
+                        },
+                        {
+                            "name": "description",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "User-provided description of the send definition."
+                        },
+                        {
+                            "name": "classification",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The external key of a sending classification defined in Email Studio Administration. Only transactional classifications are permitted. Default is default transactional."
+                        },
+                        {
+                            "name": "subscriptions.list",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Required. The external key of the list or all subscribers. Contains the subscriber keys and profile attributes."
+                        },
+                        {
+                            "name": "subscriptions.dataExtension",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The external key of the triggered send data extension. Each request inserts as a new row in the data extension. To deduplicate at send time, use messageKey. Don\u2019t use a primary key on the triggered send data extension."
+                        },
+                        {
+                            "name": "subscriptions.autoAddSubscriber",
+                            "type": "boolean",
+                            "required": false,
+                            "defaultValue": "true",
+                            "description": "Adds the recipient\u2019s email address and contact key as a subscriber key to subscriptions.list. Default is true."
+                        },
+                        {
+                            "name": "subscriptions.updateSubscriber",
+                            "type": "boolean",
+                            "required": false,
+                            "defaultValue": "true",
+                            "description": "Updates the recipient\u2019s contact key as a subscriber key with the provided email address and profile attributes to subscriptions.list. Default is true."
+                        },
+                        {
+                            "name": "options.trackLinks",
+                            "type": "boolean",
+                            "required": false,
+                            "defaultValue": "true",
+                            "description": "Wraps links for tracking and reporting. Default is true."
+                        },
+                        {
+                            "name": "options.cc",
+                            "type": "array",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Include CC email addresses with every send. To CC dynamically at send time, create a profile attribute and use the %%attribute%% syntax."
+                        },
+                        {
+                            "name": "options.bcc",
+                            "type": "array",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Include BCC email addresses with every send. To BCC dynamically at send time, create a profile attribute and use the %%attribute%% syntax."
+                        },
+                        {
+                            "name": "options.createJourney",
+                            "type": "boolean",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "A value of true updates the send definition to make it available in Journey Builder as a Transactional Send Journey. After the definition is tied to a Transactional Send Journey, the definition remains part of Journey Builder. You can\u2019t unlink a journey from a definition without recreating the transactional send definition."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "deleteCampaign",
+                    "description": "Delete Campaign.",
+                    "params": [
+                        {
+                            "name": "campaignId",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The ID of the campaign to delete."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "deleteContact",
+                    "description": "Deletes Contact.",
+                    "params": [
+                        {
+                            "name": "values",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Array of contact ID values to delete."
+                        },
+                        {
+                            "name": "deleteOperationType",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "ContactAndAttributes",
+                            "description": "Type of delete operation to perform."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "createSmsDefinition",
+                    "description": "Create SMS Definition",
+                    "params": [
+                        {
+                            "name": "inputStructure",
+                            "type": "comboOrExpression",
+                            "required": false,
+                            "defaultValue": "FORM",
+                            "description": "The type of input data structure. Supported values: FORM, INLINE"
+                        },
+                        {
+                            "name": "payload",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "{\n    \"definitionKey\": \"account-reset\",\n    \"name\": \"account-reset\",\n    \"description\": \"Using SMS Transactional API\",\n    \"content\": {\n        \"message\": \"%%FirstName%%, your 2FA token is %%password%%\"\n    },\n    \"subscriptions\": {\n        \"shortCode\": \"8201221\",\n        \"countryCode\": \"US\",\n        \"keyword\": \"PASSWORD\"\n    },\n    \"options\": {\n        \"urlShortenerOptions\": {\n            \"isLinkShorteningEnabled\": true,\n            \"isSubscriberTrackingEnabled\": true,\n            \"shortenerType\": \"SFMC\"\n        },\n        \"smsMessageRegulatoryAuthorityTemplateId\": \"1107170833298425627\"\n    }\n}",
+                            "description": "The properties required to create a new SMS definition."
+                        },
+                        {
+                            "name": "definitionKey",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Required. Unique, user-generated key to access the definition object."
+                        },
+                        {
+                            "name": "name",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Required. Name of the definition. Must be unique."
+                        },
+                        {
+                            "name": "content.message",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Required. The message content that you want sent with each message. Use substitution strings and AMPscript to personalize the message."
+                        },
+                        {
+                            "name": "status",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Operational state of the definition: active, inactive, or deleted. A message sent to an active definition is processed and delivered. A message sent to an inactive definition isn\u2019t processed or delivered. Instead, the message is queued for later processing for up to three days."
+                        },
+                        {
+                            "name": "description",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "User-provided description of the send definition."
+                        },
+                        {
+                            "name": "subscriptions.shortCode",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Required. The short or long code for the mobile transmissions for each message on this definition."
+                        },
+                        {
+                            "name": "subscriptions.countryCode",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The country code associated with the shortCode for the mobile transmissions for each message on this definition. Don't use for long codes, unless your account configuration requires it."
+                        },
+                        {
+                            "name": "subscriptions.keyword",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Required. The keyword used to track messages."
+                        },
+                        {
+                            "name": "subscriptions.autoAddSubscriber",
+                            "type": "boolean",
+                            "required": false,
+                            "defaultValue": "true",
+                            "description": "Allows you to add a recipient as subscriber against the shortCode using contactKey. When false, the message is rejected if contactKey doesn\u2019t exist as a subscriber. Default is true."
+                        },
+                        {
+                            "name": "options.urlShortenerOptions.IsLinkShorteningEnabled",
+                            "type": "boolean",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Indicates if URL shortening is enabled for URLs in the message body. The values are true and false."
+                        },
+                        {
+                            "name": "options.urlShortenerOptions.isSubscriberTrackingEnabled",
+                            "type": "boolean",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Indicates if subscriber level tracking is enabled for URLs in the message body. The values are true and false. The value is true if the value of shortenerType is SFMC."
+                        },
+                        {
+                            "name": "options.urlShortenerOptions.shortenerType",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The type of URL shortener. The value is SFMC."
+                        },
+                        {
+                            "name": "options.SmsMessageRegulatoryAuthorityTemplateId",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "The ID of the DLT template used in the SMS. This attribute is available only for customers in India."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
+                    "isHidden": false
+                },
+                {
+                    "name": "sendSmsMessage",
+                    "description": "Send SMS Message",
+                    "params": [
+                        {
+                            "name": "inputStructure",
+                            "type": "comboOrExpression",
+                            "required": false,
+                            "defaultValue": "FORM",
+                            "description": "The type of input data structure. Supported values: FORM, INLINE"
+                        },
+                        {
+                            "name": "payload",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "{\n    \"definitionKey\": \"SEND_DEFINITION\",\n    \"recipients\": [\n        {\n            \"contactKey\": \"Astro25\",\n            \"to\": \"15555551234\",\n            \"messageKey\": \"nFL4ULgheUeaGbPIMzJJSw\",\n            \"attributes\": {\n                \"FirstName\": \"Astro\",\n                \"Password\": \"1234567\"\n            }\n        },\n        {\n            \"contactKey\": \"Codey36\",\n            \"to\": \"15555554321\",\n            \"messageKey\": \"GV1LhQ6NFkqFUAE1IsoQ9Q\",\n            \"attributes\": {\n                \"FirstName\": \"Code\",\n                \"Password\": \"2345678\"\n            }\n        }\n    ],\n    \"attributes\": {\n        \"RequestTrackingAttribute\": \"2\"\n    }\n}",
+                            "description": "The properties required to send SMS message."
+                        },
+                        {
+                            "name": "definitionKey",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "The ID of the send definition."
+                        },
+                        {
+                            "name": "recipients",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "An array of recipient objects that contain tracking and personalization metadata."
+                        },
+                        {
+                            "name": "subscriptions",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Resubscribe the recipient even if previously opted out."
+                        },
+                        {
+                            "name": "content",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Overrides content in send definition. Supports substitution strings."
+                        },
+                        {
+                            "name": "attributes",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Key-value pairs used to personalize the message globally."
+                        },
+                        {
+                            "name": "responseVariable",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Name of the variable to which the output of the operation should be assigned"
+                        },
+                        {
+                            "name": "overwriteBody",
+                            "type": "checkbox",
+                            "required": false,
+                            "defaultValue": "false",
+                            "description": "Replace the Message Body in Message Context with the output of the operation (This will remove the payload from the above variable)."
+                        }
+                    ],
                     "isHidden": false
                 }
             ],
             "connections": [
                 {
                     "name": "SalesforceMarketingCloud",
-                    "description": "Connection to Salesforce Marketing Cloud using subdomain, client ID, and client secret."
+                    "description": "Salesforce Marketing Cloud Connection",
+                    "params": [
+                        {
+                            "name": "connectionName",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "SFMC_1",
+                            "description": "The name for the Salesforce Marketing Cloud connection."
+                        },
+                        {
+                            "name": "subdomain",
+                            "type": "string",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Your Salesforce Marketing Cloud sub domain."
+                        },
+                        {
+                            "name": "clientId",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Client ID issued when you create the API integration in Installed Packages."
+                        },
+                        {
+                            "name": "clientSecret",
+                            "type": "stringOrExpression",
+                            "required": true,
+                            "defaultValue": "",
+                            "description": "Client secret issued when you create the API integration in Installed Packages."
+                        },
+                        {
+                            "name": "accountId",
+                            "type": "stringOrExpression",
+                            "required": false,
+                            "defaultValue": "",
+                            "description": "Account identifier, or MID, of the target business unit."
+                        }
+                    ]
                 }
-            ],
-            "isHidden": false
+            ]
         }
     ]
 }
